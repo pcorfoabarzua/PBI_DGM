@@ -1,0 +1,41 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-CL
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["PB_REQ_MUESTREO","PB_REQ_VIAJES","PB_VIAJE_MUESTREO_TEST","Tipo grafico","Dimension OBSERVADOR_CIENTIFICO","Dimension REGION","Dimension FLOTA","Dimension PUERTO","Dimension BARCO","Dimension ZONA","Dimension ACTIVIDAD","medidas","Dimension MAESTRO ESPECIE","PB_VIAJE_MUESTREO_DESCARTE"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DaxQueryView_Desktop","DevMode"]
+
+ref table PB_REQ_MUESTREO
+ref table DateTableTemplate_f01868b1-61b7-4e6b-969f-ef8a086879f3
+ref table PB_REQ_VIAJES
+ref table PB_VIAJE_MUESTREO_TEST
+ref table Date
+ref table 'Tipo grafico'
+ref table 'Dimension OBSERVADOR_CIENTIFICO'
+ref table 'Dimension REGION'
+ref table 'Dimension FLOTA'
+ref table 'Dimension PUERTO'
+ref table 'Dimension BARCO'
+ref table 'Dimension ZONA'
+ref table 'Dimension ACTIVIDAD'
+ref table medidas
+ref table Date2
+ref table LocalDateTable_e390ec01-e410-4f61-9d24-06abe6539729
+ref table 'Dimension MAESTRO ESPECIE'
+ref table LocalDateTable_29a6f2b9-9c57-4c65-931d-1542e6accbc7
+ref table LocalDateTable_bc0b6aec-16d3-4111-9bae-db6deb1a9845
+ref table 'Dimension PERIODO'
+ref table LocalDateTable_31ef8b6a-e218-434a-a9da-13632bd94475
+ref table LocalDateTable_f6ea5bea-ba25-45ff-9a3e-fd3fbe511975
+ref table 'Dimension PROYECTO'
+ref table LocalDateTable_75d9bd68-b8f0-4024-bf16-17cc1d9d78ba
+
+ref cultureInfo en-US
+

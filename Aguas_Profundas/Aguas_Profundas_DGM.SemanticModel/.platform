@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Aguas_Profundas_DGM"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "3ce58e1f-60be-4fc2-bfe1-b4690f686fb8"
+  }
+}

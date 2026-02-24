@@ -1,0 +1,113 @@
+table PB_REQ_MUESTREO
+	lineageTag: 344b56d9-3bb2-4bdb-8591-54287a0981a1
+
+	column ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 9b518f49-37f3-4780-a950-fb5d81db0f9e
+		summarizeBy: count
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_PROYECTO
+		dataType: string
+		lineageTag: c5678676-bfa1-4e0f-944c-f5490f513a89
+		summarizeBy: none
+		sourceColumn: COD_PROYECTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column MES
+		dataType: int64
+		formatString: 0
+		lineageTag: 5fedc1ab-c0de-4c83-bf64-522f500ed69a
+		summarizeBy: sum
+		sourceColumn: MES
+
+		annotation SummarizationSetBy = Automatic
+
+	column TOT_MUES_LON
+		dataType: int64
+		formatString: 0
+		lineageTag: 9b10a260-0b97-45c4-b1fb-66972d4e2bf7
+		summarizeBy: sum
+		sourceColumn: TOT_MUES_LON
+
+		annotation SummarizationSetBy = Automatic
+
+	column TOT_MUES_BIO
+		dataType: int64
+		formatString: 0
+		lineageTag: f04f5ff3-fd93-4d47-b846-07b3d6624daf
+		summarizeBy: sum
+		sourceColumn: TOT_MUES_BIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column TOT_MUES_CON_OTOL
+		dataType: int64
+		formatString: 0
+		lineageTag: b71ed891-2dbe-4b42-9d16-23dd9ac60ea9
+		summarizeBy: sum
+		sourceColumn: TOT_MUES_CON_OTOL
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_REGION
+		dataType: int64
+		formatString: 0
+		lineageTag: 2d1b0817-2fc8-49fa-8a60-15ff8b41813a
+		summarizeBy: none
+		sourceColumn: COD_REGION
+
+		annotation SummarizationSetBy = Automatic
+
+	column PERIODO
+		dataType: int64
+		formatString: 0
+		lineageTag: 0788ad5b-aa66-4a58-8e22-ce5bd913073e
+		summarizeBy: sum
+		sourceColumn: PERIODO
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_FLOTA
+		dataType: int64
+		formatString: 0
+		lineageTag: 34bfd0b8-8685-4525-a82f-e109fbcd795f
+		summarizeBy: none
+		sourceColumn: COD_FLOTA
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_PUERTO
+		dataType: int64
+		formatString: 0
+		lineageTag: 431bd29d-ce57-42ef-b66d-4e0ed7a0883c
+		summarizeBy: none
+		sourceColumn: COD_PUERTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column PERIODOMES = FORMAT(PB_REQ_MUESTREO[PERIODO], "0000") & "-" & FORMAT(PB_REQ_MUESTREO[MES], "00")
+		lineageTag: 49aabf69-ea6a-475b-88cf-a7e416845a75
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition PB_REQ_MUESTREO = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("192.168.169.110"),
+				    Analytics = Source{[Name="Analytics"]}[Data],
+				    Fact_PB_REQ_MUESTREO = Analytics{[Schema="Fact",Item="PB_REQ_MUESTREO"]}[Data],
+				    #"Texto limpio" = Table.TransformColumns(Fact_PB_REQ_MUESTREO,{{"COD_PROYECTO", Text.Clean, type text}})
+				in
+				    #"Texto limpio"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

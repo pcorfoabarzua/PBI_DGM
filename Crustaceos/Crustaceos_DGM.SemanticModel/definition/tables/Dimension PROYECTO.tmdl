@@ -1,0 +1,40 @@
+table 'Dimension PROYECTO'
+	lineageTag: 84559002-0b56-40f0-9813-4ca2a87d6e8f
+
+	column COD_PROYECTO
+		lineageTag: 6a0429d0-b571-4753-b110-f828b789acc9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [COD_PROYECTO]
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOMBRE_PROYECTO
+		lineageTag: 5deaf83c-0b3c-4866-8069-9fc0ccaca6c3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [NOMBRE_PROYECTO]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dimension PROYECTO' = calculated
+		mode: import
+		source =
+				
+				VAR ProyViaje =
+				    SELECTCOLUMNS (
+				        'PB_VIAJE_MUESTREO_TEST',
+				        "COD_PROYECTO", UPPER ( TRIM ( 'PB_VIAJE_MUESTREO_TEST'[PROYECTO] ) ),
+				        "NOMBRE_PROYECTO", UPPER ( TRIM ( 'PB_VIAJE_MUESTREO_TEST'[PROYECTO] ) )
+				    )
+				VAR ProyReq =
+				    SELECTCOLUMNS (
+				        'PB_REQ_MUESTREO',
+				        "COD_PROYECTO", UPPER ( TRIM ( 'PB_REQ_MUESTREO'[COD_PROYECTO] ) ),
+				        "NOMBRE_PROYECTO", UPPER ( TRIM ( 'PB_REQ_MUESTREO'[COD_PROYECTO] ) )
+				    )
+				RETURN
+				    DISTINCT ( UNION ( ProyViaje, ProyReq ) )
+
+	annotation PBI_Id = ac503af69d8f48179149de69dc729615
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Pelagicos_DGM"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2c68f128-eb1b-4171-a959-60253f4a65b9"
+  }
+}

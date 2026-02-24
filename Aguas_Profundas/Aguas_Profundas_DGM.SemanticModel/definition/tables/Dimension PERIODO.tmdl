@@ -1,0 +1,111 @@
+table 'Dimension PERIODO'
+	lineageTag: 53937cc1-1bc2-4d20-9bdf-89aded00037e
+
+	column Año
+		formatString: 0
+		lineageTag: 921af272-4193-4a9a-a52c-431e89ad1b39
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Año]
+
+		annotation SummarizationSetBy = Automatic
+
+	column MesN
+		formatString: 0
+		lineageTag: e8e72601-094a-4f2f-9cf2-40937e834f0e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [MesN]
+
+		annotation SummarizationSetBy = Automatic
+
+	column MesTxt
+		lineageTag: 8c39fd01-b4a7-45c3-8e88-ff33fe24b69d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [MesTxt]
+
+		annotation SummarizationSetBy = Automatic
+
+	column PERIODOMES
+		lineageTag: b74671d8-da55-4833-9acd-8aa6350e432f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [PERIODOMES]
+
+		annotation SummarizationSetBy = Automatic
+
+	column InicioMes
+		formatString: General Date
+		lineageTag: 36e0dfdd-c30c-40ae-a36a-41254ea8aa51
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [InicioMes]
+
+		variation Variación
+			isDefault
+			relationship: 1af9e0ce-b51c-4c5e-8f93-fb06a5d978dd
+			defaultHierarchy: LocalDateTable_31ef8b6a-e218-434a-a9da-13632bd94475.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column FinMes
+		formatString: General Date
+		lineageTag: e80f53cd-a57f-4d41-a83a-ca9475780c36
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [FinMes]
+
+		variation Variación
+			isDefault
+			relationship: 15e50f4f-2d32-4cd9-8f67-678994203288
+			defaultHierarchy: LocalDateTable_f6ea5bea-ba25-45ff-9a3e-fd3fbe511975.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trimestre
+		lineageTag: aba096c6-e67f-4259-81fa-13c08f4ce5cb
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Trimestre]
+
+		annotation SummarizationSetBy = Automatic
+
+	column PeriodoTexto
+		lineageTag: c341c330-1a9c-4c56-adcd-50013e6eeb5c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [PeriodoTexto]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dimension PERIODO' = calculated
+		mode: import
+		source = ```
+				
+				VAR MinDate =
+				    CALCULATE ( MIN ( 'Date'[Date] ), ALL ( 'Date' ) )
+				VAR MaxDate =
+				    CALCULATE ( MAX ( 'Date'[Date] ), ALL ( 'Date' ) )
+				VAR Base =
+				    ADDCOLUMNS (
+				        CALENDAR ( EOMONTH ( MinDate, -1 ) + 1, EOMONTH ( MaxDate, 0 ) ),
+				        "Año", YEAR ( [Date] ),
+				        "MesN", MONTH ( [Date] ),
+				        "MesTxt", FORMAT ( [Date], "[$-es-CL]mmm" ),
+				        "PERIODOMES", FORMAT ( [Date], "yyyyMM" ),
+				        "InicioMes", DATE ( YEAR ( [Date] ), MONTH ( [Date] ), 1 ),
+				        "FinMes", EOMONTH ( [Date], 0 ),
+				        "Trimestre", "T" & FORMAT ( [Date], "Q" ),
+				        "PeriodoTexto", FORMAT ( [Date], "[$-es-CL]mmm-yyyy" )
+				    )
+				RETURN
+				    SUMMARIZE (
+				        Base,
+				        [Año], [MesN], [MesTxt], [PERIODOMES], [InicioMes], [FinMes], [Trimestre], [PeriodoTexto]
+				    )
+				
+				```
+
+	annotation PBI_Id = 975331224fc5400394b696ed3112f512
+

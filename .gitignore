@@ -1,0 +1,44 @@
+# ============================================
+#  Power BI PBIP / PBIR - .gitignore
+# ============================================
+
+# --- NO SUBIR ARCHIVOS BINARIOS ---
+*.pbix
+*.pbit
+*.pbids
+
+# --- CARPETAS INTERNAS DE POWER BI (.pbi) ---
+# Power BI genera estos caches cuando abres el PBIP
+**/.pbi/localCache/
+**/.pbi/localModelCache/
+**/.pbi/temp/
+**/.pbi/cache/
+**/.pbi/UserState/
+
+# Archivos de estado/sesión
+*.lock
+*.pid
+
+# --- NO SUBIR ARCHIVOS TEMPORALES DEL SISTEMA ---
+*.tmp
+*.bak
+*.log
+*.tmd
+Thumbs.db
+.DS_Store
+
+# --- CARPETAS GENERADAS POR VISUALES CUSTOM ---
+node_modules/
+dist/
+
+# --- EDITORES ---
+.vscode/
+.idea/
+
+# --- PYTHON / JUPYTER TEMP ---
+__pycache__/
+.ipynb_checkpoints/
+
+# ============================================
+# FIN DEL .gitignore
+# ============================================
