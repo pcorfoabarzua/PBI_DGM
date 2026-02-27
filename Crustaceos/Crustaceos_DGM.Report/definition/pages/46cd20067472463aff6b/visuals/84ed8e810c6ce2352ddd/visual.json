@@ -23,12 +23,11 @@
                       "Entity": "medidas"
                     }
                   },
-                  "Property": "Viajes totales"
+                  "Property": "Viajes Totales Tarjeta"
                 }
               },
-              "queryRef": "medidas.Viajes totales",
-              "nativeQueryRef": "N° Viajes",
-              "displayName": "N° Viajes"
+              "queryRef": "medidas.Viajes Totales Tarjeta",
+              "nativeQueryRef": "Viajes Totales Tarjeta"
             }
           ]
         }
@@ -43,7 +42,7 @@
                     "Entity": "medidas"
                   }
                 },
-                "Property": "Viajes totales"
+                "Property": "Viajes Totales Tarjeta"
               }
             },
             "direction": "Descending"

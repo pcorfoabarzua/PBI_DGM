@@ -56,11 +56,12 @@
                       "Entity": "medidas"
                     }
                   },
-                  "Property": "Req Viajes"
+                  "Property": "Req Viajes (sin viajes)"
                 }
               },
-              "queryRef": "medidas.Req Viajes",
-              "nativeQueryRef": "Req Viajes"
+              "queryRef": "medidas.Req Viajes (sin viajes)",
+              "nativeQueryRef": "Req Viajes",
+              "displayName": "Req Viajes"
             }
           ]
         }

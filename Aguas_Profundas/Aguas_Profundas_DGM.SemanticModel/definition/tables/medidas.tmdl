@@ -124,6 +124,7 @@ table medidas
 			        )
 			    )
 			
+			
 			```
 		formatString: 0
 		lineageTag: 7ec04244-5cc8-44e4-ae3a-14c2bc755863
@@ -505,6 +506,59 @@ table medidas
 	measure 'N° Lances Tarjeta' = IF(ISBLANK([N° Lances]) , 0 , [N° Lances])
 		formatString: 0
 		lineageTag: 0cab8aa9-01f6-4e41-9c53-a4d42d400aeb
+
+	measure 'Viajes Totales Obs Cientifico' = ```
+			
+			   COUNTROWS(
+			        SUMMARIZE(
+			            PB_VIAJE_MUESTREO_TEST ,
+			            PB_VIAJE_MUESTREO_TEST[COD_BARCO],
+			            PB_VIAJE_MUESTREO_TEST[FECHA_HORA_RECALADA]
+			        )
+			    )
+			
+			```
+		formatString: 0
+		lineageTag: 2163c55b-43d4-4ecc-907a-a696f0086701
+
+	measure 'Req Viajes (sin viajes)' = ```
+			
+			VAR LugarNorm =
+			    LOWER(
+			        TRIM(
+			            SELECTEDVALUE( PB_VIAJE_MUESTREO_TEST[LUGAR_MUESTREO], "embarcado" )
+			        )
+			    )
+			
+			VAR ReqViajes_Embarcados =
+			    CALCULATE(
+			        SUM( 'PB_REQ_VIAJES'[TOT_VIAJE_EMB] ),
+			        TREATAS( VALUES( 'Date'[PERIODOMES] ), 'PB_REQ_VIAJES'[PERIODOMES] ),
+			        -- mantenemos relaciones, solo removemos el filtro de la columna de lugar
+			        REMOVEFILTERS( PB_VIAJE_MUESTREO_TEST[LUGAR_MUESTREO] )
+			    )
+			
+			VAR ReqViajes_Tierra =
+			    CALCULATE(
+			        SUM( 'PB_REQ_VIAJES'[TOT_VIAJE_ENC] ),
+			        TREATAS( VALUES( 'Date'[PERIODOMES] ), 'PB_REQ_VIAJES'[PERIODOMES] ),
+			        REMOVEFILTERS( PB_VIAJE_MUESTREO_TEST[LUGAR_MUESTREO] )
+			    )
+			
+			VAR Resultado =
+			    SWITCH(
+			        TRUE(),
+			        LugarNorm = "embarcado", ReqViajes_Embarcados,
+			        LugarNorm = "tierra" || LugarNorm = "encuesta en tierra", ReqViajes_Tierra,
+			        -- default si el LUGAR no está definido
+			        ReqViajes_Embarcados
+			    )
+			RETURN
+			Resultado
+			
+			```
+		formatString: 0
+		lineageTag: df1b8fb2-4472-4ff7-b164-254b6493185e
 
 	partition medidas = m
 		mode: import

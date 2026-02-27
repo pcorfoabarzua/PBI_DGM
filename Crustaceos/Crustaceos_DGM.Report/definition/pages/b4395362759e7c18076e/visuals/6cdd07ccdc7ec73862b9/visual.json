@@ -57,11 +57,12 @@
                       "Entity": "medidas"
                     }
                   },
-                  "Property": "Req Viajes"
+                  "Property": "Req Viajes (sin viajes)"
                 }
               },
-              "queryRef": "medidas.Req Viajes",
-              "nativeQueryRef": "Req Viajes"
+              "queryRef": "medidas.Req Viajes (sin viajes)",
+              "nativeQueryRef": "Req Viajes",
+              "displayName": "Req Viajes"
             }
           ]
         }
@@ -254,6 +255,13 @@
                   "Value": "'46cd20067472463aff6b'"
                 }
               }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
             }
           }
         }
@@ -373,6 +381,48 @@
         },
         "type": "Advanced",
         "howCreated": "User"
+      },
+      {
+        "name": "36b89110aa5b35d9bd4a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Date"
+              }
+            },
+            "Property": "Mes"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "0de4763f3700522053ed",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "medidas"
+              }
+            },
+            "Property": "Viajes totales"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "efc84a42a6011ca408c0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "medidas"
+              }
+            },
+            "Property": "Req Viajes (sin viajes)"
+          }
+        },
+        "type": "Advanced"
       }
     ],
     "filterSortOrder": "Custom"
