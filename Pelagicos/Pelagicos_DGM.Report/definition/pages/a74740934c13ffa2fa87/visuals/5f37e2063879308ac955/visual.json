@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "5f37e2063879308ac955",
   "position": {
     "x": 901.25,
@@ -89,7 +89,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Tierra'"
+                                "Value": "'Embarcado'"
                               }
                             }
                           ]
@@ -118,5 +118,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "718b1b0ed3d903980506",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "PB_VIAJE_MUESTREO_TEST"
+              }
+            },
+            "Property": "LUGAR_MUESTREO"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

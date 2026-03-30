@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
   "displayName": "Descarte Pelágico",
   "name": "c22eb73b47958ed3c540",
   "options": {
@@ -122,7 +122,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "ba852cb49609ad02a02b",
+                  "name": "2cb7fac35a7633e267b2",
                   "type": "Advanced",
                   "expression": {
                     "Column": {
@@ -237,7 +237,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "95ef2b64857002d030a4",
+                  "name": "eef32aa23c9786e385b4",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -331,7 +331,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "497c5db20bcd3d68bc94",
+                  "name": "71546710759649a3f1ba",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -346,7 +346,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "2d3481402b0298c5b7a9",
+                  "name": "c820f9f47db902d83143",
                   "type": "Advanced",
                   "expression": {
                     "Aggregation": {
@@ -419,7 +419,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "d62355a339a773cbce5d",
+                  "name": "559de7e07b8190417fa4",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -465,7 +465,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "5cd53da80d006ba54996",
+                  "name": "2deed64647276b74ba21",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -706,7 +706,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "07ab97485716ae490294",
+                  "name": "46633a32718237afcbcb",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -721,7 +721,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "c98353500055808b03b3",
+                  "name": "797e96d07707f0eb9a2d",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -782,7 +782,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "aa258db5e8a383caab38",
+                  "name": "11fce20b58f2c2f02366",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1081,7 +1081,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "4ed07ba8a458bbb040c3",
+                  "name": "1fda64ccc8ef6823545d",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1285,7 +1285,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "3e5496cc00cadeb8a991",
+                  "name": "1039f6ae5c0a68d44d6e",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1380,7 +1380,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "e551d6dcdb603c2c6ab7",
+                  "name": "fd229e1eac1d8ca0d5f8",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1537,7 +1537,22 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "b3b1f8246ed76d999748",
+                  "name": "dabfeebf66bdb6eae497",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "medidas"
+                        }
+                      },
+                      "Property": "Req Viajes"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "235717c1ed330eeeb8b5",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1552,22 +1567,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "dabfeebf66bdb6eae497",
-                  "type": "Advanced",
-                  "expression": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "medidas"
-                        }
-                      },
-                      "Property": "Req Viajes"
-                    }
-                  },
-                  "howCreated": 1
-                },
-                {
-                  "name": "12223a708a699229adb2",
+                  "name": "1b90e3e5cf2cdbbbc22b",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1580,26 +1580,11 @@
                     }
                   },
                   "howCreated": 0
-                },
-                {
-                  "name": "7be2f61b37d047c83675",
-                  "type": "Advanced",
-                  "expression": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "medidas"
-                        }
-                      },
-                      "Property": "Req Viajes (sin viajes)"
-                    }
-                  },
-                  "howCreated": 0
                 }
               ]
             },
             "singleVisual": {
-              "visualType": "columnChart",
+              "visualType": "lineClusteredColumnComboChart",
               "objects": {},
               "activeProjections": {
                 "Category": [
@@ -1656,7 +1641,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "be078d1fb1c23c4a2c0e",
+                  "name": "5d960460f7b11998b1bc",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1710,7 +1695,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "5ffd8e3f006a068d8e05",
+                  "name": "64aeb7a12991bb05a751",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1725,7 +1710,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "fc1bf371db4de0e82cdb",
+                  "name": "191d8e27e5a84a77bbc8",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1734,7 +1719,7 @@
                           "Entity": "medidas"
                         }
                       },
-                      "Property": "Viajes totales"
+                      "Property": "Viajes Totales Obs Cientifico"
                     }
                   },
                   "howCreated": 0
@@ -1754,7 +1739,7 @@
                           "Entity": "medidas"
                         }
                       },
-                      "Property": "Viajes totales"
+                      "Property": "Viajes Totales Obs Cientifico"
                     }
                   }
                 }
@@ -1788,7 +1773,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "54e3cbb6b66413bc0a8d",
+                  "name": "e3862017360571449f80",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1803,7 +1788,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "e1cede35e272098e4751",
+                  "name": "2fdbf8b8c980991bcba5",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1818,7 +1803,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "3224ab58db96aa3215d1",
+                  "name": "92a3bf266aa0922349a0",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {

@@ -4,14 +4,14 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 794.48377917425751,
+        "x": 794.14705882352848,
         "y": 0
       },
       "nodes": [
         {
           "location": {
-            "x": 1006.6229428279614,
-            "y": 690.89695641663832
+            "x": 1011.1927514363977,
+            "y": 628.4429054346765
           },
           "nodeIndex": "PB_REQ_MUESTREO",
           "nodeLineageTag": "344b56d9-3bb2-4bdb-8591-54287a0981a1",
@@ -19,20 +19,21 @@
             "height": 383,
             "width": 234
           },
-          "zIndex": 16
+          "zIndex": 14
         },
         {
           "location": {
-            "x": 553.95443122353572,
-            "y": 665.67925084043816
+            "x": 643.82733385611493,
+            "y": 575.806348207859
           },
           "nodeIndex": "PB_REQ_VIAJES",
           "nodeLineageTag": "701cf170-12da-43f6-988b-4053ccdfc70f",
           "size": {
-            "height": 434,
+            "height": 200,
             "width": 234
           },
-          "zIndex": 17
+          "zIndex": 15,
+          "expandedHeight": 434
         },
         {
           "location": {
@@ -45,7 +46,7 @@
             "height": 198.29215686274506,
             "width": 234
           },
-          "zIndex": 13
+          "zIndex": 12
         },
         {
           "location": {
@@ -58,7 +59,7 @@
             "height": 104,
             "width": 234
           },
-          "zIndex": 6
+          "zIndex": 5
         },
         {
           "location": {
@@ -71,7 +72,7 @@
             "height": 104,
             "width": 234
           },
-          "zIndex": 9,
+          "zIndex": 8,
           "expandedHeight": 128
         },
         {
@@ -99,7 +100,7 @@
             "height": 145,
             "width": 234
           },
-          "zIndex": 7
+          "zIndex": 6
         },
         {
           "location": {
@@ -126,12 +127,12 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 11
+          "zIndex": 10
         },
         {
           "location": {
-            "x": 268.21697475426146,
-            "y": 117.12960264752512
+            "x": 321.53140851935086,
+            "y": 467.48159596096951
           },
           "nodeIndex": "Dimension REGION",
           "nodeLineageTag": "837d5044-e4ea-4576-b51e-a5dffc566e1d",
@@ -139,12 +140,12 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 8
+          "zIndex": 7
         },
         {
           "location": {
-            "x": 1762.2811545607553,
-            "y": 1094.3470141403789
+            "x": 1789.6066447568337,
+            "y": 858.66466119920256
           },
           "nodeIndex": "Dimension ZONA",
           "nodeLineageTag": "be59d071-f6f9-4df2-b76d-c0631b793c8f",
@@ -152,7 +153,7 @@
             "height": 104,
             "width": 234
           },
-          "zIndex": 5,
+          "zIndex": 16,
           "expandedHeight": 128
         },
         {
@@ -178,12 +179,12 @@
             "height": 200,
             "width": 234
           },
-          "zIndex": 10
+          "zIndex": 9
         },
         {
           "location": {
-            "x": 1976.2536855957869,
-            "y": 982.10079697078061
+            "x": 2078.7242738310811,
+            "y": 857.42824795117281
           },
           "nodeIndex": "Dimension MAESTRO ESPECIE",
           "nodeLineageTag": "eb91ca5a-7ae2-45e4-a1fb-ddc9ff56ffa2",
@@ -202,10 +203,11 @@
           "nodeIndex": "PB_VIAJE_MUESTREO_TEST",
           "nodeLineageTag": "190195d3-3388-4bce-9613-a563e60a52f9",
           "size": {
-            "height": 599.743137254902,
+            "height": 392,
             "width": 348
           },
-          "zIndex": 14
+          "zIndex": 13,
+          "expandedHeight": 599.743137254902
         },
         {
           "location": {
@@ -218,12 +220,12 @@
             "height": 200,
             "width": 234
           },
-          "zIndex": 12
+          "zIndex": 11
         },
         {
           "location": {
-            "x": 880.50026883490818,
-            "y": 80.733285415706817
+            "x": 883.546807907199,
+            "y": 108.15213706632422
           },
           "nodeIndex": "Dimension PERIODO",
           "nodeLineageTag": "f8a5c11c-91e2-48fb-b85c-d6788891056d",
@@ -231,11 +233,11 @@
             "height": 200,
             "width": 234
           },
-          "zIndex": 15
+          "zIndex": 17
         }
       ],
       "name": "All tables",
-      "zoomValue": 58.553386911595894,
+      "zoomValue": 58.553386911595936,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,

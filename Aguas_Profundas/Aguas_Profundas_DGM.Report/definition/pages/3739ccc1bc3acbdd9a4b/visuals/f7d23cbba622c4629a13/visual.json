@@ -1,16 +1,16 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "f7d23cbba622c4629a13",
   "position": {
-    "x": 167.2595281306715,
-    "y": 197.62068965517241,
+    "x": 165.52369077306736,
+    "y": 198.25436408977558,
     "z": 16000,
     "height": 239.40149625935163,
     "width": 353.4912718204489,
     "tabOrder": 12000
   },
   "visual": {
-    "visualType": "columnChart",
+    "visualType": "lineClusteredColumnComboChart",
     "query": {
       "queryState": {
         "Category": {
@@ -48,7 +48,11 @@
               "queryRef": "medidas.Viajes totales",
               "nativeQueryRef": "N° Viajes",
               "displayName": "N° Viajes"
-            },
+            }
+          ]
+        },
+        "Y2": {
+          "projections": [
             {
               "field": {
                 "Measure": {
@@ -57,10 +61,10 @@
                       "Entity": "medidas"
                     }
                   },
-                  "Property": "Req Viajes (sin viajes)"
+                  "Property": "Req Viajes"
                 }
               },
-              "queryRef": "medidas.Req Viajes (sin viajes)",
+              "queryRef": "medidas.Req Viajes Test",
               "nativeQueryRef": "Req Viajes",
               "displayName": "Req Viajes"
             }
@@ -111,6 +115,20 @@
               }
             }
           }
+        },
+        {
+          "properties": {
+            "showSeries": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "medidas.Req Viajes Test"
+          }
         }
       ],
       "legend": [
@@ -120,6 +138,13 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -149,6 +174,13 @@
                   "Value": "'Categorical'"
                 }
               }
+            },
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
             }
           }
         }
@@ -161,7 +193,7 @@
                 "color": {
                   "expr": {
                     "ThemeDataColor": {
-                      "ColorId": 3,
+                      "ColorId": 2,
                       "Percent": 0
                     }
                   }
@@ -171,10 +203,65 @@
           }
         }
       ],
-      "totals": [
+      "lineStyles": [
         {
           "properties": {
+            "lineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "'solid'"
+                }
+              }
+            },
+            "showMarker": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "gridlineShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "secShowAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "switchAxisPosition": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
             "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "secShow": {
               "expr": {
                 "Literal": {
                   "Value": "false"

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "8845cff1a9e9f4e1aa2f",
   "position": {
     "x": 160,
@@ -23,12 +23,12 @@
                       "Entity": "medidas"
                     }
                   },
-                  "Property": "N° Viajes Año Pasado Tarjeta"
+                  "Property": "Req Viajes Tarjeta"
                 }
               },
-              "queryRef": "medidas.N° Viajes Año Pasado Tarjeta",
-              "nativeQueryRef": "N° Viajes Año Pasado",
-              "displayName": "N° Viajes Año Pasado"
+              "queryRef": "medidas.Req Viajes Tarjeta",
+              "nativeQueryRef": "Req Viajes",
+              "displayName": "Req Viajes"
             }
           ]
         }
@@ -43,7 +43,7 @@
                     "Entity": "medidas"
                   }
                 },
-                "Property": "N° Viajes Año Pasado Tarjeta"
+                "Property": "Req Viajes Tarjeta"
               }
             },
             "direction": "Descending"
@@ -118,7 +118,7 @@
                           "Entity": "medidas"
                         }
                       },
-                      "Property": "Color N° Viajes Año Pasado"
+                      "Property": "Color Req Viajes"
                     }
                   }
                 }

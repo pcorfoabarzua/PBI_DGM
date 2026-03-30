@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "08f9dfd0a9a1583ad8d8",
   "position": {
-    "x": 168,
-    "y": 4,
+    "x": 168.32917705735662,
+    "y": 3.7406483790523692,
     "z": 2000,
-    "height": 95,
-    "width": 1079,
+    "height": 95.386533665835415,
+    "width": 1040.8354114713218,
     "tabOrder": 1000
   },
   "visual": {
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "CUMPLIMIENTO DE REQUERIMIENTOS MENSUALES DE LOS PROYECTOS AGUAS PROFUNDAS",
+                    "value": "CUMPLIMIENTO DE REQUERIMIENTOS MENSUALES DE LOS PROYECTOS DEMERSALES Y AGUAS PROFUNDAS",
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontSize": "12pt",

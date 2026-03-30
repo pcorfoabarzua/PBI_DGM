@@ -10,7 +10,7 @@ table Date
 
 		variation Variación
 			isDefault
-			relationship: 909e0101-7270-4e32-a44d-003a9b728bdc
+			relationship: 0742c549-0bf0-49ec-93ac-f65409047ac3
 			defaultHierarchy: LocalDateTable_75d9bd68-b8f0-4024-bf16-17cc1d9d78ba.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
@@ -62,33 +62,34 @@ table Date
 
 	partition Date = calculated
 		mode: import
-		source =
+		source = ```
 				
 				ADDCOLUMNS (
 				    CALENDAR (
 				        MIN ( PB_VIAJE_MUESTREO_TEST[FECHA] ),
-				        MAX ( PB_VIAJE_MUESTREO_TEST[FECHA] )
+				        DATE ( YEAR ( MAX ( PB_VIAJE_MUESTREO_TEST[FECHA] ) ) + 1, 12, 31 )  -- Con esto podemos ver los requerimientos de todo el año
 				    ),
 				    "Year", YEAR ( [Date] ),
 				    "Month Number", MONTH ( [Date] ),
-				    "Mes" ,
+				    "Mes",
 				    SWITCH (
-				    MONTH ( [Date] ),
-				    1, "enero",
-				    2, "febrero",
-				    3, "marzo",
-				    4, "abril",
-				    5, "mayo",
-				    6, "junio",
-				    7, "julio",
-				    8, "agosto",
-				    9, "septiembre",
-				    10, "octubre",
-				    11, "noviembre",
-				    12, "diciembre"
-				),  -- Se coloco este Switch debido a que la configuracion regional original esta en inglés y no podia cambiar el formato de Mes en texto a español
-				    "Month Year", FORMAT ( [Date], "[$-es-ES]MMM yyyy" )
+				        MONTH ( [Date] ),
+				        1, "enero",
+				        2, "febrero",
+				        3, "marzo",
+				        4, "abril",
+				        5, "mayo",
+				        6, "junio",
+				        7, "julio",
+				        8, "agosto",
+				        9, "septiembre",
+				        10, "octubre",
+				        11, "noviembre",
+				        12, "diciembre"
+				    ),
+				    "Month Year", FORMAT ( [Date], "[$-es-ES]MMM yyyy" ) 
 				)
+				```
 
 	annotation PBI_Id = 159e75b837834a2b94f7680f44ece2a8
 

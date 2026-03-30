@@ -69,6 +69,21 @@
               "queryRef": "medidas.nmuestras2",
               "nativeQueryRef": "N° Muestras",
               "displayName": "N° Muestras"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "medidas"
+                    }
+                  },
+                  "Property": "Req (según actividad)"
+                }
+              },
+              "queryRef": "medidas.Req (según actividad)",
+              "nativeQueryRef": "Req",
+              "displayName": "Req"
             }
           ]
         }
@@ -636,6 +651,34 @@
         },
         "type": "Advanced",
         "howCreated": "User"
+      },
+      {
+        "name": "cf95a2381d8dd46a69a6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "PB_VIAJE_MUESTREO_TEST"
+              }
+            },
+            "Property": "NOMBRE_ESPECIE_SELECCIONADA"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b9fc8db494601162a4cb",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "medidas"
+              }
+            },
+            "Property": "Req (según actividad)"
+          }
+        },
+        "type": "Advanced"
       }
     ],
     "filterSortOrder": "Custom"

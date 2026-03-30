@@ -1,0 +1,760 @@
+table medidas
+	lineageTag: 35e7f987-6529-4f11-bb13-87eb33f4c696
+
+	measure nmuestras = SUM(PB_VIAJE_MUESTREO_TEST[NRO_MUESTREOS_ESPECIE])
+		formatString: 0
+		lineageTag: 2c46fb87-9fe1-461c-b975-6fa3ea41aa8c
+
+	measure TxtFlotaRegion = ```
+			
+			"Flota: " & SELECTEDVALUE('Dimension FLOTA'[TIPO_FLOTA] , "Múltiple") & 
+			" | Región: " & SELECTEDVALUE('Dimension REGION'[NOMBRE_REGION] , "Múltiple") &
+			" | Año: " & SELECTEDVALUE('Date'[Year] , "Múltiple") 
+			```
+		lineageTag: 8f90f832-de34-4efb-84da-6204f86324e5
+
+	measure nmuestras2 = count(PB_VIAJE_MUESTREO_TEST[CODIGO_ACTIVIDAD])
+		formatString: 0
+		lineageTag: f1f9c5e2-f6aa-4561-8879-777be0595010
+
+	measure 'Titulo Principal' = ""
+		lineageTag: 37c73fe6-0082-4e08-b192-9ce6f44a886c
+
+	measure 'N° Viajes Embarcados' = ```
+			
+			
+			/*   
+			    Calculo del N° Viajes que son Bitacora y que sean Embarcados
+			
+			    Para el caso de 2021 , Region Bio Bio , Mes 12 ,   Flota Industrial : Se obtienen 9 Viajes en esta medida y en el gráfico se obtienen 10 Viajes debido a que hay dos Viajes donde lo único que cambia es la Zona
+			
+			
+			*/
+			 
+			    COUNTROWS(
+			        SUMMARIZE(
+			            PB_VIAJE_MUESTREO_TEST , 
+			            PB_VIAJE_MUESTREO_TEST[COD_BARCO],
+			            PB_VIAJE_MUESTREO_TEST[FECHA_HORA_RECALADA]
+			        )
+			    )
+			
+			
+			
+			```
+		formatString: 0
+		lineageTag: 7590d973-40f5-4e25-8e68-079d4aec3c39
+
+	measure 'N° Muestreos Especie' = ```
+			
+			VAR total =
+			CALCULATE(
+			SUM(PB_VIAJE_MUESTREO_TEST[NRO_MUESTREOS_ESPECIE]) ,
+			'Dimension ACTIVIDAD'[NOMBRE_ACTIVIDAD] <> "Bitacora"
+			)
+			
+			RETURN IF(ISBLANK(total) , 0 , total )
+			
+			```
+		formatString: #,0
+		lineageTag: 7a8af00f-dcb5-48bb-87e8-1c0b1d615e32
+
+	measure 'N° Lances' = ```
+			
+			SUM(PB_VIAJE_MUESTREO_TEST[NRO_LANCES])
+			
+			
+			
+			```
+		formatString: 0
+		lineageTag: b2959f47-cdb1-4181-b45e-c99489ef7866
+
+	measure 'Datos Año' = ```
+			
+			VAR data = CALCULATETABLE(VALUES(PB_VIAJE_MUESTREO_TEST[FECHA]) , USERELATIONSHIP('Date'[Date] , PB_VIAJE_MUESTREO_TEST[FECHA]))
+			
+			RETURN IF(COUNTROWS(data) > 0 , 1 , BLANK())
+			                                                                                                                                                                                                                                         
+			
+			
+			```
+		formatString: 0
+		lineageTag: 5960e52f-122c-425c-a089-2896df94133c
+
+	measure 'Datos Meses' = ```
+			
+			VAR data = CALCULATETABLE(VALUES(PB_VIAJE_MUESTREO_TEST[FECHA]) , 
+			            USERELATIONSHIP( PB_VIAJE_MUESTREO_TEST[FECHA] , 'Date'[Date] ))
+			
+			RETURN IF(COUNTROWS(data) > 0 , 1 , BLANK())  
+			```
+		formatString: 0
+		lineageTag: a72d1a29-ce18-47a3-8fac-e1da43003d1f
+
+	measure 'Datos region' = ```
+			
+			VAR data = CALCULATETABLE(VALUES(PB_VIAJE_MUESTREO_TEST[CODIGO_REGION]) , USERELATIONSHIP('Dimension REGION'[COD_REGION] , PB_VIAJE_MUESTREO_TEST[CODIGO_REGION]))
+			
+			RETURN IF(COUNTROWS(data) > 0 , 1 , BLANK()) 
+			
+			
+			```
+		formatString: 0
+		lineageTag: 78c6b500-f15f-48dd-af1c-f1466fe7eaa2
+
+	measure 'Datos Flota' = ```
+			
+			VAR data = CALCULATETABLE(VALUES(PB_VIAJE_MUESTREO_TEST[CODIGO_FLOTA]),
+			            USERELATIONSHIP('Dimension FLOTA'[CODIGO_FLOTA] , PB_VIAJE_MUESTREO_TEST[CODIGO_FLOTA]))
+			
+			RETURN IF(COUNTROWS(data) > 0 , 1 , BLANK())
+			
+			
+			```
+		formatString: 0
+		lineageTag: c7516a3f-b793-44d2-aa27-8d5a437e0a84
+
+	measure 'Viajes totales' = ```
+			
+			    COUNTROWS(
+			        SUMMARIZE(
+			            PB_VIAJE_MUESTREO_TEST ,
+			            PB_VIAJE_MUESTREO_TEST[COD_BARCO],
+			            PB_VIAJE_MUESTREO_TEST[FECHA_HORA_RECALADA]
+			        )
+			    )
+			
+			
+			
+			
+			
+			
+			```
+		formatString: 0
+		lineageTag: 7ec04244-5cc8-44e4-ae3a-14c2bc755863
+
+	measure ColorFiltro = ```
+			
+			SWITCH(
+			    SELECTEDVALUE(PB_VIAJE_MUESTREO_TEST[LUGAR_MUESTREO]),
+			    "TIERRA", "#FFFFFF00",   // Blanco
+			    "EMBARCADO", "#FFFFFF00", // Azul
+			    "#FFFFFF"              // Blanco por defecto (simula transparente)
+			)
+			
+			
+			```
+		lineageTag: 950ab079-0fc6-4eed-bff2-78313a456d97
+
+	measure 'Titulo Muestreos OC' = ```
+			
+			SWITCH(
+			    SELECTEDVALUE(PB_VIAJE_MUESTREO_TEST[LUGAR_MUESTREO]),
+			    "TIERRA", "N° Viajes Tierra",
+			    "EMBARCADO", "N° Viajes Embarcados",
+			    BLANK()
+			)
+			
+			```
+		lineageTag: 56caf8c6-9e92-45f1-8a35-c74e24ed7fa4
+
+	measure 'Viajes Totales rem Filtro' = ```
+			
+			CALCULATE(
+			    COUNTROWS(
+			        SUMMARIZE(
+			            PB_VIAJE_MUESTREO_TEST,
+			            PB_VIAJE_MUESTREO_TEST[COD_BARCO],
+			            PB_VIAJE_MUESTREO_TEST[FECHA_HORA_RECALADA]
+			        )
+			    ),
+			    ALL(PB_VIAJE_MUESTREO_TEST) 
+			    
+			)
+			
+			```
+		formatString: 0
+		lineageTag: af180bb9-13fe-4216-8980-8997261ecec5
+
+	measure 'Total REQ Viajes EMB' = ```
+			
+			CALCULATE(
+			    SUM(PB_REQ_VIAJES[TOT_VIAJE_EMB]),
+			    PB_REQ_VIAJES[COD_PROYECTO] = "C" ,  
+			    'Dimension ACTIVIDAD'[NOMBRE_ACTIVIDAD] = "Bitacora" ,
+			    TREATAS(
+			         VALUES(PB_VIAJE_MUESTREO_TEST[PERIODOMES]) ,
+			         PB_REQ_VIAJES[PERIODOMES]
+			
+			)
+			)
+			```
+		formatString: 0
+		lineageTag: 2f95d673-da30-41c2-8a60-aa922a593344
+
+	measure 'Titulo Viajes Embarcados' = ```
+			
+			IF(
+			    ISBLANK([N° Viajes Embarcados]),
+			    "No se encontraron datos de viajes embarcados",
+			    IF(
+			        SELECTEDVALUE(PB_VIAJE_MUESTREO_TEST[PROYECTO]) = "B",
+			        "Bentónicos",
+			        "Otro"
+			    )
+			)
+			
+			
+			```
+		lineageTag: 7990af53-d97d-44b4-9a25-ed58c7cfaafa
+
+	measure 'N° Ejemplares' = SUM(PB_VIAJE_MUESTREO_TEST[NRO_EJEMPLARES])
+		formatString: #,0
+		lineageTag: 57b435bd-9aad-45fa-bd79-a33f7e733235
+
+	measure 'Titulo Porcentaje Muestras' = ```
+			
+			
+			IF(ISBLANK([N° Ejemplares]) ,  "No existen datos de muestras de especie" , "Porcentaje de muestras por especies")
+			
+			```
+		lineageTag: 27c47909-d2b7-4dd3-bac1-02c55508036a
+
+	measure 'Titulo Marea y Lances' = ```
+			
+			
+			IF(ISBLANK([N° Lances]) , 
+			"No existen datos del lance" , 
+			
+			SWITCH(SELECTEDVALUE(PB_VIAJE_MUESTREO_TEST[LUGAR_MUESTREO]) ,
+			    "EMBARCADO" ,  "Duración Marea y Lances por Viaje (Muestreos embarcados)" ,
+			    "Duración Marea y Lances por Viaje (Muestreos en tierra)"
+			
+			))
+			```
+		lineageTag: 42071c18-6138-4b60-b859-0539ef59e292
+
+	measure 'N° Lances Test' = ```
+			
+			
+			CALCULATE(
+			    [N° Lances] ,
+			    'Dimension ACTIVIDAD'[NOMBRE_ACTIVIDAD] = "Bitacora"
+			
+			)
+			
+			
+			```
+		formatString: 0
+		lineageTag: df95dece-f0d5-48a2-8b87-986d76883a4e
+
+	measure 'Duración Marea (Hrs)' = ```
+			
+			CALCULATE(
+			    SUMX(
+			        PB_VIAJE_MUESTREO_TEST,
+			        ABS(
+			            DATEDIFF(
+			                PB_VIAJE_MUESTREO_TEST[FECHA_HORA_ZARPE],
+			                PB_VIAJE_MUESTREO_TEST[FECHA_HORA_RECALADA],
+			                HOUR
+			            )
+			        )
+			    )
+			
+			)
+			
+			
+			```
+		formatString: #,0
+		lineageTag: d1216e48-abd8-4db6-b2ec-4003cfd4c67b
+
+	measure 'N° Muestreos test' = ```
+			
+			
+			/*  
+			    Esto realiza una suma de NRO_MUESTREOS_ESPECIE con las siguientes condiciones
+			
+			    1.Que la ACTIVIDAD sea MUESTREO BIOLOGICO , MUESTREO LONGITUD Y PROPORCION ESPECIES
+			
+			    2.Que el lugar de muestreo sea EMBARCADO
+			    
+			
+			*/
+			
+			CALCULATE(
+			    SUM(PB_VIAJE_MUESTREO_TEST[NRO_MUESTREOS_ESPECIE]) , 
+			    FILTER(PB_VIAJE_MUESTREO_TEST , PB_VIAJE_MUESTREO_TEST[CODIGO_ACTIVIDAD] IN {1 , 2  , 3 }) ,
+			    PB_VIAJE_MUESTREO_TEST[LUGAR_MUESTREO] = "EMBARCADO" 
+			
+			)
+			
+			```
+		formatString: 0
+		lineageTag: 4a624384-a1f9-438b-bb30-7ea443363625
+
+	measure 'Titulo Actividad Muestreo' = ```
+			
+			IF(SELECTEDVALUE(PB_VIAJE_MUESTREO_TEST[LUGAR_MUESTREO]) = "EMBARCADO" , 
+			  "Actividad de muestreo con observadores científicos embarcados" , "Actividad de muestreo con observadores científicos en tierra" )
+			
+			
+			```
+		lineageTag: b3b7e20d-c328-4f47-a2b8-dfc303838da5
+
+	measure 'Datos Especies' = ```
+			
+			VAR data = CALCULATETABLE(VALUES(PB_VIAJE_MUESTREO_TEST[COD_ESPECIE]) , USERELATIONSHIP('Dimension MAESTRO ESPECIE'[COD_ESPECIE] , PB_VIAJE_MUESTREO_TEST[COD_ESPECIE]))
+			
+			RETURN IF(COUNTROWS(data) > 0 , 1 , BLANK()) 
+			```
+		formatString: 0
+		lineageTag: 3cdbe256-1476-4eab-bc72-55d425b267b0
+
+	measure Actividad = SELECTEDVALUE('Dimension ACTIVIDAD'[NOMBRE_ACTIVIDAD] , "Varios")
+		lineageTag: 23ef54a3-5e76-4936-95b0-24f958cf8345
+
+	measure 'Req Biológico' = ```
+			
+			CALCULATE(
+			    SUM('PB_REQ_MUESTREO'[TOT_MUES_BIO]),
+			    KEEPFILTERS(
+			        TREATAS(
+			            VALUES('Date'[PERIODOMES]),
+			            'PB_REQ_MUESTREO'[PERIODOMES]
+			        )
+			    )
+			)
+			
+			
+			```
+		formatString: 0
+		lineageTag: 09bba311-b38e-4eb4-90cf-68dfe3815e97
+
+	measure 'Req Otolitos' = ```
+			
+			CALCULATE(
+			    SUM('PB_REQ_MUESTREO'[TOT_MUES_CON_OTOL]),
+			    KEEPFILTERS(
+			        TREATAS(
+			            VALUES('Date'[PERIODOMES]),
+			            'PB_REQ_MUESTREO'[PERIODOMES]
+			        )
+			    )
+			)
+			
+			```
+		formatString: 0
+		lineageTag: 7e7f74f9-b8f4-4f20-a143-7f514f229967
+
+	measure 'Req Longitud' = ```
+			
+			CALCULATE(
+			    SUM('PB_REQ_MUESTREO'[TOT_MUES_LON]),
+			    KEEPFILTERS(
+			        TREATAS(
+			            VALUES('Date'[PERIODOMES]),
+			            'PB_REQ_MUESTREO'[PERIODOMES]
+			        )
+			    )
+			)
+			
+			```
+		formatString: 0
+		lineageTag: ebc5ac12-78ad-4d1b-b982-ba89516ffee5
+
+	measure 'Req (según actividad)' = ```
+			
+			VAR Act = SELECTEDVALUE ( 'Dimension ACTIVIDAD'[CODIGO_ACTIVIDAD] )
+			VAR ReqOto = [Req Otolitos]
+			VAR ReqLon = [Req Longitud]
+			VAR ReqBio = [Req Biológico]
+			RETURN
+			IF (
+			    NOT ISBLANK ( Act ),
+			    SWITCH ( Act, 4, ReqOto, 2, ReqLon, 3, ReqBio, BLANK() ),
+			    -- Si no hay una sola actividad en el contexto (totales), muestra la suma total:
+			    ReqOto + ReqLon + ReqBio
+			)
+			
+			```
+		formatString: 0
+		lineageTag: ec9dd188-4756-4199-be3a-872a932ef003
+
+	measure 'Req (forzado por PROYECTO y PERIODO)' = ```
+			
+			VAR ProySel = VALUES ( 'Dimension PROYECTO'[COD_PROYECTO] )
+			VAR PerSel  = VALUES ( 'Dimension PERIODO'[PERIODOMES] )
+			RETURN
+			CALCULATE (
+			    SUM ( 'PB_REQ_MUESTREO'[TOT_MUES_BIO] ) 
+			      + SUM ( 'PB_REQ_MUESTREO'[TOT_MUES_LON] )
+			      + SUM ( 'PB_REQ_MUESTREO'[TOT_MUES_CON_OTOL] ),
+			    TREATAS ( ProySel, 'PB_REQ_MUESTREO'[COD_PROYECTO] ),
+			    TREATAS ( PerSel,  'PB_REQ_MUESTREO'[PERIODOMES] )
+			)
+			
+			```
+		formatString: 0
+		lineageTag: 7b02f247-6ed7-4751-a8d4-e70e92b7bd9f
+
+	measure 'Datos Periodo Mes' = ```
+			
+			VAR periodoMesSel =
+			    FILTER(
+			        VALUES('Dimension PERIODO'[PERIODOMES]),
+			        NOT ISBLANK('Dimension PERIODO'[PERIODOMES])
+			    )
+			VAR data =
+			    CALCULATETABLE(
+			        VALUES('Date'[PERIODOMES]),
+			        TREATAS(periodoMesSel, 'Date'[PERIODOMES])
+			    )
+			RETURN
+			IF( NOT ISEMPTY(data), 1, BLANK() )
+			
+			```
+		formatString: 0
+		lineageTag: 60c608a4-3e83-4b18-9431-f9c80a0bc462
+
+	measure 'N° Muestreos (real) base' = ```
+			
+			SUM ( 'PB_VIAJE_MUESTREO_TEST'[NRO_MUESTREOS_ESPECIE] )
+			
+			```
+		formatString: 0
+		lineageTag: 7a5ead3b-58f5-495e-8b61-a2c83add4c96
+
+	measure 'N° Muestreos (real) — solo PERIODO_MES' = ```
+			
+			CALCULATE(
+			    [N° Muestreos (real) base],
+			    REMOVEFILTERS ( 'Date' )        -- ignora totalmente el slicer/tabla Date
+			)
+			
+			```
+		formatString: 0
+		lineageTag: 0e9d0788-7491-402a-a66e-a5ba636b933d
+
+	measure 'Req Total — solo PERIODO_MES' = ```
+			
+			[Req Biológico] +
+			[Req Longitud] +
+			[Req Otolitos]
+			
+			```
+		formatString: 0
+		lineageTag: 13e1d47d-08df-49e2-8c0c-e93768bae87c
+
+	measure 'Req (según actividad — solo PERIODO_MES)' = ```
+			
+			VAR Act = SELECTEDVALUE ( 'Dimension ACTIVIDAD'[CODIGO_ACTIVIDAD] )
+			RETURN
+			SWITCH(
+			   TRUE(),
+			   ISINSCOPE('Dimension ACTIVIDAD'[CODIGO_ACTIVIDAD]),
+			      SWITCH( Act,
+			              4, [Req Otolitos],
+			              2, [Req Longitud],
+			              3, [Req Biológico],
+			              BLANK()
+			      ),
+			   [Req Total — solo PERIODO_MES]    -- totales sin actividad
+			)
+			
+			```
+		formatString: 0
+		lineageTag: 2b1530dd-6cec-40ab-bd1f-063b15d34e11
+
+	measure '% Cumplimiento muestreos' =
+			
+			DIVIDE ( [nmuestras2], [Req (según actividad)] )
+		lineageTag: ebaf9cf2-9b7d-4316-87fd-b4270fa11b1e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cumplimiento viaje embarcados' = ```
+			
+			
+			VAR Viajes = IF(ISBLANK([Viajes totales]) , 0 , [Viajes totales])
+			
+			RETURN DIVIDE(Viajes , [Req Viajes] , 0)
+			
+			
+			```
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: ed7d2e1d-0ea6-40d7-a8ef-0f0d6cfee2e1
+
+	measure 'Req Viajes Embarcados' =
+			
+			CALCULATE(
+			    SUM('PB_REQ_VIAJES'[TOT_VIAJE_EMB]),
+			    KEEPFILTERS(
+			        TREATAS(
+			            VALUES('Date'[PERIODOMES]),
+			            'PB_REQ_VIAJES'[PERIODOMES]
+			        )
+			    )
+			)
+		formatString: 0
+		lineageTag: ce587f96-ecca-4336-beec-e6dad849c97b
+
+	measure 'Req Viajes' = ```
+			
+			VAR LugarNorm =
+			    LOWER ( TRIM ( SELECTEDVALUE ( PB_VIAJE_MUESTREO_TEST[LUGAR_MUESTREO], BLANK() ) ) )
+			
+			VAR ReqViajes_Embarcados =
+			    CALCULATE (
+			        SUM ( 'PB_REQ_VIAJES'[TOT_VIAJE_EMB] ),
+			        TREATAS ( VALUES ( 'Date'[PERIODOMES] ), 'PB_REQ_VIAJES'[PERIODOMES] )
+			  
+			    )
+			
+			VAR ReqViajes_Tierra =
+			    CALCULATE (
+			        SUM ( 'PB_REQ_VIAJES'[TOT_VIAJE_ENC] ),
+			        TREATAS ( VALUES ( 'Date'[PERIODOMES] ), 'PB_REQ_VIAJES'[PERIODOMES] )
+			
+			    )
+			
+			-- Medida que ya usas
+			VAR NumViajes = [Viajes totales]
+			RETURN
+			IF (
+			    ISBLANK ( NumViajes ),
+			    0,
+			    SWITCH (
+			        TRUE (),
+			        LugarNorm = "embarcado", ReqViajes_Embarcados,
+			        LugarNorm = "tierra" || LugarNorm = "encuesta en tierra", ReqViajes_Tierra,
+			        -- Si no hay un único LUGAR_MUESTREO, conserva default si lo necesitas (o BLANK())
+			        ReqViajes_Embarcados
+			    )
+			)
+			
+			```
+		formatString: 0
+		lineageTag: bb07a41a-3149-45fa-820f-2c680a3e03b5
+
+	measure 'Color N° Viajes Año Pasado' = ```
+			
+			VAR Actual = [Viajes Totales Tarjeta]
+			VAR Anterior = [N° Viajes Año pasado]
+			-- Colores (puedes cambiarlos por tu paleta corporativa)
+			VAR Verde = "#2E7D32"   -- verde oscuro
+			VAR Rojo  = "#C62828"   -- rojo
+			VAR Gris  = "#9E9E9E"   -- opcional para casos sin dato
+			
+			VAR Resultado = IF(ISBLANK(Anterior) , 0 , Anterior)
+			
+			
+			
+			RETURN
+			SWITCH (
+			    TRUE(),
+			    ISBLANK(Resultado) || ISBLANK(Actual), Gris,          -- evita color “falso” si falta dato
+			    Anterior <= Actual, Verde,
+			    Rojo
+			)
+			
+			```
+		lineageTag: 79bc53b2-92e8-45a1-bb44-a61c9ab4b60b
+
+	measure 'N° Viajes Año Pasado' = CALCULATE([Viajes totales] , SAMEPERIODLASTYEAR('Date'[Date]))
+		formatString: 0
+		lineageTag: 4362808c-e28d-496c-ab78-c8b6b319c858
+
+	measure 'N° Viajes Año Pasado Tarjeta' = IF(ISBLANK([N° Viajes Año Pasado]) , 0 , [N° Viajes Año Pasado])
+		formatString: 0
+		lineageTag: bf17dcda-f98a-40aa-86af-d40a4856b76a
+
+	measure 'Viajes Totales Tarjeta' = IF(ISBLANK([Viajes totales]) , 0 , [Viajes totales])
+		formatString: 0
+		lineageTag: 522b7f71-9bb6-4845-9619-1a9b41fb1a7d
+
+	measure 'Lances Totales Tarjeta' = IF(ISBLANK([N° Lances]) , 0 , [N° Lances])
+		formatString: 0
+		lineageTag: 455020d5-1dba-4cc1-b7a3-ad86a7935508
+
+	measure 'Req Viajes (sin viajes)' = ```
+			
+			VAR LugarNorm =
+			    LOWER(
+			        TRIM(
+			            SELECTEDVALUE( PB_VIAJE_MUESTREO_TEST[LUGAR_MUESTREO], "embarcado" )
+			        )
+			    )
+			
+			VAR ReqViajes_Embarcados =
+			    CALCULATE(
+			        SUM( 'PB_REQ_VIAJES'[TOT_VIAJE_EMB] ),
+			        TREATAS( VALUES( 'Date'[PERIODOMES] ), 'PB_REQ_VIAJES'[PERIODOMES] ),
+			        -- mantenemos relaciones, solo removemos el filtro de la columna de lugar
+			        REMOVEFILTERS( PB_VIAJE_MUESTREO_TEST[LUGAR_MUESTREO] )
+			    )
+			
+			VAR ReqViajes_Tierra =
+			    CALCULATE(
+			        SUM( 'PB_REQ_VIAJES'[TOT_VIAJE_ENC] ),
+			        TREATAS( VALUES( 'Date'[PERIODOMES] ), 'PB_REQ_VIAJES'[PERIODOMES] ),
+			        REMOVEFILTERS( PB_VIAJE_MUESTREO_TEST[LUGAR_MUESTREO] )
+			    )
+			
+			VAR Resultado =
+			    SWITCH(
+			        TRUE(),
+			        LugarNorm = "embarcado", ReqViajes_Embarcados,
+			        LugarNorm = "tierra" || LugarNorm = "encuesta en tierra", ReqViajes_Tierra,
+			        -- default si el LUGAR no está definido
+			        ReqViajes_Embarcados
+			    )
+			RETURN
+			Resultado
+			
+			
+			```
+		formatString: 0
+		lineageTag: c802c498-95dd-4195-84d8-6127e983f9b1
+
+	measure 'Viajes Totales Obs Cientifico' = ```
+			
+			   COUNTROWS(
+			        SUMMARIZE(
+			            PB_VIAJE_MUESTREO_TEST ,
+			            PB_VIAJE_MUESTREO_TEST[COD_BARCO],
+			            PB_VIAJE_MUESTREO_TEST[FECHA_HORA_RECALADA]
+			        )
+			    )
+			
+			
+			
+			```
+		formatString: 0
+		lineageTag: 1c62c513-92cc-4b82-b2e7-1cedcbd8f34a
+
+	measure 'Color Req Viajes' = ```
+			
+			VAR Actual = [Viajes totales]
+			VAR Anterior = [Req Viajes]
+			-- Colores (puedes cambiarlos por tu paleta corporativa)
+			VAR Verde = "#2E7D32"   -- verde oscuro
+			VAR Rojo  = "#C62828"   -- rojo
+			VAR Gris  = "#9E9E9E"   -- opcional para casos sin dato
+			
+			VAR Resultado = IF(ISBLANK(Anterior) , 0 , Anterior)
+			
+			RETURN
+			SWITCH (
+			    TRUE(),
+			    ISBLANK(Resultado) || ISBLANK(Actual), Gris,          -- evita color “falso” si falta dato
+			    Anterior <= Actual, Verde,
+			    Rojo
+			)
+			
+			```
+		lineageTag: 26ba866a-61c1-4110-add7-aaaa20b51832
+
+	measure 'Req Viajes Tarjeta' =
+			
+			
+			VAR ReqViajes = IF(ISBLANK([Req Viajes]) , 0 ,  [Req Viajes])
+			
+			RETURN ReqViajes
+		formatString: 0
+		lineageTag: ddf33850-42ac-4341-8588-75459ca99b4b
+
+	measure 'N° Muestreos Biologicos' =
+			
+			CALCULATE( sum(pb_viaje
+			
+			))
+		lineageTag: 3bc92c62-4efa-4ec0-b889-623109d109a4
+
+	measure 'N° Muestreos Longitud' = ```
+			
+			
+			CALCULATE(SUM(PB_VIAJE_MUESTREO_TEST[NRO_MUESTREOS_ESPECIE]) , 'Dimension ACTIVIDAD'[CODIGO_ACTIVIDAD] = 2)  -- COD_ACTIVIDAD = 2 / LONGITUD
+			
+			```
+		formatString: 0
+		lineageTag: fe6012d2-060f-4d03-bdec-6a0f06255dab
+
+	measure 'N° Ejemplares Bio' = ```
+			
+			CALCULATE(sum(PB_VIAJE_MUESTREO_TEST[NRO_EJEMPLARES])  , 'Dimension ACTIVIDAD'[CODIGO_ACTIVIDAD] = 3 ) -- COD_ACTIVIDAD = 3 / BIOLOGICO
+			
+			
+			```
+		formatString: 0
+		lineageTag: 31ca4d7c-c944-418e-ae13-8f4f986dc634
+
+	measure 'N° Muestreos Biologico' =
+			
+			
+			CALCULATE(SUM(PB_VIAJE_MUESTREO_TEST[NRO_MUESTREOS_ESPECIE]) , 'Dimension ACTIVIDAD'[CODIGO_ACTIVIDAD] = 3)  -- COD_ACTIVIDAD = 3 / LONGITUD
+		formatString: 0
+		lineageTag: 38d5d466-f8c8-4641-b90a-4c1f44d226ba
+
+	measure 'N° Ejemplares Long' =
+			
+			CALCULATE(sum(PB_VIAJE_MUESTREO_TEST[NRO_EJEMPLARES])  , 'Dimension ACTIVIDAD'[CODIGO_ACTIVIDAD] = 2 ) -- COD_ACTIVIDAD = 2 / LONGITUD
+		formatString: 0
+		lineageTag: bbea76ce-1da0-451b-a334-0b355e744914
+
+	measure 'N° Muestreos Long Tarjeta' = ```
+			
+			
+			VAR MuestreosLong = IF(ISBLANK([N° Muestreos Longitud] ) , 0 ,  [N° Muestreos Longitud])
+			
+			RETURN MuestreosLong
+			
+			
+			```
+		formatString: 0
+		lineageTag: adb14076-fa7f-483d-96ba-20a566a0c7a7
+
+	measure 'N° Muestreos Bio Tarjeta' = ```
+			
+			
+			VAR MuestreosBio = IF(ISBLANK([N° Muestreos Biologico] ) , 0 ,  [N° Muestreos Biologico])
+			
+			RETURN MuestreosBio
+			
+			```
+		formatString: 0
+		lineageTag: 6e8c306a-1213-450f-aef9-a855d208afcc
+
+	measure 'N° Ejemplares Long Tarjeta' = ```
+			
+			
+			VAR EjemplaresLong = IF(ISBLANK([N° Ejemplares Long]) , 0 ,  [N° Ejemplares Long])
+			
+			RETURN EjemplaresLong
+			
+			
+			```
+		formatString: 0
+		lineageTag: d6b9e3cf-60d3-4586-aa5e-75b36c6c8d15
+
+	measure 'N° Ejemplares Bio Tarjeta' =
+			
+			
+			VAR EjemplaresBio = IF(ISBLANK([N° Ejemplares Bio]) , 0 ,  [N° Ejemplares Bio])
+			
+			RETURN EjemplaresBio
+		formatString: 0
+		lineageTag: 4426ef05-2505-4a69-b568-8dbfafd47492
+
+	partition medidas = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

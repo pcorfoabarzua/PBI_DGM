@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "ef71cbbfae34d3d53229",
   "position": {
     "x": 3.75,
@@ -142,7 +142,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Arica'"
+                                "Value": "'de Tarapacá'"
                               }
                             }
                           ]

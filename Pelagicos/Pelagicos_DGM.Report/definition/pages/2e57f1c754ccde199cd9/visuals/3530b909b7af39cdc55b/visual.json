@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "3530b909b7af39cdc55b",
   "position": {
     "x": 6.969147005444646,
@@ -119,7 +119,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "2024L"
+                                "Value": "2026L"
                               }
                             }
                           ]
@@ -255,6 +255,20 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "6f3af960add5159bac97",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Date"
+              }
+            },
+            "Property": "Year"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

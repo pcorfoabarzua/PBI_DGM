@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "ca8294e073e42a9d149d",
   "position": {
     "x": 167,
@@ -10,7 +10,7 @@
     "tabOrder": 12000
   },
   "visual": {
-    "visualType": "columnChart",
+    "visualType": "lineClusteredColumnComboChart",
     "query": {
       "queryState": {
         "Category": {
@@ -48,7 +48,11 @@
               "queryRef": "medidas.Viajes totales",
               "nativeQueryRef": "N° Viajes",
               "displayName": "N° Viajes"
-            },
+            }
+          ]
+        },
+        "Y2": {
+          "projections": [
             {
               "field": {
                 "Measure": {
@@ -57,10 +61,10 @@
                       "Entity": "medidas"
                     }
                   },
-                  "Property": "Req Viajes (sin viajes)"
+                  "Property": "Req Viajes"
                 }
               },
-              "queryRef": "medidas.Req Viajes (sin viajes)",
+              "queryRef": "medidas.Req Viajes Test",
               "nativeQueryRef": "Req Viajes",
               "displayName": "Req Viajes"
             }
@@ -160,9 +164,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 3,
-                      "Percent": 0
+                    "Literal": {
+                      "Value": "'#1F7A8C'"
                     }
                   }
                 }
@@ -171,10 +174,10 @@
           }
         }
       ],
-      "totals": [
+      "valueAxis": [
         {
           "properties": {
-            "show": {
+            "secShow": {
               "expr": {
                 "Literal": {
                   "Value": "false"

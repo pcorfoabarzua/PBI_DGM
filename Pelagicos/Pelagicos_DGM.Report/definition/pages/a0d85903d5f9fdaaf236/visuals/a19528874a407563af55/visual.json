@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "a19528874a407563af55",
   "position": {
     "x": 166.99923254029162,
@@ -10,7 +10,7 @@
     "tabOrder": 12000
   },
   "visual": {
-    "visualType": "columnChart",
+    "visualType": "lineClusteredColumnComboChart",
     "query": {
       "queryState": {
         "Category": {
@@ -48,7 +48,11 @@
               "queryRef": "medidas.Viajes totales",
               "nativeQueryRef": "N° Viajes",
               "displayName": "N° Viajes"
-            },
+            }
+          ]
+        },
+        "Y2": {
+          "projections": [
             {
               "field": {
                 "Measure": {
@@ -57,12 +61,11 @@
                       "Entity": "medidas"
                     }
                   },
-                  "Property": "Req Viajes (sin viajes)"
+                  "Property": "Req Viajes"
                 }
               },
-              "queryRef": "medidas.Req Viajes (sin viajes)",
-              "nativeQueryRef": "Req Viajes",
-              "displayName": "Req Viajes"
+              "queryRef": "medidas.Req Viajes",
+              "nativeQueryRef": "Req Viajes"
             }
           ]
         }
@@ -93,6 +96,20 @@
                 }
               }
             }
+          }
+        },
+        {
+          "properties": {
+            "showSeries": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "medidas.Req Viajes"
           }
         }
       ],
@@ -144,7 +161,7 @@
                 "color": {
                   "expr": {
                     "ThemeDataColor": {
-                      "ColorId": 7,
+                      "ColorId": 2,
                       "Percent": 0
                     }
                   }
@@ -180,6 +197,40 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "secShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "lineStyles": [
+        {
+          "properties": {
+            "lineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "'solid'"
+                }
+              }
+            },
+            "strokeLineJoin": {
+              "expr": {
+                "Literal": {
+                  "Value": "'miter'"
+                }
+              }
+            },
+            "showMarker": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -310,21 +361,6 @@
         "howCreated": "User"
       },
       {
-        "name": "b3b1f8246ed76d999748",
-        "ordinal": 3,
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Date"
-              }
-            },
-            "Property": "Mes"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
         "name": "dabfeebf66bdb6eae497",
         "ordinal": 4,
         "field": {
@@ -335,22 +371,6 @@
               }
             },
             "Property": "Req Viajes"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User"
-      },
-      {
-        "name": "12223a708a699229adb2",
-        "ordinal": 5,
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "medidas"
-              }
-            },
-            "Property": "Viajes totales"
           }
         },
         "type": "Advanced"

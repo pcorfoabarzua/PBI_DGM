@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "4e1ae15130fcd155bc85",
   "position": {
     "x": 902,
@@ -164,6 +164,19 @@
                     }
                   },
                   "Property": "Titulo Muestreos OC"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualTooltip": [
+        {
+          "properties": {
+            "section": {
+              "expr": {
+                "Literal": {
+                  "Value": "'5d1dc9a18bc58504f26a'"
                 }
               }
             }

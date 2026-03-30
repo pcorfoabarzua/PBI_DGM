@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "056d76a940702029b065",
   "position": {
     "x": 5,
@@ -214,8 +214,23 @@
         "howCreated": "User"
       },
       {
-        "name": "3c72558eb64369c684f1",
+        "name": "550c2dfe3d8e0d59a80e",
         "ordinal": 1,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dimension FLOTA"
+              }
+            },
+            "Property": "TIPO_FLOTA"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3cbbf8cbcee6bb9923da",
+        "ordinal": 2,
         "field": {
           "Measure": {
             "Expression": {
@@ -223,44 +238,10 @@
                 "Entity": "medidas"
               }
             },
-            "Property": "Datos region"
+            "Property": "Datos Flota"
           }
         },
         "type": "Advanced",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "m",
-              "Entity": "medidas",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Comparison": {
-                  "ComparisonKind": 0,
-                  "Left": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Source": "m"
-                        }
-                      },
-                      "Property": "Datos region"
-                    }
-                  },
-                  "Right": {
-                    "Literal": {
-                      "Value": "1L"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        },
         "howCreated": "User"
       }
     ],

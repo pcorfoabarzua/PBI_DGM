@@ -93,7 +93,7 @@ relationship 9090365e-6018-e6c7-d65f-00305d7f5980
 	fromColumn: PB_VIAJE_MUESTREO_TEST.PERIODOMES
 	toColumn: 'Dimension PERIODO'.PERIODOMES
 
-relationship baf01537-e4c6-4dce-8253-7c7c663f531c
+relationship 43335368-b4e3-40ac-89d7-d782eeeab026
 	joinOnDateBehavior: datePartOnly
 	fromColumn: Date.Date
 	toColumn: LocalDateTable_75d9bd68-b8f0-4024-bf16-17cc1d9d78ba.Date

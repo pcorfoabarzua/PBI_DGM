@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.2.0/schema.json",
   "themeCollection": {
     "baseTheme": {
       "name": "CY24SU05",
@@ -54,16 +54,6 @@
       "type": "RegisteredResources",
       "items": [
         {
-          "name": "logo4952962136158874.png",
-          "path": "logo4952962136158874.png",
-          "type": "Image"
-        },
-        {
-          "name": "logo49567187375966704.png",
-          "path": "logo49567187375966704.png",
-          "type": "Image"
-        },
-        {
           "name": "Ifop_pez_blanco-013120272467335976.png",
           "path": "Ifop_pez_blanco-013120272467335976.png",
           "type": "Image"
@@ -71,6 +61,16 @@
         {
           "name": "Ifop_pez_blanco-016525484672919911.png",
           "path": "Ifop_pez_blanco-016525484672919911.png",
+          "type": "Image"
+        },
+        {
+          "name": "logo4952962136158874.png",
+          "path": "logo4952962136158874.png",
+          "type": "Image"
+        },
+        {
+          "name": "logo49567187375966704.png",
+          "path": "logo49567187375966704.png",
           "type": "Image"
         }
       ]

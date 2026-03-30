@@ -103,7 +103,7 @@ relationship 64c8304f-95ec-5df8-fb1d-f9640502f373
 	fromColumn: PB_VIAJE_MUESTREO_TEST.PROYECTO
 	toColumn: 'Dimension PROYECTO'.COD_PROYECTO
 
-relationship 909e0101-7270-4e32-a44d-003a9b728bdc
+relationship 0742c549-0bf0-49ec-93ac-f65409047ac3
 	joinOnDateBehavior: datePartOnly
 	fromColumn: Date.Date
 	toColumn: LocalDateTable_75d9bd68-b8f0-4024-bf16-17cc1d9d78ba.Date
