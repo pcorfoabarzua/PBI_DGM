@@ -143,7 +143,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Artesanal'"
+                                "Value": "'Industrial'"
                               }
                             }
                           ]
@@ -198,24 +198,8 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "cc95c4c3b65351b5d5e1",
-        "ordinal": 0,
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dimension REGION"
-              }
-            },
-            "Property": "NOMBRE_REGION"
-          }
-        },
-        "type": "Categorical",
-        "howCreated": "User"
-      },
-      {
         "name": "550c2dfe3d8e0d59a80e",
-        "ordinal": 1,
+        "ordinal": 0,
         "field": {
           "Column": {
             "Expression": {
@@ -230,7 +214,7 @@
       },
       {
         "name": "3cbbf8cbcee6bb9923da",
-        "ordinal": 2,
+        "ordinal": 1,
         "field": {
           "Measure": {
             "Expression": {
@@ -242,6 +226,40 @@
           }
         },
         "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "m",
+              "Entity": "medidas",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "m"
+                        }
+                      },
+                      "Property": "Datos Flota"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "1L"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
         "howCreated": "User"
       }
     ],

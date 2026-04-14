@@ -233,8 +233,23 @@
         "howCreated": "User"
       },
       {
-        "name": "3c72558eb64369c684f1",
+        "name": "8d0b7b2a9baf98f9df1c",
         "ordinal": 1,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dimension FLOTA"
+              }
+            },
+            "Property": "TIPO_FLOTA"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f745371e083ca5c55b6c",
+        "ordinal": 2,
         "field": {
           "Measure": {
             "Expression": {
@@ -242,7 +257,7 @@
                 "Entity": "medidas"
               }
             },
-            "Property": "Datos region"
+            "Property": "Datos Flota"
           }
         },
         "type": "Advanced",
@@ -267,7 +282,7 @@
                           "Source": "m"
                         }
                       },
-                      "Property": "Datos region"
+                      "Property": "Datos Flota"
                     }
                   },
                   "Right": {

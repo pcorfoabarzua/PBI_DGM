@@ -25,7 +25,8 @@ table 'Dimension BARCO'
 				    Source = Sql.Databases("192.168.169.110"),
 				    Analytics = Source{[Name="Analytics"]}[Data],
 				    Dimension_BARCO = Analytics{[Schema="Dimension",Item="BARCO"]}[Data],
-				    #"Duplicados quitados" = Table.Distinct(Dimension_BARCO, {"COD_BARCO"})
+				    #"Filas filtradas" = Table.SelectRows(Dimension_BARCO, each [NOMBRE_BARCO] <> null and [NOMBRE_BARCO] <> ""),
+				    #"Duplicados quitados" = Table.Distinct(#"Filas filtradas", {"COD_BARCO"})
 				in
 				    #"Duplicados quitados"
 

@@ -273,20 +273,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "e204742f89e8efb19da9",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Date"
-              }
-            },
-            "Property": "Year"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }
