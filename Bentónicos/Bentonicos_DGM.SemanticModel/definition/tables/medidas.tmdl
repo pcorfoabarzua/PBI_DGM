@@ -664,13 +664,6 @@ table medidas
 		formatString: 0
 		lineageTag: ddf33850-42ac-4341-8588-75459ca99b4b
 
-	measure 'N° Muestreos Biologicos' =
-			
-			CALCULATE( sum(pb_viaje
-			
-			))
-		lineageTag: 3bc92c62-4efa-4ec0-b889-623109d109a4
-
 	measure 'N° Muestreos Longitud' = ```
 			
 			

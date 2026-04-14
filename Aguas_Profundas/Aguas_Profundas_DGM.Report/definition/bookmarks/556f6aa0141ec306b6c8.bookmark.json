@@ -73,7 +73,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "b5e9d848bad492a59e12",
+                  "name": "f1982aa29c948cc8f508",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -88,7 +88,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "49b2920b08684a5b6295",
+                  "name": "46b1254c4652b94b9c9f",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -103,7 +103,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "8f0f3d2d33a5e6d9c0b3",
+                  "name": "c21171f54e5686d16299",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -217,7 +217,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "ce18b9579e9caf65662b",
+                  "name": "01ad9ce0aab03eaf4110",
                   "type": "Advanced",
                   "expression": {
                     "Column": {
@@ -332,7 +332,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "0f80a1687749975677aa",
+                  "name": "bcaedd08229efe91229d",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -347,7 +347,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "b2db551b210d9f21718f",
+                  "name": "18a94df7ad93c022caa0",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -401,7 +401,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "0365425fd082cb55ac61",
+                  "name": "df8c2ea3577ebb44905b",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -557,7 +557,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "c397fa59d222591df950",
+                  "name": "572985c5568ad6c8a20a",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -572,7 +572,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "88c87c2204e25b104a1e",
+                  "name": "d99d7294303dfb4d6897",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -698,7 +698,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "f6db1c5b6a6dedd815d6",
+                  "name": "383049a77aa52733f91e",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -713,7 +713,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "4259eecf0b97bc9a503f",
+                  "name": "862623400d9f7dcd6dd9",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -764,7 +764,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "11cade6101396ff7726d",
+                  "name": "2b6c2d09dcf8c2f66e50",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -816,7 +816,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "e875f17328ddb1f1b564",
+                  "name": "cb5905991ffd5ab3d018",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -952,7 +952,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "d6fc624b501dcbcd00cb",
+                  "name": "a33bd258af1b06df9491",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -967,7 +967,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "7b39a2a719ee970f3ffd",
+                  "name": "c94bef4f00050356d2ec",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -982,7 +982,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "067b1081128bf014511a",
+                  "name": "85dcf3d4e0931c46fedc",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1036,7 +1036,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "410b1e440990a324d23c",
+                  "name": "44cc499ad8d8cef9a349",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1336,7 +1336,22 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "3c72558eb64369c684f1",
+                  "name": "1604aa1d1fd244556b96",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dimension FLOTA"
+                        }
+                      },
+                      "Property": "TIPO_FLOTA"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "cd405ed6990c13e5205e",
                   "type": "Advanced",
                   "filter": {
                     "Version": 2,
@@ -1359,7 +1374,7 @@
                                     "Source": "m"
                                   }
                                 },
-                                "Property": "Datos region"
+                                "Property": "Datos Flota"
                               }
                             },
                             "Right": {
@@ -1379,25 +1394,10 @@
                           "Entity": "medidas"
                         }
                       },
-                      "Property": "Datos region"
+                      "Property": "Datos Flota"
                     }
                   },
                   "howCreated": 1
-                },
-                {
-                  "name": "2e45a52d7372900137df",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Dimension FLOTA"
-                        }
-                      },
-                      "Property": "TIPO_FLOTA"
-                    }
-                  },
-                  "howCreated": 0
                 }
               ]
             },
@@ -1405,6 +1405,53 @@
               "visualType": "slicer",
               "objects": {
                 "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "d",
+                                "Entity": "Dimension FLOTA",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "d"
+                                            }
+                                          },
+                                          "Property": "TIPO_FLOTA"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'Industrial'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
                   "data": [
                     {
                       "properties": {
@@ -1412,13 +1459,6 @@
                           "expr": {
                             "Literal": {
                               "Value": "'Dropdown'"
-                            }
-                          }
-                        },
-                        "isInvertedSelectionMode": {
-                          "expr": {
-                            "Literal": {
-                              "Value": "true"
                             }
                           }
                         }
@@ -1460,7 +1500,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "fa69e4b848de1c145c8c",
+                  "name": "9ea6565744f6713c4f55",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1692,7 +1732,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "ab88f9015eb612914c8c",
+                  "name": "09f0fb2a44887e98fab9",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1745,7 +1785,7 @@
               "expanded": {
                 "expr": {
                   "Literal": {
-                    "Value": "false"
+                    "Value": "true"
                   }
                 }
               }

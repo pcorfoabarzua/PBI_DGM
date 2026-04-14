@@ -45,13 +45,6 @@
                   "Value": "'Dropdown'"
                 }
               }
-            },
-            "isInvertedSelectionMode": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
             }
           }
         }
@@ -125,7 +118,49 @@
       ],
       "general": [
         {
-          "properties": {}
+          "properties": {
+            "filter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "d",
+                    "Entity": "Dimension FLOTA",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "d"
+                                }
+                              },
+                              "Property": "TIPO_FLOTA"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'Industrial'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
         }
       ]
     },
@@ -185,8 +220,23 @@
         "howCreated": "User"
       },
       {
-        "name": "3c72558eb64369c684f1",
+        "name": "1604aa1d1fd244556b96",
         "ordinal": 1,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dimension FLOTA"
+              }
+            },
+            "Property": "TIPO_FLOTA"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "cd405ed6990c13e5205e",
+        "ordinal": 2,
         "field": {
           "Measure": {
             "Expression": {
@@ -194,7 +244,7 @@
                 "Entity": "medidas"
               }
             },
-            "Property": "Datos region"
+            "Property": "Datos Flota"
           }
         },
         "type": "Advanced",
@@ -219,7 +269,7 @@
                           "Source": "m"
                         }
                       },
-                      "Property": "Datos region"
+                      "Property": "Datos Flota"
                     }
                   },
                   "Right": {

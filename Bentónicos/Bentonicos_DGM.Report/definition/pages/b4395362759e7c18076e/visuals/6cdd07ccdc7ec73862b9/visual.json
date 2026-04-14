@@ -415,48 +415,6 @@
         },
         "type": "Advanced",
         "howCreated": "User"
-      },
-      {
-        "name": "f46294f42c51ab0aeb1a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Date"
-              }
-            },
-            "Property": "Mes"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "959f782672413d1cb8a3",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "medidas"
-              }
-            },
-            "Property": "Viajes totales"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "66ad0c25dde0551199c1",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "medidas"
-              }
-            },
-            "Property": "Req Viajes (sin viajes)"
-          }
-        },
-        "type": "Advanced"
       }
     ],
     "filterSortOrder": "Custom"
