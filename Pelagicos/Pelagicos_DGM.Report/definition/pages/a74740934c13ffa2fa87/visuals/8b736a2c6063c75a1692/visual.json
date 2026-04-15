@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "8b736a2c6063c75a1692",
   "position": {
-    "x": 520.36297640653356,
-    "y": 221.85117967332124,
+    "x": 534.44444444444446,
+    "y": 217.77777777777777,
     "z": 21000,
-    "height": 254.37386569872959,
-    "width": 329.87295825771326,
+    "height": 258.88888888888886,
+    "width": 336.66666666666669,
     "tabOrder": 20000
   },
   "visual": {
@@ -317,6 +317,30 @@
               }
             ],
             "metadata": "medidas.% Cumplimiento muestreos"
+          }
+        },
+        {
+          "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            }
           }
         }
       ]

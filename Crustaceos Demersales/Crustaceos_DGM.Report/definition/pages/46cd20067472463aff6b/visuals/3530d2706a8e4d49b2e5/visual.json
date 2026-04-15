@@ -23,11 +23,12 @@
                       "Entity": "medidas"
                     }
                   },
-                  "Property": "Req Viajes"
+                  "Property": "Req Viajes Tarjeta"
                 }
               },
-              "queryRef": "medidas.Req Viajes",
-              "nativeQueryRef": "Req Viajes"
+              "queryRef": "medidas.Req Viajes Tarjeta",
+              "nativeQueryRef": "Req Viajes",
+              "displayName": "Req Viajes"
             }
           ]
         }
@@ -42,7 +43,7 @@
                     "Entity": "medidas"
                   }
                 },
-                "Property": "Req Viajes"
+                "Property": "Req Viajes Tarjeta"
               }
             },
             "direction": "Descending"
@@ -73,6 +74,13 @@
                   "Value": "35D"
                 }
               }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
             }
           }
         }
@@ -89,6 +97,20 @@
                       "Percent": 0
                     }
                   }
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
                 }
               }
             }

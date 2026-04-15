@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "medidas.N° Ejemplares Long Tarjeta",
-              "nativeQueryRef": "N° Ejemplares Long Tarjeta"
+              "nativeQueryRef": "N° Ejemplares Longitud",
+              "displayName": "N° Ejemplares Longitud"
             }
           ]
         }
@@ -73,6 +74,13 @@
                   "Value": "35D"
                 }
               }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
             }
           }
         }
@@ -89,6 +97,13 @@
                       "Percent": 0
                     }
                   }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
                 }
               }
             }

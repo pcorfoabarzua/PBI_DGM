@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "bd505dacaa5710b8d576",
   "position": {
-    "x": 167.98158096699922,
-    "y": 12.770529547198771,
+    "x": 168.32917705735662,
+    "y": 2.8054862842892772,
     "z": 5000,
-    "height": 95.287797390636982,
-    "width": 1078.6185725249422,
+    "height": 76.683291770573575,
+    "width": 1078.2418952618455,
     "tabOrder": 4000
   },
   "visual": {
@@ -19,10 +19,11 @@
               {
                 "textRuns": [
                   {
-                    "value": "CUMPLIMIENTO DE REQUERIMIENTOS MENSUALES DE LOS PROYECTOS BENTÓNICOS",
+                    "value": "Cumplimiento de requerimientos mensuales de los proyectos Bentónicos",
                     "textStyle": {
                       "fontWeight": "bold",
-                      "fontSize": "12pt",
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontSize": "14pt",
                       "color": "#ffffff"
                     }
                   }
@@ -35,18 +36,6 @@
                     "value": ""
                   }
                 ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "Departamento Gestión de Muestreo",
-                    "textStyle": {
-                      "fontSize": "13.3333px",
-                      "color": "#ffffff"
-                    }
-                  }
-                ],
-                "horizontalTextAlignment": "center"
               },
               {
                 "textRuns": [

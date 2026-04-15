@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "medidas.N° Muestreos Bio Tarjeta",
-              "nativeQueryRef": "N° Muestreos Bio Tarjeta"
+              "nativeQueryRef": "N° Muestreos Biológicos",
+              "displayName": "N° Muestreos Biológicos"
             }
           ]
         }
@@ -55,6 +56,20 @@
       "labels": [
         {
           "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "35D"
+                }
+              }
+            },
             "color": {
               "solid": {
                 "color": {
@@ -66,13 +81,6 @@
                   }
                 }
               }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "35D"
-                }
-              }
             }
           }
         }
@@ -80,6 +88,13 @@
       "categoryLabels": [
         {
           "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            },
             "color": {
               "solid": {
                 "color": {
@@ -107,13 +122,6 @@
                 }
               }
             },
-            "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            },
             "color": {
               "solid": {
                 "color": {
@@ -123,6 +131,13 @@
                       "Percent": 0
                     }
                   }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
                 }
               }
             }

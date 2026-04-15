@@ -4,10 +4,10 @@
   "position": {
     "x": 160,
     "y": 120,
-    "z": 1,
+    "z": 1000,
     "height": 120,
     "width": 160,
-    "tabOrder": 1
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "card",
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "medidas.N° Ejemplares Bio Tarjeta",
-              "nativeQueryRef": "N° Ejemplares Bio Tarjeta"
+              "nativeQueryRef": "N° Ejemplares Biológicos",
+              "displayName": "N° Ejemplares Biológicos"
             }
           ]
         }
@@ -55,6 +56,13 @@
       "labels": [
         {
           "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
             "fontSize": {
               "expr": {
                 "Literal": {
@@ -80,6 +88,20 @@
       "categoryLabels": [
         {
           "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            },
             "color": {
               "solid": {
                 "color": {

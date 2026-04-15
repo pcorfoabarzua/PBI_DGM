@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "f410cedb89ada5c26e4b",
   "position": {
     "x": 13.752877973906369,
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "medidas.Lances Totales Tarjeta",
-              "nativeQueryRef": "Lances Totales Tarjeta"
+              "nativeQueryRef": "N° Lances",
+              "displayName": "N° Lances"
             }
           ]
         }
@@ -55,6 +56,13 @@
       "labels": [
         {
           "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
             "fontSize": {
               "expr": {
                 "Literal": {
@@ -80,6 +88,20 @@
       "categoryLabels": [
         {
           "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            },
             "color": {
               "solid": {
                 "color": {
@@ -125,7 +147,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#6B7280'"
+                      "Value": "'#DB7C0D'"
                     }
                   }
                 }

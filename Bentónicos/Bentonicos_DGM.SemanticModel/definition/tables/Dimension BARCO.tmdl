@@ -12,7 +12,7 @@ table 'Dimension BARCO'
 
 	column NOMBRE_BARCO
 		dataType: string
-		lineageTag: 88790039-95ae-48aa-81d3-9888e1d23d34
+		lineageTag: 32a376de-9d63-498f-a5bb-d775c95b0be4
 		summarizeBy: none
 		sourceColumn: NOMBRE_BARCO
 
@@ -26,9 +26,24 @@ table 'Dimension BARCO'
 				    Analytics = Source{[Name="Analytics"]}[Data],
 				    Dimension_BARCO = Analytics{[Schema="Dimension",Item="BARCO"]}[Data],
 				    #"Filas filtradas" = Table.SelectRows(Dimension_BARCO, each [NOMBRE_BARCO] <> null and [NOMBRE_BARCO] <> ""),
-				    #"Duplicados quitados" = Table.Distinct(#"Filas filtradas", {"COD_BARCO"})
+				    #"Duplicados quitados" = Table.Distinct(#"Filas filtradas", {"COD_BARCO"}),
+				    #"Personalizada agregada" = Table.AddColumn(#"Duplicados quitados", "NOMBRE_BARCO.1", each Text.Combine(
+				    List.Transform(
+				        Text.Split([NOMBRE_BARCO], " "),
+				        (palabra) =>
+				            if List.Contains(
+				                {"I","II","III","IV","V","VI","VII","VIII","IX","X"},
+				                palabra
+				            )
+				            then palabra
+				            else Text.Proper(Text.Lower(palabra))
+				    ),
+				    " "
+				)),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Personalizada agregada",{"NOMBRE_BARCO"}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Columnas quitadas",{{"NOMBRE_BARCO.1", "NOMBRE_BARCO"}})
 				in
-				    #"Duplicados quitados"
+				    #"Columnas con nombre cambiado"
 
 	annotation PBI_ResultType = Table
 

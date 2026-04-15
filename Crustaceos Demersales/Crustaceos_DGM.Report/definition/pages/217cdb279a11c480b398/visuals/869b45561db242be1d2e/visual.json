@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "medidas.N° Muestreos Long Tarjeta",
-              "nativeQueryRef": "N° Muestreos Long Tarjeta"
+              "nativeQueryRef": "N° Muestreos Longitud",
+              "displayName": "N° Muestreos Longitud"
             }
           ]
         }
@@ -73,6 +74,13 @@
                   "Value": "35D"
                 }
               }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
             }
           }
         }
@@ -89,6 +97,20 @@
                       "Percent": 0
                     }
                   }
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
                 }
               }
             }

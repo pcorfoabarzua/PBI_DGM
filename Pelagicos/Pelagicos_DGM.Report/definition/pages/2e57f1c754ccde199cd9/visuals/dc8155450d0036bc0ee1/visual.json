@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "dc8155450d0036bc0ee1",
   "position": {
-    "x": 898.8488104374519,
-    "y": 169.8139624947795,
+    "x": 914.44444444444446,
+    "y": 156.66666666666666,
     "z": 23000,
-    "height": 55.99386032233307,
-    "width": 330.06907137375288,
+    "height": 55.555555555555557,
+    "width": 330,
     "tabOrder": 22000
   },
   "visual": {
@@ -89,7 +89,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Embarcado'"
+                                "Value": "'Tierra'"
                               }
                             }
                           ]
@@ -145,6 +145,13 @@
                       "Value": "'#ffffff'"
                     }
                   }
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
                 }
               }
             }

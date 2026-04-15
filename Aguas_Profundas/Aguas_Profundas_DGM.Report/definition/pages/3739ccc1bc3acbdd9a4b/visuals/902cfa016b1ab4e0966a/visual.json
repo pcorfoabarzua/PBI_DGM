@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "902cfa016b1ab4e0966a",
   "position": {
-    "x": 179,
-    "y": 26,
+    "x": 178.61596009975065,
+    "y": 33.665835411471328,
     "z": 7000,
-    "height": 26,
-    "width": 1080,
+    "height": 26.184538653366587,
+    "width": 1080.1122194513716,
     "tabOrder": 6000
   },
   "visual": {
@@ -66,6 +66,13 @@
                       "Percent": 0
                     }
                   }
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
                 }
               }
             }

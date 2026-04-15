@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "medidas.N° Ejemplares Bio Tarjeta",
-              "nativeQueryRef": "N° Ejemplares Bio Tarjeta"
+              "nativeQueryRef": "N° Ejemplares Biológicos",
+              "displayName": "N° Ejemplares Biológicos"
             }
           ]
         }
@@ -55,6 +56,13 @@
       "labels": [
         {
           "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
             "fontSize": {
               "expr": {
                 "Literal": {
@@ -80,6 +88,13 @@
       "categoryLabels": [
         {
           "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            },
             "color": {
               "solid": {
                 "color": {

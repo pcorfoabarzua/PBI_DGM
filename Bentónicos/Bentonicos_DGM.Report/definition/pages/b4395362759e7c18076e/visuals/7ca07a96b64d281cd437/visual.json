@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "medidas.N° Ejemplares",
-              "nativeQueryRef": "N° Ejemplares"
+              "nativeQueryRef": "N° Muestreos",
+              "displayName": "N° Muestreos"
             }
           ]
         }
@@ -55,6 +56,13 @@
       "labels": [
         {
           "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
             "fontSize": {
               "expr": {
                 "Literal": {
@@ -80,6 +88,20 @@
       "categoryLabels": [
         {
           "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            },
             "color": {
               "solid": {
                 "color": {

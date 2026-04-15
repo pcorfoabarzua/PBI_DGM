@@ -25,9 +25,10 @@ table 'Dimension PUERTO'
 				    Source = Sql.Databases("192.168.169.110"),
 				    Analytics = Source{[Name="Analytics"]}[Data],
 				    Dimension_PUERTO = Analytics{[Schema="Dimension",Item="PUERTO"]}[Data],
-				    #"Duplicados quitados" = Table.Distinct(Dimension_PUERTO, {"CODIGO_PUERTO"})
+				    #"Duplicados quitados" = Table.Distinct(Dimension_PUERTO, {"CODIGO_PUERTO"}),
+				    #"Poner En Mayúsculas Cada Palabra" = Table.TransformColumns(#"Duplicados quitados",{{"PUERTO", Text.Proper, type text}})
 				in
-				    #"Duplicados quitados"
+				    #"Poner En Mayúsculas Cada Palabra"
 
 	annotation PBI_ResultType = Table
 

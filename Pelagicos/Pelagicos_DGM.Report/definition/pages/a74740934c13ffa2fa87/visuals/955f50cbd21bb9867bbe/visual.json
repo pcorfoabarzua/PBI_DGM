@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "955f50cbd21bb9867bbe",
   "position": {
-    "x": 168.32917705735662,
-    "y": 4.6758104738154618,
+    "x": 168,
+    "y": 5,
     "z": 2000,
-    "height": 83.229426433915222,
-    "width": 1078.2418952618455,
+    "height": 91,
+    "width": 1078,
     "tabOrder": 1000
   },
   "visual": {
@@ -19,10 +19,11 @@
               {
                 "textRuns": [
                   {
-                    "value": "CUMPLIMIENTO DE REQUERIMIENTOS MENSUALES DE LOS PROYECTOS PELAGICO NORTE",
+                    "value": "Cumplimiento de requerimientos mensuales de los proyectos Pelágico Norte",
                     "textStyle": {
                       "fontWeight": "bold",
-                      "fontSize": "12pt",
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontSize": "14pt",
                       "color": "#ffffff"
                     }
                   }
@@ -39,11 +40,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Departamento Gestión de Muestreo",
-                    "textStyle": {
-                      "fontSize": "13.3333px",
-                      "color": "#ffffff"
-                    }
+                    "value": ""
                   }
                 ],
                 "horizontalTextAlignment": "center"

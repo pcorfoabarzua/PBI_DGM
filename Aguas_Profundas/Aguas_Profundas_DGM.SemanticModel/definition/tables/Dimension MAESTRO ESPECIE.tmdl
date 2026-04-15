@@ -23,9 +23,10 @@ table 'Dimension MAESTRO ESPECIE'
 		source =
 				let
 				    Origen = Sql.Database("192.168.169.110", "Analytics"),
-				    Dimension_PB_MAESTRO_ESPECIE = Origen{[Schema="Dimension",Item="PB_MAESTRO_ESPECIE"]}[Data]
+				    Dimension_PB_MAESTRO_ESPECIE = Origen{[Schema="Dimension",Item="PB_MAESTRO_ESPECIE"]}[Data],
+				    #"Poner En Mayúsculas Cada Palabra" = Table.TransformColumns(Dimension_PB_MAESTRO_ESPECIE,{{"NOMBRE_ESPECIE", Text.Proper, type text}})
 				in
-				    Dimension_PB_MAESTRO_ESPECIE
+				    #"Poner En Mayúsculas Cada Palabra"
 
 	annotation PBI_ResultType = Table
 

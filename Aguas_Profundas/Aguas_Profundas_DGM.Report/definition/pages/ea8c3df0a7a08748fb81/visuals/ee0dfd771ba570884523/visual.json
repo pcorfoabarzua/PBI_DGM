@@ -1,0 +1,104 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "ee0dfd771ba570884523",
+  "position": {
+    "x": 915.86901763224171,
+    "y": 147.80856423173802,
+    "z": 25013,
+    "height": 44.433249370277075,
+    "width": 330.07556675062972,
+    "tabOrder": 24013
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "PB_VIAJE_MUESTREO_TEST"
+                    }
+                  },
+                  "Property": "LUGAR_MUESTREO"
+                }
+              },
+              "queryRef": "PB_VIAJE_MUESTREO.LUGAR_MUESTREO",
+              "nativeQueryRef": "LUGAR_MUESTREO",
+              "active": true,
+              "format": "G"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Basic'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "orientation": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "selection": [
+        {
+          "properties": {}
+        }
+      ],
+      "items": [
+        {
+          "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "acc3e613e8406b0eca11",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "PB_VIAJE_MUESTREO_TEST"
+              }
+            },
+            "Property": "LUGAR_MUESTREO"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

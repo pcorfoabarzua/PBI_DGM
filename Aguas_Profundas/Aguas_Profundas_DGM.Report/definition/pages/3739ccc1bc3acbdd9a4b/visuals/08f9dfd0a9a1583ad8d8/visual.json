@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "08f9dfd0a9a1583ad8d8",
   "position": {
-    "x": 168.32917705735662,
-    "y": 3.7406483790523692,
+    "x": 168,
+    "y": 4,
     "z": 2000,
-    "height": 95.386533665835415,
-    "width": 1040.8354114713218,
+    "height": 75,
+    "width": 1041,
     "tabOrder": 1000
   },
   "visual": {
@@ -19,10 +19,11 @@
               {
                 "textRuns": [
                   {
-                    "value": "CUMPLIMIENTO DE REQUERIMIENTOS MENSUALES DE LOS PROYECTOS DEMERSALES Y AGUAS PROFUNDAS",
+                    "value": "Cumplimiento de requerimientos mensuales de los proyectos Demersales y Aguas Profundas",
                     "textStyle": {
                       "fontWeight": "bold",
-                      "fontSize": "12pt",
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontSize": "14pt",
                       "color": "#ffffff"
                     }
                   }
@@ -35,18 +36,6 @@
                     "value": ""
                   }
                 ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "Departamento Gestión de Muestreo",
-                    "textStyle": {
-                      "fontSize": "13.3333px",
-                      "color": "#ffffff"
-                    }
-                  }
-                ],
-                "horizontalTextAlignment": "center"
               },
               {
                 "textRuns": [

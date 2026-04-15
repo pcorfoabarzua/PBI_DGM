@@ -482,7 +482,7 @@ table medidas
 			
 			
 			```
-		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		formatString: #,0.00\ %;-#,0.00\ %;#,0.00\ %
 		lineageTag: ed7d2e1d-0ea6-40d7-a8ef-0f0d6cfee2e1
 
 	measure 'Req Viajes Embarcados' =
@@ -534,7 +534,7 @@ table medidas
 			)
 			
 			```
-		formatString: 0
+		formatString: #,0
 		lineageTag: bb07a41a-3149-45fa-820f-2c680a3e03b5
 
 	measure 'Color N° Viajes Año Pasado' = ```
@@ -570,7 +570,7 @@ table medidas
 		lineageTag: bf17dcda-f98a-40aa-86af-d40a4856b76a
 
 	measure 'Viajes Totales Tarjeta' = IF(ISBLANK([Viajes totales]) , 0 , [Viajes totales])
-		formatString: 0
+		formatString: #,0
 		lineageTag: 522b7f71-9bb6-4845-9619-1a9b41fb1a7d
 
 	measure 'Lances Totales Tarjeta' = IF(ISBLANK([N° Lances]) , 0 , [N° Lances])
@@ -674,7 +674,7 @@ table medidas
 			VAR EjemplaresBio = IF(ISBLANK([N° Ejemplares Bio]) , 0 ,  [N° Ejemplares Bio])
 			
 			RETURN EjemplaresBio
-		formatString: 0
+		formatString: #,0
 		lineageTag: 9999bccd-c06e-4e7e-ad9f-2669e54e102b
 
 	measure 'N° Muestreos Longitud' =
@@ -690,7 +690,7 @@ table medidas
 			VAR MuestreosLong = IF(ISBLANK([N° Muestreos Longitud] ) , 0 ,  [N° Muestreos Longitud])
 			
 			RETURN MuestreosLong
-		formatString: 0
+		formatString: #,0
 		lineageTag: a09b30b1-2c9e-4dda-967d-a23febf745cf
 
 	measure 'N° Ejemplares Long' =
@@ -707,7 +707,7 @@ table medidas
 			RETURN EjemplaresLong
 			
 			```
-		formatString: 0
+		formatString: #,0
 		lineageTag: 753b3a8c-338f-4cf4-bd6f-36807e48fc26
 
 	measure 'N° Muestreos Bio Tarjeta' =
@@ -716,8 +716,19 @@ table medidas
 			VAR MuestreosBio = IF(ISBLANK([N° Muestreos Biologico] ) , 0 ,  [N° Muestreos Biologico])
 			
 			RETURN MuestreosBio
-		formatString: 0
+		formatString: #,0
 		lineageTag: dccac4e4-7239-4686-b1ff-efdecb22096a
+
+	measure 'Req Viajes Tarjeta' = ```
+			
+			
+			VAR Valor = IF([Req Viajes] == BLANK() , 0  ,  [Req Viajes])
+			
+			RETURN Valor
+			
+			```
+		formatString: 0
+		lineageTag: 5d732377-6294-453e-8fcc-0fa950851968
 
 	partition medidas = m
 		mode: import

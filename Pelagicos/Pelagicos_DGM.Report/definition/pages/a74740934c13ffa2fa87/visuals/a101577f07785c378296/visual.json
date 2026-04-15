@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "a101577f07785c378296",
   "position": {
-    "x": 899.01996370235929,
-    "y": 226.497277676951,
+    "x": 924.44444444444446,
+    "y": 217.77777777777777,
     "z": 23000,
-    "height": 231.14337568058076,
-    "width": 328.71143375680577,
+    "height": 245.55555555555554,
+    "width": 328.88888888888886,
     "tabOrder": 22000
   },
   "visual": {
@@ -27,9 +27,9 @@
                 }
               },
               "queryRef": "Dimension OBSERVADOR_CIENTIFICO.OBSERVADOR_CIENTIFICO",
-              "nativeQueryRef": "OC",
+              "nativeQueryRef": "Observador Científico",
               "active": true,
-              "displayName": "OC"
+              "displayName": "Observador Científico"
             }
           ]
         },
@@ -87,6 +87,20 @@
                   "Value": "true"
                 }
               }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "titleFontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
             }
           }
         }
@@ -116,6 +130,19 @@
                       "Percent": 0
                     }
                   }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
                 }
               }
             }
@@ -167,6 +194,13 @@
                   "Property": "Titulo Muestreos OC"
                 }
               }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
             }
           }
         }
@@ -178,6 +212,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'031e1d5b117547c64e8d'"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
                 }
               }
             }

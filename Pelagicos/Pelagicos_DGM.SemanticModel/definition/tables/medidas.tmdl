@@ -653,7 +653,7 @@ table medidas
 			VAR EjemplaresBio = IF(ISBLANK([N° Ejemplares Bio]) , 0 ,  [N° Ejemplares Bio])
 			
 			RETURN EjemplaresBio
-		formatString: 0
+		formatString: #,0
 		lineageTag: 795e6096-5abc-4fef-9ec8-9a78b60d4d76
 
 	measure 'N° Muestreos Long Tarjeta' = ```
@@ -664,7 +664,7 @@ table medidas
 			RETURN MuestreosLong
 			
 			```
-		formatString: 0
+		formatString: #,0
 		lineageTag: 7ea51c6d-40ee-45a4-a656-1948705fde9a
 
 	measure 'N° Muestreos Longitud' =
@@ -682,7 +682,7 @@ table medidas
 			RETURN EjemplaresLong
 			
 			```
-		formatString: 0
+		formatString: #,0
 		lineageTag: d92668ae-92f3-4568-b3e2-bd2f28a12f41
 
 	measure 'N° Ejemplares Long' =
@@ -697,7 +697,7 @@ table medidas
 			VAR MuestreosBio = IF(ISBLANK([N° Muestreos Biologico] ) , 0 ,  [N° Muestreos Biologico])
 			
 			RETURN MuestreosBio
-		formatString: 0
+		formatString: #,0
 		lineageTag: c3397adb-fab6-480d-a826-8bfcb52b9154
 
 	partition medidas = m

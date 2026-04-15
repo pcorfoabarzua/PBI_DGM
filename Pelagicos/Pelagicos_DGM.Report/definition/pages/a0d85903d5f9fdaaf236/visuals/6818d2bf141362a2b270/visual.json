@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "6818d2bf141362a2b270",
   "position": {
-    "x": 179.55112219451374,
-    "y": 5.6109725685785543,
+    "x": 180,
+    "y": 6,
     "z": 2000,
-    "height": 82.294264339152122,
-    "width": 1078.2418952618455,
+    "height": 87,
+    "width": 1078,
     "tabOrder": 1000
   },
   "visual": {
@@ -19,10 +19,11 @@
               {
                 "textRuns": [
                   {
-                    "value": "CUMPLIMIENTO DE REQUERIMIENTOS MENSUALES DE LOS PROYECTOS DESCARTE PELÁGICO",
+                    "value": "Cumplimiento de requerimiento mensuales de los proyectos Descarte Pelágico",
                     "textStyle": {
                       "fontWeight": "bold",
-                      "fontSize": "12pt",
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontSize": "14pt",
                       "color": "#ffffff"
                     }
                   }
@@ -39,11 +40,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Departamento Gestión de Muestreo",
-                    "textStyle": {
-                      "fontSize": "13.3333px",
-                      "color": "#ffffff"
-                    }
+                    "value": ""
                   }
                 ],
                 "horizontalTextAlignment": "center"

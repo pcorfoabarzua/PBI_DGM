@@ -3,10 +3,10 @@
   "name": "7b0cd099d5905e4c7c37",
   "position": {
     "x": 158.9775561097257,
-    "y": 72.9426433915212,
+    "y": 78.553615960099762,
     "z": 28000,
-    "height": 69.201995012468828,
-    "width": 1099.7506234413966,
+    "height": 64.526184538653368,
+    "width": 1120.3241895261847,
     "tabOrder": 27000
   },
   "visual": {
@@ -78,7 +78,7 @@
             "fontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'wf_standard-font, helvetica, arial, sans-serif'"
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
                 }
               }
             }
@@ -92,7 +92,7 @@
             "fontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'wf_standard-font, helvetica, arial, sans-serif'"
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
                 }
               }
             }
