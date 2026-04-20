@@ -20,15 +20,16 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "PB_VIAJE_MUESTREO_TEST"
+                      "Entity": "Dimension MAESTRO ESPECIE"
                     }
                   },
-                  "Property": "NOMBRE_ESPECIE_SELECCIONADA"
+                  "Property": "NOMBRE_ESPECIE"
                 }
               },
-              "queryRef": "PB_VIAJE_MUESTREO_TEST.NOMBRE_ESPECIE_SELECCIONADA",
-              "nativeQueryRef": "NOMBRE_ESPECIE_SELECCIONADA",
-              "active": true
+              "queryRef": "Dimension MAESTRO ESPECIE.NOMBRE_ESPECIE",
+              "nativeQueryRef": "Especie",
+              "active": true,
+              "displayName": "Especie"
             }
           ]
         },
@@ -224,8 +225,21 @@
             "Property": "NOMBRE_ESPECIE"
           }
         },
-        "type": "Categorical",
-        "howCreated": "User"
+        "type": "Categorical"
+      },
+      {
+        "name": "6f4bb294c8e2a6194c99",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "medidas"
+              }
+            },
+            "Property": "N° Ejemplares"
+          }
+        },
+        "type": "Advanced"
       }
     ],
     "filterSortOrder": "Custom"

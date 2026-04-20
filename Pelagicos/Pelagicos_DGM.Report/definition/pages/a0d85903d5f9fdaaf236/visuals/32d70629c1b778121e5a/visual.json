@@ -587,6 +587,34 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "ad1bd21083c0be93d133",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "medidas"
+              }
+            },
+            "Property": "Req (según actividad)"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1c2dae23d06008230554",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "medidas"
+              }
+            },
+            "Property": "% Cumplimiento muestreos"
+          }
+        },
+        "type": "Advanced"
       }
     ],
     "filterSortOrder": "Custom"

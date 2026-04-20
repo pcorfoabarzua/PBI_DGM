@@ -13,7 +13,17 @@ table medidas
 			```
 		lineageTag: 8f90f832-de34-4efb-84da-6204f86324e5
 
-	measure nmuestras2 = count(PB_VIAJE_MUESTREO_TEST[CODIGO_ACTIVIDAD])
+	measure otonmuestras2 = ```
+			
+			SWITCH (
+			    SELECTEDVALUE ( 'Dimension ACTIVIDAD'[CODIGO_ACTIVIDAD] ),
+			    3, [N° Muestreos Biologico],
+			    2, [N° Muestreos Longitud],
+			    4 , [N° Muestreos Otolitos] , 
+			    BLANK()
+			)
+			
+			```
 		formatString: 0
 		lineageTag: f1f9c5e2-f6aa-4561-8879-777be0595010
 
@@ -116,13 +126,14 @@ table medidas
 
 	measure 'Viajes totales' = ```
 			
-			    COUNTROWS(
-			        SUMMARIZE(
-			            PB_VIAJE_MUESTREO_TEST ,
-			            PB_VIAJE_MUESTREO_TEST[COD_BARCO],
-			            PB_VIAJE_MUESTREO_TEST[FECHA_HORA_RECALADA]
-			        )
+			COUNTROWS(
+			    GROUPBY(
+			        PB_VIAJE_MUESTREO_TEST,
+			        PB_VIAJE_MUESTREO_TEST[COD_BARCO],
+			        PB_VIAJE_MUESTREO_TEST[FECHA_HORA_RECALADA]
 			    )
+			)
+			
 			
 			
 			```
@@ -292,15 +303,48 @@ table medidas
 
 	measure 'Req Biológico' = ```
 			
+			
+			 VAR LugarNorm =
+			    LOWER(
+			        TRIM(
+			            SELECTEDVALUE( PB_VIAJE_MUESTREO_TEST[LUGAR_MUESTREO], "embarcado" )
+			        )
+			    )
+			
+			VAR Req_bio_tierra =
 			CALCULATE(
 			    SUM('PB_REQ_MUESTREO'[TOT_MUES_BIO]),
 			    KEEPFILTERS(
 			        TREATAS(
 			            VALUES('Date'[PERIODOMES]),
 			            'PB_REQ_MUESTREO'[PERIODOMES]
-			        )
-			    )
+			        ) 
+			    ) , FILTER(PB_REQ_MUESTREO , PB_REQ_MUESTREO[LUGAR_MUESTREO] = "TIERRA")
 			)
+			
+			VAR Req_bio_emb = CALCULATE(
+			    SUM('PB_REQ_MUESTREO'[TOT_MUES_BIO]),
+			    KEEPFILTERS(
+			        TREATAS(
+			            VALUES('Date'[PERIODOMES]),
+			            'PB_REQ_MUESTREO'[PERIODOMES]
+			        ) 
+			    ) , FILTER(PB_REQ_MUESTREO , PB_REQ_MUESTREO[LUGAR_MUESTREO] = "EMBARCADO")
+			)
+			
+			
+			VAR Resultado =
+			    SWITCH(
+			        TRUE(),
+			        LugarNorm = "embarcado", Req_bio_emb,
+			        LugarNorm = "tierra" || LugarNorm = "encuesta en tierra", Req_bio_tierra,
+			        -- default si el LUGAR no está definido
+			        Req_bio_tierra + Req_bio_emb
+			    )
+			RETURN
+			Resultado
+			
+			
 			
 			
 			
@@ -310,15 +354,46 @@ table medidas
 
 	measure 'Req Otolitos' = ```
 			
+			 VAR LugarNorm =
+			    LOWER(
+			        TRIM(
+			            SELECTEDVALUE( PB_VIAJE_MUESTREO_TEST[LUGAR_MUESTREO], "embarcado" )
+			        )
+			    )
+			
+			VAR Req_oto_tierra =
 			CALCULATE(
 			    SUM('PB_REQ_MUESTREO'[TOT_MUES_CON_OTOL]),
 			    KEEPFILTERS(
 			        TREATAS(
 			            VALUES('Date'[PERIODOMES]),
 			            'PB_REQ_MUESTREO'[PERIODOMES]
-			        )
-			    )
+			        ) 
+			    ) , FILTER(PB_REQ_MUESTREO , PB_REQ_MUESTREO[LUGAR_MUESTREO] = "TIERRA")
 			)
+			
+			VAR Req_oto_emb = CALCULATE(
+			    SUM('PB_REQ_MUESTREO'[TOT_MUES_CON_OTOL]),
+			    KEEPFILTERS(
+			        TREATAS(
+			            VALUES('Date'[PERIODOMES]),
+			            'PB_REQ_MUESTREO'[PERIODOMES]
+			        ) 
+			    ) , FILTER(PB_REQ_MUESTREO , PB_REQ_MUESTREO[LUGAR_MUESTREO] = "EMBARCADO")
+			)
+			
+			
+			VAR Resultado =
+			    SWITCH(
+			        TRUE(),
+			        LugarNorm = "embarcado", Req_oto_emb,
+			        LugarNorm = "tierra" || LugarNorm = "encuesta en tierra", Req_oto_tierra,
+			        -- default si el LUGAR no está definido
+			        Req_oto_emb + Req_oto_tierra
+			    )
+			RETURN
+			Resultado
+			
 			
 			
 			```
@@ -327,15 +402,48 @@ table medidas
 
 	measure 'Req Longitud' = ```
 			
+			
+			 VAR LugarNorm =
+			    LOWER(
+			        TRIM(
+			            SELECTEDVALUE( PB_VIAJE_MUESTREO_TEST[LUGAR_MUESTREO], "embarcado" )
+			        )
+			    )
+			
+			VAR Req_long_tierra =
 			CALCULATE(
 			    SUM('PB_REQ_MUESTREO'[TOT_MUES_LON]),
 			    KEEPFILTERS(
 			        TREATAS(
 			            VALUES('Date'[PERIODOMES]),
 			            'PB_REQ_MUESTREO'[PERIODOMES]
-			        )
-			    )
+			        ) 
+			    ) , FILTER(PB_REQ_MUESTREO , PB_REQ_MUESTREO[LUGAR_MUESTREO] = "TIERRA")
 			)
+			
+			VAR Req_long_emb = CALCULATE(
+			    SUM('PB_REQ_MUESTREO'[TOT_MUES_LON]),
+			    KEEPFILTERS(
+			        TREATAS(
+			            VALUES('Date'[PERIODOMES]),
+			            'PB_REQ_MUESTREO'[PERIODOMES]
+			        ) 
+			    ) , FILTER(PB_REQ_MUESTREO , PB_REQ_MUESTREO[LUGAR_MUESTREO] = "EMBARCADO")
+			)
+			
+			
+			VAR Resultado =
+			    SWITCH(
+			        TRUE(),
+			        LugarNorm = "embarcado", Req_long_emb,
+			        LugarNorm = "tierra" || LugarNorm = "encuesta en tierra", Req_long_tierra,
+			        -- default si el LUGAR no está definido
+			        Req_long_tierra + Req_long_emb
+			    )
+			RETURN
+			Resultado
+			
+			
 			
 			
 			```
@@ -356,8 +464,9 @@ table medidas
 			    ReqOto + ReqLon + ReqBio
 			)
 			
+			
 			```
-		formatString: 0
+		formatString: #,0
 		lineageTag: 7099ad9a-e27d-4de9-b662-632e08144d4b
 
 	measure 'N° Muestreos (real)' = ```
@@ -370,12 +479,11 @@ table medidas
 
 	measure '% Cumplimiento muestreos' = ```
 			
-			DIVIDE ( [nmuestras2], [Req (según actividad)] )
+			DIVIDE ( [otonmuestras2], [Req (según actividad)] )
 			
 			```
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
 		lineageTag: 9bc3c0f5-5367-4360-96af-aa541277c552
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Cumplimiento viaje embarcados' = ```
 			
@@ -425,11 +533,11 @@ table medidas
 		lineageTag: de4a9e95-1903-4426-95ad-3a15b8ea95ad
 
 	measure 'Viajes Totales Tarjeta' = IF(ISBLANK([Viajes totales]) , 0 , [Viajes totales])
-		formatString: 0
+		formatString: #,0
 		lineageTag: 001f4e0c-7eef-4950-9d97-34652d1cf9ab
 
 	measure 'Lances Totales Tarjeta' = IF(ISBLANK([N° Lances]) , 0 , [N° Lances])
-		formatString: 0
+		formatString: #,0
 		lineageTag: ec13a8e7-b27c-44f7-9949-6239be5c99a8
 
 	measure 'N° Viajes Año Pasado' = CALCULATE([Viajes totales] , SAMEPERIODLASTYEAR('Date'[Date]))
@@ -464,7 +572,7 @@ table medidas
 		lineageTag: d39cad28-cad0-45b1-a772-c3531436e796
 
 	measure 'N° Lances Tarjeta' = IF(ISBLANK([N° Lances]) , 0 , [N° Lances])
-		formatString: 0
+		formatString: #,0
 		lineageTag: 0cab8aa9-01f6-4e41-9c53-a4d42d400aeb
 
 	measure 'Viajes Totales Obs Cientifico' = ```
@@ -526,7 +634,7 @@ table medidas
 			RETURN EjemplaresLong
 			
 			```
-		formatString: 0
+		formatString: #,0
 		lineageTag: f52edf29-eb8e-4688-9628-efb48243cbdc
 
 	measure 'N° Muestreos Longitud' =
@@ -557,7 +665,7 @@ table medidas
 			VAR EjemplaresBio = IF(ISBLANK([N° Ejemplares Bio]) , 0 ,  [N° Ejemplares Bio])
 			
 			RETURN EjemplaresBio
-		formatString: 0
+		formatString: #,0
 		lineageTag: 0d321d3c-09a7-46be-96c0-9542d7f24a5a
 
 	measure 'N° Muestreos Biologico' = ```
@@ -577,6 +685,18 @@ table medidas
 			RETURN MuestreosBio
 		formatString: 0
 		lineageTag: 15199a5c-e6a6-4e5d-bd9a-3ce8f71f5f20
+
+	measure 'N° Muestreos Otolitos' = ```
+			
+			CALCULATE(
+			    SUM ( PB_VIAJE_MUESTREO_TEST[NRO_MUESTREOS_ESPECIE] ),
+			    'Dimension ACTIVIDAD'[CODIGO_ACTIVIDAD] = 4  -- Actividad Muestreo de Otolitos
+			)
+			
+			
+			```
+		formatString: 0
+		lineageTag: b7b90aa2-bff5-45d5-8e4d-1a0dd8111e9f
 
 	partition medidas = m
 		mode: import

@@ -212,5 +212,37 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a7a09e3810002552d952",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dimension OBSERVADOR_CIENTIFICO"
+              }
+            },
+            "Property": "OBSERVADOR_CIENTIFICO"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6f6ae3153d08197c3c9d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "medidas"
+              }
+            },
+            "Property": "Viajes Totales Obs Cientifico"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

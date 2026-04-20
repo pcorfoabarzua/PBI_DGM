@@ -10,30 +10,10 @@
     "tabOrder": 26000
   },
   "visual": {
-    "visualType": "pivotTable",
+    "visualType": "tableEx",
     "query": {
       "queryState": {
-        "Columns": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Dimension MAESTRO ESPECIE"
-                    }
-                  },
-                  "Property": "NOMBRE_ESPECIE"
-                }
-              },
-              "queryRef": "Dimension MAESTRO ESPECIE.NOMBRE_ESPECIE",
-              "nativeQueryRef": "Especie",
-              "active": true,
-              "displayName": "Especie"
-            }
-          ]
-        },
-        "Rows": {
+        "Values": {
           "projections": [
             {
               "field": {
@@ -48,13 +28,23 @@
               },
               "queryRef": "Dimension ACTIVIDAD.NOMBRE_ACTIVIDAD",
               "nativeQueryRef": "Actividad",
-              "active": true,
               "displayName": "Actividad"
-            }
-          ]
-        },
-        "Values": {
-          "projections": [
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dimension MAESTRO ESPECIE"
+                    }
+                  },
+                  "Property": "NOMBRE_ESPECIE"
+                }
+              },
+              "queryRef": "Dimension MAESTRO ESPECIE.NOMBRE_ESPECIE",
+              "nativeQueryRef": "Especie",
+              "displayName": "Especie"
+            },
             {
               "field": {
                 "Measure": {
@@ -84,6 +74,21 @@
               "queryRef": "medidas.Req (según actividad)",
               "nativeQueryRef": "Req",
               "displayName": "Req"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "medidas"
+                    }
+                  },
+                  "Property": "% Cumplimiento muestreos"
+                }
+              },
+              "queryRef": "medidas.% Cumplimiento muestreos",
+              "nativeQueryRef": "% Cumpl",
+              "displayName": "% Cumpl"
             }
           ]
         }
@@ -103,26 +108,6 @@
           },
           "selector": {
             "metadata": "Dimension ACTIVIDAD.NOMBRE_ACTIVIDAD"
-          }
-        }
-      ],
-      "subTotals": [
-        {
-          "properties": {
-            "rowSubtotals": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "columnSubtotals": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
           }
         }
       ],
@@ -343,19 +328,6 @@
             }
           }
         }
-      ],
-      "rowHeaders": [
-        {
-          "properties": {
-            "fontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
-                }
-              }
-            }
-          }
-        }
       ]
     },
     "visualContainerObjects": {
@@ -417,51 +389,6 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "46ef1afecd0ba18f711b",
-        "ordinal": 0,
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dimension ACTIVIDAD"
-              }
-            },
-            "Property": "NOMBRE_ACTIVIDAD"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "605537d0bb1b73a7a0b1",
-        "ordinal": 1,
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dimension MAESTRO ESPECIE"
-              }
-            },
-            "Property": "NOMBRE_ESPECIE"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "63cd9a6b24fc96694a0f",
-        "ordinal": 2,
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "medidas"
-              }
-            },
-            "Property": "nmuestras2"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
         "name": "0c87f035633255e8be7f",
         "ordinal": 3,
         "field": {
@@ -476,21 +403,6 @@
         },
         "type": "Advanced",
         "howCreated": "User"
-      },
-      {
-        "name": "5365ecd6a52c370dfc8a",
-        "ordinal": 4,
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "medidas"
-              }
-            },
-            "Property": "Req (según actividad)"
-          }
-        },
-        "type": "Advanced"
       }
     ],
     "filterSortOrder": "Custom"

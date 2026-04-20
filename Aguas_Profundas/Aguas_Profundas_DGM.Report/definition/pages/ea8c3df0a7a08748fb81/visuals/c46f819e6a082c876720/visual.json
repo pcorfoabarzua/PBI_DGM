@@ -4,10 +4,10 @@
   "position": {
     "x": 895.91939546599485,
     "y": 194.05541561712846,
-    "z": 25014,
+    "z": 20000,
     "height": 231.23425692695213,
     "width": 377.22921914357681,
-    "tabOrder": 24014
+    "tabOrder": 19000
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -46,7 +46,8 @@
                 }
               },
               "queryRef": "medidas.Viajes Totales Obs Cientifico",
-              "nativeQueryRef": "Viajes Totales Obs Cientifico"
+              "nativeQueryRef": "Viajes Totales",
+              "displayName": "Viajes Totales"
             }
           ]
         }
@@ -198,7 +199,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "f183bcfb909640c09585",
+        "name": "520578b923bd5cb73790",
         "field": {
           "Column": {
             "Expression": {
@@ -212,7 +213,7 @@
         "type": "Categorical"
       },
       {
-        "name": "f58674ad577d87077a2c",
+        "name": "a97e4a592177c30dad06",
         "field": {
           "Measure": {
             "Expression": {

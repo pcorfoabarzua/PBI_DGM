@@ -89,7 +89,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Tierra'"
+                                "Value": "'Embarcado'"
                               }
                             }
                           ]
@@ -144,5 +144,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "1fd677be32d748d0201e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "PB_VIAJE_MUESTREO_TEST"
+              }
+            },
+            "Property": "LUGAR_MUESTREO"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

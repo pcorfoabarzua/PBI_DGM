@@ -3,9 +3,9 @@
   "name": "1fc02678108e5c0b9cc1",
   "position": {
     "x": 793.9526184538654,
-    "y": 489.08977556109727,
+    "y": 484.41396508728184,
     "z": 6000,
-    "height": 257.16957605985039,
+    "height": 261.84538653366587,
     "width": 483.47880299251875,
     "tabOrder": 2000
   },
@@ -261,14 +261,14 @@
             "secTitleFontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "10D"
+                  "Value": "8D"
                 }
               }
             },
             "titleFontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
+                  "Value": "9D"
                 }
               }
             },
@@ -294,6 +294,27 @@
               }
             },
             "titleFontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "secFontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "secFontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "secTitleFontFamily": {
               "expr": {
                 "Literal": {
                   "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"

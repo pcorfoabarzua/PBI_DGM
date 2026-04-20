@@ -2,7 +2,7 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "394dcecc8cff2a5bb5f6",
   "position": {
-    "x": 520.88528678304249,
+    "x": 542.39401496259359,
     "y": 142.14463840399003,
     "z": 20000,
     "height": 244.07730673316709,
@@ -42,8 +42,8 @@
                 }
               },
               "queryRef": "medidas.nmuestras2",
-              "nativeQueryRef": "N° muestras",
-              "displayName": "N° muestras"
+              "nativeQueryRef": "N° Muestras",
+              "displayName": "N° Muestras"
             },
             {
               "field": {
@@ -134,7 +134,7 @@
               "layout": {
                 "expr": {
                   "Literal": {
-                    "Value": "'Before'"
+                    "Value": "'After'"
                   }
                 }
               },
@@ -167,7 +167,7 @@
                                 },
                                 "Right": {
                                   "Literal": {
-                                    "Value": "0.68D"
+                                    "Value": "0.7D"
                                   }
                                 }
                               }
@@ -187,7 +187,7 @@
                                 },
                                 "Right": {
                                   "Literal": {
-                                    "Value": "1D"
+                                    "Value": "1000D"
                                   }
                                 }
                               }
@@ -238,7 +238,7 @@
                                 },
                                 "Right": {
                                   "Literal": {
-                                    "Value": "0.67D"
+                                    "Value": "0.7D"
                                   }
                                 }
                               }
