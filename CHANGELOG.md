@@ -17,6 +17,17 @@ El formato está basado en *Keep a Changelog* y el versionado sigue una lógica 
 
 ---
 
+### Changed
+
+- Ajuste en la presentación del dashboard para mejorar la interpretación de los indicadores de cumplimiento.
+- Revisión de la lógica de las medidas asociadas a requerimientos de viajes y muestreos, considerando la disponibilidad parcial de PB_REQ_MUESTREO.
+
+### Fixed
+
+- Mejora en la comunicación visual de estados donde no existen requerimientos definidos para el período o proyecto seleccionado.
+
+---
+
 ## [2026-04-14]
 ### Fixed
 - Corrección de datos erróneos en la dimensión **Dim_Barcos** mediante transformaciones en Power Query.
