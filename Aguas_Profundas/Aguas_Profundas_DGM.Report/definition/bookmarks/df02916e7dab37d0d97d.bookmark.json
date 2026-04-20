@@ -4,7 +4,7 @@
   "name": "df02916e7dab37d0d97d",
   "options": {
     "targetVisualNames": [
-      "056d76a940702029b065"
+      "537b3c3a0c1b5d78f9ed"
     ]
   },
   "explorationState": {
@@ -256,7 +256,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "fce99c54d98c692e2c02",
+                  "name": "50256c500a01c2ecb539",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -403,7 +403,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "19c31a6d45f51b32ff03",
+                  "name": "a7ea95550e80147b32a0",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -418,7 +418,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "13e4b0387886b7dd6315",
+                  "name": "f62379077d8205546ad8",
                   "type": "Advanced",
                   "expression": {
                     "Aggregation": {
@@ -700,7 +700,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "3f73a3b77ebbbb642e66",
+                  "name": "894618e54ddc201d7e73",
                   "type": "Advanced",
                   "expression": {
                     "Column": {
@@ -974,7 +974,7 @@
                           "Entity": "medidas"
                         }
                       },
-                      "Property": "nmuestras2"
+                      "Property": "otonmuestras2"
                     }
                   },
                   "howCreated": 0
@@ -995,7 +995,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "117419a4c70b27d2a26a",
+                  "name": "5dc6bded8903e42eae85",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1035,7 +1035,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "7d05b6f48a722547468a",
+                  "name": "2c2cae156570a805cd4c",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1081,51 +1081,6 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "46ef1afecd0ba18f711b",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Dimension ACTIVIDAD"
-                        }
-                      },
-                      "Property": "NOMBRE_ACTIVIDAD"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
-                  "name": "605537d0bb1b73a7a0b1",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Dimension MAESTRO ESPECIE"
-                        }
-                      },
-                      "Property": "NOMBRE_ESPECIE"
-                    }
-                  },
-                  "howCreated": 1
-                },
-                {
-                  "name": "63cd9a6b24fc96694a0f",
-                  "type": "Advanced",
-                  "expression": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "medidas"
-                        }
-                      },
-                      "Property": "nmuestras2"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
                   "name": "0c87f035633255e8be7f",
                   "type": "Advanced",
                   "expression": {
@@ -1141,22 +1096,75 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "8cd06e10994b8b7a25d0",
+                  "name": "177e6aabd81be7ea052b",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "PB_VIAJE_MUESTREO_TEST"
+                          "Entity": "Dimension ACTIVIDAD"
                         }
                       },
-                      "Property": "NOMBRE_ESPECIE_SELECCIONADA"
+                      "Property": "NOMBRE_ACTIVIDAD"
                     }
                   },
                   "howCreated": 0
                 },
                 {
-                  "name": "90cb9d44ee9b56e501fd",
+                  "name": "5a2fc506ddc7e4c6a9db",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "m",
+                        "Entity": "medidas",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "Comparison": {
+                                "ComparisonKind": 0,
+                                "Left": {
+                                  "Measure": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Source": "m"
+                                      }
+                                    },
+                                    "Property": "otonmuestras2"
+                                  }
+                                },
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "null"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "medidas"
+                        }
+                      },
+                      "Property": "otonmuestras2"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "63cf98ceb76095cc0bd0",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1169,45 +1177,64 @@
                     }
                   },
                   "howCreated": 0
+                },
+                {
+                  "name": "8f2337cb600392bb0305",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "medidas"
+                        }
+                      },
+                      "Property": "% Cumplimiento muestreos"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d4b6195cd9604235c397",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dimension MAESTRO ESPECIE"
+                        }
+                      },
+                      "Property": "NOMBRE_ESPECIE"
+                    }
+                  },
+                  "howCreated": 0
                 }
               ]
             },
             "singleVisual": {
-              "visualType": "pivotTable",
+              "visualType": "tableEx",
               "objects": {},
-              "activeProjections": {
-                "Columns": [
-                  {
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "PB_VIAJE_MUESTREO_TEST"
+                          "Entity": "Dimension MAESTRO ESPECIE"
                         }
                       },
-                      "Property": "NOMBRE_ESPECIE_SELECCIONADA"
+                      "Property": "NOMBRE_ESPECIE"
                     }
                   }
-                ],
-                "Rows": [
-                  {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Dimension ACTIVIDAD"
-                        }
-                      },
-                      "Property": "NOMBRE_ACTIVIDAD"
-                    }
-                  }
-                ]
-              }
+                }
+              ]
             }
           },
           "539fc4f46444b0a5c0e2": {
             "filters": {
               "byExpr": [
                 {
-                  "name": "1ca449e32b31b0306bbc",
+                  "name": "55ec925e268ee2128b20",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1259,7 +1286,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "38340a9b85def78b65d3",
+                  "name": "7031adab00ca1c8960de",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1274,7 +1301,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "720e980595b70985952c",
+                  "name": "71b82247015e4802803c",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1289,7 +1316,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "8f78f1c705abc68af712",
+                  "name": "73d9e7b8879dd20456d6",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1348,7 +1375,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "352f8a08c9725861b884",
+                  "name": "837f778bd00dc0571c48",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1411,25 +1438,10 @@
                       "Property": "NOMBRE_ESPECIE"
                     }
                   },
-                  "howCreated": 1
-                },
-                {
-                  "name": "15683306fb5b167c948a",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "PB_VIAJE_MUESTREO_TEST"
-                        }
-                      },
-                      "Property": "NOMBRE_ESPECIE_SELECCIONADA"
-                    }
-                  },
                   "howCreated": 0
                 },
                 {
-                  "name": "378925411282e6486352",
+                  "name": "37e36d3e9505d3dad6c6",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1469,10 +1481,10 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "PB_VIAJE_MUESTREO_TEST"
+                          "Entity": "Dimension MAESTRO ESPECIE"
                         }
                       },
-                      "Property": "NOMBRE_ESPECIE_SELECCIONADA"
+                      "Property": "NOMBRE_ESPECIE"
                     }
                   }
                 ]
@@ -1495,7 +1507,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "744ce1a0d78aa3675b4e",
+                  "name": "036546b67d32a1dda775",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1696,7 +1708,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "6861826f9683a30699c4",
+                  "name": "72631f8f3d0964b22849",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1711,7 +1723,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "a546e1af993b92e6acf1",
+                  "name": "768a698ba87401080148",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1870,7 +1882,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "eea780f6cb4fb0f4565e",
+                  "name": "81541736d1bede8be127",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1885,7 +1897,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "2b0478d073d9b47a4830",
+                  "name": "641ace75a11005a0a5d0",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1900,7 +1912,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "21f8eb6a2dc32bea20ff",
+                  "name": "24d9cb9219c068e08675",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {

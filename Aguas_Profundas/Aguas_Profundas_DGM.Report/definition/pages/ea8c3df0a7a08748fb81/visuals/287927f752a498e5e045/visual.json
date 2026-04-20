@@ -4,36 +4,16 @@
   "position": {
     "x": 167.75818639798487,
     "y": 438.89168765743068,
-    "z": 25016,
+    "z": 22000,
     "height": 281.10831234256926,
     "width": 334.60957178841306,
-    "tabOrder": 24016
+    "tabOrder": 21000
   },
   "visual": {
-    "visualType": "pivotTable",
+    "visualType": "tableEx",
     "query": {
       "queryState": {
-        "Columns": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "PB_VIAJE_MUESTREO_TEST"
-                    }
-                  },
-                  "Property": "NOMBRE_ESPECIE_SELECCIONADA"
-                }
-              },
-              "queryRef": "PB_VIAJE_MUESTREO_TEST.NOMBRE_ESPECIE_SELECCIONADA",
-              "nativeQueryRef": "Especie",
-              "active": true,
-              "displayName": "Especie"
-            }
-          ]
-        },
-        "Rows": {
+        "Values": {
           "projections": [
             {
               "field": {
@@ -48,13 +28,23 @@
               },
               "queryRef": "Dimension ACTIVIDAD.NOMBRE_ACTIVIDAD",
               "nativeQueryRef": "Actividad",
-              "active": true,
               "displayName": "Actividad"
-            }
-          ]
-        },
-        "Values": {
-          "projections": [
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "PB_VIAJE_MUESTREO_TEST"
+                    }
+                  },
+                  "Property": "NOMBRE_ESPECIE_SELECCIONADA"
+                }
+              },
+              "queryRef": "PB_VIAJE_MUESTREO_TEST.NOMBRE_ESPECIE_SELECCIONADA",
+              "nativeQueryRef": "Especie",
+              "displayName": "Especie"
+            },
             {
               "field": {
                 "Measure": {
@@ -63,7 +53,7 @@
                       "Entity": "medidas"
                     }
                   },
-                  "Property": "nmuestras2"
+                  "Property": "otonmuestras2"
                 }
               },
               "queryRef": "medidas.nmuestras2",
@@ -106,50 +96,9 @@
           }
         }
       ],
-      "subTotals": [
-        {
-          "properties": {
-            "rowSubtotals": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "columnSubtotals": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "blankRows": [
-        {
-          "properties": {
-            "showBlankRows": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
       "general": [
         {
-          "properties": {
-            "layout": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Compact'"
-                }
-              }
-            }
-          }
+          "properties": {}
         }
       ],
       "values": [
@@ -587,19 +536,6 @@
             }
           }
         }
-      ],
-      "rowHeaders": [
-        {
-          "properties": {
-            "fontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
-                }
-              }
-            }
-          }
-        }
       ]
     },
     "visualContainerObjects": {
@@ -656,21 +592,6 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "46ef1afecd0ba18f711b",
-        "ordinal": 0,
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dimension ACTIVIDAD"
-              }
-            },
-            "Property": "NOMBRE_ACTIVIDAD"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
         "name": "605537d0bb1b73a7a0b1",
         "ordinal": 1,
         "field": {
@@ -687,21 +608,6 @@
         "howCreated": "User"
       },
       {
-        "name": "63cd9a6b24fc96694a0f",
-        "ordinal": 2,
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "medidas"
-              }
-            },
-            "Property": "nmuestras2"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
         "name": "0c87f035633255e8be7f",
         "ordinal": 3,
         "field": {
@@ -716,6 +622,58 @@
         },
         "type": "Advanced",
         "howCreated": "User"
+      },
+      {
+        "name": "25456b169b210683c46d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "medidas"
+              }
+            },
+            "Property": "otonmuestras2"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "m",
+              "Entity": "medidas",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "Comparison": {
+                      "ComparisonKind": 0,
+                      "Left": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "m"
+                            }
+                          },
+                          "Property": "otonmuestras2"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "null"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
       }
     ],
     "filterSortOrder": "Custom"

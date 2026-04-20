@@ -5,35 +5,15 @@
     "x": 169.2643391521197,
     "y": 392.76807980049881,
     "z": 26000,
-    "height": 357.2319201995013,
+    "height": 346.00997506234415,
     "width": 332.91770573566089,
     "tabOrder": 25000
   },
   "visual": {
-    "visualType": "pivotTable",
+    "visualType": "tableEx",
     "query": {
       "queryState": {
-        "Columns": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "PB_VIAJE_MUESTREO_TEST"
-                    }
-                  },
-                  "Property": "NOMBRE_ESPECIE_SELECCIONADA"
-                }
-              },
-              "queryRef": "PB_VIAJE_MUESTREO_TEST.NOMBRE_ESPECIE_SELECCIONADA",
-              "nativeQueryRef": "Especie",
-              "active": true,
-              "displayName": "Especie"
-            }
-          ]
-        },
-        "Rows": {
+        "Values": {
           "projections": [
             {
               "field": {
@@ -48,13 +28,23 @@
               },
               "queryRef": "Dimension ACTIVIDAD.NOMBRE_ACTIVIDAD",
               "nativeQueryRef": "Actividad",
-              "active": true,
               "displayName": "Actividad"
-            }
-          ]
-        },
-        "Values": {
-          "projections": [
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "PB_VIAJE_MUESTREO_TEST"
+                    }
+                  },
+                  "Property": "NOMBRE_ESPECIE_SELECCIONADA"
+                }
+              },
+              "queryRef": "PB_VIAJE_MUESTREO_TEST.NOMBRE_ESPECIE_SELECCIONADA",
+              "nativeQueryRef": "Especie",
+              "displayName": "Especie"
+            },
             {
               "field": {
                 "Measure": {
@@ -121,26 +111,6 @@
           }
         }
       ],
-      "subTotals": [
-        {
-          "properties": {
-            "rowSubtotals": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "columnSubtotals": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
       "values": [
         {
           "properties": {
@@ -149,7 +119,7 @@
               "layout": {
                 "expr": {
                   "Literal": {
-                    "Value": "'Before'"
+                    "Value": "'After'"
                   }
                 }
               },
@@ -182,7 +152,7 @@
                                 },
                                 "Right": {
                                   "Literal": {
-                                    "Value": "0.68D"
+                                    "Value": "0.7D"
                                   }
                                 }
                               }
@@ -202,7 +172,7 @@
                                 },
                                 "Right": {
                                   "Literal": {
-                                    "Value": "1D"
+                                    "Value": "10000D"
                                   }
                                 }
                               }
@@ -253,7 +223,7 @@
                                 },
                                 "Right": {
                                   "Literal": {
-                                    "Value": "0.67D"
+                                    "Value": "0.7D"
                                   }
                                 }
                               }
@@ -347,19 +317,6 @@
         }
       ],
       "columnHeaders": [
-        {
-          "properties": {
-            "fontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "rowHeaders": [
         {
           "properties": {
             "fontFamily": {
@@ -537,21 +494,6 @@
         },
         "type": "Categorical",
         "howCreated": "User"
-      },
-      {
-        "name": "63cd9a6b24fc96694a0f",
-        "ordinal": 3,
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "medidas"
-              }
-            },
-            "Property": "nmuestras2"
-          }
-        },
-        "type": "Advanced"
       },
       {
         "name": "27257db5aa9672e18cdf",

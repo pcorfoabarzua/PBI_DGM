@@ -10,30 +10,10 @@
     "tabOrder": 26000
   },
   "visual": {
-    "visualType": "pivotTable",
+    "visualType": "tableEx",
     "query": {
       "queryState": {
-        "Columns": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "PB_VIAJE_MUESTREO_TEST"
-                    }
-                  },
-                  "Property": "NOMBRE_ESPECIE_SELECCIONADA"
-                }
-              },
-              "queryRef": "PB_VIAJE_MUESTREO_TEST.NOMBRE_ESPECIE_SELECCIONADA",
-              "nativeQueryRef": "Especie",
-              "active": true,
-              "displayName": "Especie"
-            }
-          ]
-        },
-        "Rows": {
+        "Values": {
           "projections": [
             {
               "field": {
@@ -48,13 +28,23 @@
               },
               "queryRef": "Dimension ACTIVIDAD.NOMBRE_ACTIVIDAD",
               "nativeQueryRef": "Actividad",
-              "active": true,
               "displayName": "Actividad"
-            }
-          ]
-        },
-        "Values": {
-          "projections": [
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "PB_VIAJE_MUESTREO_TEST"
+                    }
+                  },
+                  "Property": "NOMBRE_ESPECIE_SELECCIONADA"
+                }
+              },
+              "queryRef": "PB_VIAJE_MUESTREO_TEST.NOMBRE_ESPECIE_SELECCIONADA",
+              "nativeQueryRef": "Especie",
+              "displayName": "Especie"
+            },
             {
               "field": {
                 "Measure": {
@@ -84,6 +74,21 @@
               "queryRef": "medidas.Req (según actividad)",
               "nativeQueryRef": "Req",
               "displayName": "Req"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "medidas"
+                    }
+                  },
+                  "Property": "% Cumplimiento muestreos"
+                }
+              },
+              "queryRef": "medidas.% Cumplimiento muestreos",
+              "nativeQueryRef": "% Cumpl",
+              "displayName": "% Cumpl"
             }
           ]
         }
@@ -104,25 +109,19 @@
           "selector": {
             "metadata": "Dimension ACTIVIDAD.NOMBRE_ACTIVIDAD"
           }
-        }
-      ],
-      "subTotals": [
+        },
         {
           "properties": {
-            "rowSubtotals": {
+            "value": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "columnSubtotals": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
+                  "Value": "117.34386772910239D"
                 }
               }
             }
+          },
+          "selector": {
+            "metadata": "PB_VIAJE_MUESTREO_TEST.NOMBRE_ESPECIE_SELECCIONADA"
           }
         }
       ],
@@ -343,19 +342,6 @@
             }
           }
         }
-      ],
-      "rowHeaders": [
-        {
-          "properties": {
-            "fontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
-                }
-              }
-            }
-          }
-        }
       ]
     },
     "visualContainerObjects": {
@@ -417,21 +403,6 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "46ef1afecd0ba18f711b",
-        "ordinal": 0,
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dimension ACTIVIDAD"
-              }
-            },
-            "Property": "NOMBRE_ACTIVIDAD"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
         "name": "605537d0bb1b73a7a0b1",
         "ordinal": 1,
         "field": {
@@ -446,21 +417,6 @@
         },
         "type": "Categorical",
         "howCreated": "User"
-      },
-      {
-        "name": "63cd9a6b24fc96694a0f",
-        "ordinal": 2,
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "medidas"
-              }
-            },
-            "Property": "nmuestras2"
-          }
-        },
-        "type": "Advanced"
       },
       {
         "name": "0c87f035633255e8be7f",

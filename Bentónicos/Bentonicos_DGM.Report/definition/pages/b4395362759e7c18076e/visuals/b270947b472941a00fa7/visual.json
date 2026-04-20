@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "b270947b472941a00fa7",
   "position": {
-    "x": 169.2643391521197,
-    "y": 410.53615960099756,
+    "x": 168.42105263157893,
+    "y": 410.01814882032664,
     "z": 26000,
-    "height": 339.46384039900255,
-    "width": 320.76059850374065,
+    "height": 340.32667876588022,
+    "width": 320.58076225045369,
     "tabOrder": 25000
   },
   "visual": {
@@ -107,6 +107,23 @@
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dimension PUERTO"
+                  }
+                },
+                "Property": "PUERTO"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
       }
     },
     "objects": {
@@ -479,24 +496,8 @@
         }
       },
       {
-        "name": "f498bd338c6b0346bed4",
-        "ordinal": 1,
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "medidas"
-              }
-            },
-            "Property": "%cumplimiento"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User"
-      },
-      {
         "name": "605537d0bb1b73a7a0b1",
-        "ordinal": 2,
+        "ordinal": 1,
         "field": {
           "Column": {
             "Expression": {
@@ -511,7 +512,37 @@
         "howCreated": "User"
       },
       {
-        "name": "27257db5aa9672e18cdf",
+        "name": "1efc5ab56de50501c138",
+        "ordinal": 2,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dimension PUERTO"
+              }
+            },
+            "Property": "PUERTO"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1f664d3c274058677279",
+        "ordinal": 3,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "PB_VIAJE_MUESTREO_TEST"
+              }
+            },
+            "Property": "NOMBRE_ESPECIE_SELECCIONADA"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1f4e77989eb5e5108098",
         "ordinal": 4,
         "field": {
           "Measure": {
@@ -520,14 +551,51 @@
                 "Entity": "medidas"
               }
             },
-            "Property": "REQ_TEST"
+            "Property": "nmuestras2"
           }
         },
         "type": "Advanced",
-        "howCreated": "User"
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "m",
+              "Entity": "medidas",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "Comparison": {
+                      "ComparisonKind": 0,
+                      "Left": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "m"
+                            }
+                          },
+                          "Property": "nmuestras2"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "null"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
       },
       {
-        "name": "b5466a3aff41ee26c936",
+        "name": "821afd2cd3b5630be701",
         "ordinal": 5,
         "field": {
           "Measure": {
@@ -536,11 +604,25 @@
                 "Entity": "medidas"
               }
             },
-            "Property": "%cumplimiento especie"
+            "Property": "Req (según actividad)"
           }
         },
-        "type": "Advanced",
-        "howCreated": "User"
+        "type": "Advanced"
+      },
+      {
+        "name": "2e8a00050aae6d528410",
+        "ordinal": 6,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "medidas"
+              }
+            },
+            "Property": "% Cumplimiento muestreos"
+          }
+        },
+        "type": "Advanced"
       }
     ],
     "filterSortOrder": "Custom"

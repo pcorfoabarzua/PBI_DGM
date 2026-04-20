@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "2ab9bcf69871d087a88b",
   "position": {
     "x": 520.36297640653356,
@@ -38,7 +38,7 @@
                       "Entity": "medidas"
                     }
                   },
-                  "Property": "nmuestras2"
+                  "Property": "otonmuestras2"
                 }
               },
               "queryRef": "medidas.nmuestras2",
@@ -397,7 +397,7 @@
                 "Entity": "medidas"
               }
             },
-            "Property": "nmuestras2"
+            "Property": "otonmuestras2"
           }
         },
         "type": "Advanced"

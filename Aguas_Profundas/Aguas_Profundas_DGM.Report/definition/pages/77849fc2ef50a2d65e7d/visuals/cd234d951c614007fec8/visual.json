@@ -315,7 +315,7 @@
                                   },
                                   "Right": {
                                     "Literal": {
-                                      "Value": "0.5D"
+                                      "Value": "0.51D"
                                     }
                                   }
                                 }
@@ -483,23 +483,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "b2f9a7e20360e17d0d00",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "medidas"
-              }
-            },
-            "Property": "Cumplimiento viaje embarcados"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -3,7 +3,9 @@
   "displayName": "Pelágico Centro Sur",
   "name": "33d287491abc682d94a7",
   "options": {
-    "targetVisualNames": []
+    "targetVisualNames": [
+      "10cf2c39a71455c0f852"
+    ]
   },
   "explorationState": {
     "version": "1.3",
@@ -85,21 +87,6 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "46ef1afecd0ba18f711b",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Dimension ACTIVIDAD"
-                        }
-                      },
-                      "Property": "NOMBRE_ACTIVIDAD"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
                   "name": "605537d0bb1b73a7a0b1",
                   "type": "Categorical",
                   "expression": {
@@ -113,21 +100,6 @@
                     }
                   },
                   "howCreated": 1
-                },
-                {
-                  "name": "63cd9a6b24fc96694a0f",
-                  "type": "Advanced",
-                  "expression": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "medidas"
-                        }
-                      },
-                      "Property": "nmuestras2"
-                    }
-                  },
-                  "howCreated": 0
                 },
                 {
                   "name": "0c87f035633255e8be7f",
@@ -145,7 +117,22 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "cf95a2381d8dd46a69a6",
+                  "name": "dc598d8f8300b36e5ec8",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dimension ACTIVIDAD"
+                        }
+                      },
+                      "Property": "NOMBRE_ACTIVIDAD"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a53f92e804de14d6005e",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -160,7 +147,22 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "b9fc8db494601162a4cb",
+                  "name": "dde0034d13073a29580c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "medidas"
+                        }
+                      },
+                      "Property": "nmuestras2"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "35682cdcadb0a34e7089",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -173,45 +175,34 @@
                     }
                   },
                   "howCreated": 0
+                },
+                {
+                  "name": "1627b3ade058d3aa5ad2",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "medidas"
+                        }
+                      },
+                      "Property": "% Cumplimiento muestreos"
+                    }
+                  },
+                  "howCreated": 0
                 }
               ]
             },
             "singleVisual": {
-              "visualType": "pivotTable",
-              "objects": {},
-              "activeProjections": {
-                "Columns": [
-                  {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "PB_VIAJE_MUESTREO_TEST"
-                        }
-                      },
-                      "Property": "NOMBRE_ESPECIE_SELECCIONADA"
-                    }
-                  }
-                ],
-                "Rows": [
-                  {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Dimension ACTIVIDAD"
-                        }
-                      },
-                      "Property": "NOMBRE_ACTIVIDAD"
-                    }
-                  }
-                ]
-              }
+              "visualType": "tableEx",
+              "objects": {}
             }
           },
           "1b46b69a1707c15a33ee": {
             "filters": {
               "byExpr": [
                 {
-                  "name": "a92a3617a3e5f56575c9",
+                  "name": "4a3a34279dd80159669e",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -297,7 +288,7 @@
                         "strictSingleSelect": {
                           "expr": {
                             "Literal": {
-                              "Value": "true"
+                              "Value": "false"
                             }
                           }
                         }
@@ -326,7 +317,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "2fb88c771865af710933",
+                  "name": "7f4f97c3a151ece4a598",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -341,7 +332,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "bfc83a659e955fc2f22e",
+                  "name": "3bae63742cca0d5d675e",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -356,7 +347,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "7ea2a5658c6811109288",
+                  "name": "f200039607b081024935",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -515,7 +506,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "77eac6c8f8e25d03f770",
+                  "name": "d9ca2ac7868a0a60e304",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -604,7 +595,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "6f3af960add5159bac97",
+                  "name": "38770e9fe0710b4edc60",
                   "type": "Advanced",
                   "expression": {
                     "Column": {
@@ -743,7 +734,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "3ecfafa8fa0c98e92b4d",
+                  "name": "6f3182c14e2c484ccebe",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -768,7 +759,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "a95c26456d97d9e30eab",
+                  "name": "a7c47670396c04073d13",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -930,7 +921,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "aaa3954bbf79a32ab8f1",
+                  "name": "63e3fbc558a313de7172",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -945,7 +936,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "868358cf47b3d61aa66c",
+                  "name": "2b6403dc3b1aed6505b2",
                   "type": "Advanced",
                   "expression": {
                     "Aggregation": {
@@ -1126,7 +1117,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "b4c83e6d6a69a81789a4",
+                  "name": "b3435554a3658e9ba08c",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1279,7 +1270,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "58c5517946fc1fb8c346",
+                  "name": "0e19e7f0abb0263a1314",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1294,7 +1285,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "5d7f12731023576156e5",
+                  "name": "9cf5f9856e61b06988de",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1309,7 +1300,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "2071c579da70a947720f",
+                  "name": "367fe2d2446b940a3a77",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1363,7 +1354,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "0a6661d94ce4e9c94f30",
+                  "name": "62f402aa8d8257b0adb2",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1403,7 +1394,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "c6c6ba904ee0a7d227c1",
+                  "name": "daa2db66387c20b81de6",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1456,7 +1447,7 @@
                                       [
                                         {
                                           "Literal": {
-                                            "Value": "'Tierra'"
+                                            "Value": "'Embarcado'"
                                           }
                                         }
                                       ]
@@ -1518,7 +1509,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "38b63eec78a6fc92a510",
+                  "name": "9bedaca80dd9bc685c76",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1564,7 +1555,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "4b7346e7130910c51b0f",
+                  "name": "94884071677ded000788",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1579,7 +1570,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "ea06cd620a30c25f15a4",
+                  "name": "acacbe8bb45bd760b0ed",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1688,7 +1679,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "6c9615089694c1c2a745",
+                  "name": "cf5d2dfa3e0a036151c1",
                   "type": "Categorical",
                   "expression": {
                     "Column": {

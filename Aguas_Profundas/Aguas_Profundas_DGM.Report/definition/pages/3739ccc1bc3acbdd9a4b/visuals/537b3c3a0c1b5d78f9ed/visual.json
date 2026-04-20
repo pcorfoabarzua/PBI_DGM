@@ -10,30 +10,10 @@
     "tabOrder": 25000
   },
   "visual": {
-    "visualType": "pivotTable",
+    "visualType": "tableEx",
     "query": {
       "queryState": {
-        "Columns": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "PB_VIAJE_MUESTREO_TEST"
-                    }
-                  },
-                  "Property": "NOMBRE_ESPECIE_SELECCIONADA"
-                }
-              },
-              "queryRef": "PB_VIAJE_MUESTREO_TEST.NOMBRE_ESPECIE_SELECCIONADA",
-              "nativeQueryRef": "Especie",
-              "active": true,
-              "displayName": "Especie"
-            }
-          ]
-        },
-        "Rows": {
+        "Values": {
           "projections": [
             {
               "field": {
@@ -48,13 +28,23 @@
               },
               "queryRef": "Dimension ACTIVIDAD.NOMBRE_ACTIVIDAD",
               "nativeQueryRef": "Actividad",
-              "active": true,
               "displayName": "Actividad"
-            }
-          ]
-        },
-        "Values": {
-          "projections": [
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dimension MAESTRO ESPECIE"
+                    }
+                  },
+                  "Property": "NOMBRE_ESPECIE"
+                }
+              },
+              "queryRef": "Dimension MAESTRO ESPECIE.NOMBRE_ESPECIE",
+              "nativeQueryRef": "Especie",
+              "displayName": "Especie"
+            },
             {
               "field": {
                 "Measure": {
@@ -63,7 +53,7 @@
                       "Entity": "medidas"
                     }
                   },
-                  "Property": "nmuestras2"
+                  "Property": "otonmuestras2"
                 }
               },
               "queryRef": "medidas.nmuestras2",
@@ -84,9 +74,41 @@
               "queryRef": "medidas.Req (según actividad)",
               "nativeQueryRef": "Req",
               "displayName": "Req"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "medidas"
+                    }
+                  },
+                  "Property": "% Cumplimiento muestreos"
+                }
+              },
+              "queryRef": "medidas.% Cumplimiento muestreos",
+              "nativeQueryRef": "% Cumpl",
+              "displayName": "% Cumpl"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dimension MAESTRO ESPECIE"
+                  }
+                },
+                "Property": "NOMBRE_ESPECIE"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
       }
     },
     "objects": {
@@ -96,7 +118,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "94.57142603610507D"
+                  "Value": "82.35807335543451D"
                 }
               }
             }
@@ -104,52 +126,39 @@
           "selector": {
             "metadata": "Dimension ACTIVIDAD.NOMBRE_ACTIVIDAD"
           }
-        }
-      ],
-      "subTotals": [
+        },
         {
           "properties": {
-            "rowSubtotals": {
+            "value": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "columnSubtotals": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
+                  "Value": "73.70962325211126D"
                 }
               }
             }
+          },
+          "selector": {
+            "metadata": "Dimension MAESTRO ESPECIE.NOMBRE_ESPECIE"
           }
-        }
-      ],
-      "blankRows": [
+        },
         {
           "properties": {
-            "showBlankRows": {
+            "value": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "67.20011913484558D"
                 }
               }
             }
+          },
+          "selector": {
+            "metadata": "medidas.nmuestras2"
           }
         }
       ],
       "general": [
         {
-          "properties": {
-            "layout": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Compact'"
-                }
-              }
-            }
-          }
+          "properties": {}
         }
       ],
       "values": [
@@ -160,7 +169,7 @@
               "layout": {
                 "expr": {
                   "Literal": {
-                    "Value": "'Before'"
+                    "Value": "'After'"
                   }
                 }
               },
@@ -177,106 +186,45 @@
                     "Cases": [
                       {
                         "Condition": {
-                          "Comparison": {
-                            "ComparisonKind": 1,
+                          "And": {
                             "Left": {
-                              "Measure": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Entity": "medidas"
+                              "Comparison": {
+                                "ComparisonKind": 2,
+                                "Left": {
+                                  "Measure": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Entity": "medidas"
+                                      }
+                                    },
+                                    "Property": "% Cumplimiento muestreos"
                                   }
                                 },
-                                "Property": "% Cumplimiento muestreos"
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "0.7D"
+                                  }
+                                }
                               }
                             },
                             "Right": {
-                              "Literal": {
-                                "Value": "1D"
-                              }
-                            }
-                          }
-                        },
-                        "Value": {
-                          "Literal": {
-                            "Value": "'CircleSymbolMedium'"
-                          }
-                        }
-                      },
-                      {
-                        "Condition": {
-                          "Comparison": {
-                            "ComparisonKind": 2,
-                            "Left": {
-                              "Measure": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Entity": "medidas"
-                                  }
-                                },
-                                "Property": "% Cumplimiento muestreos"
-                              }
-                            },
-                            "Right": {
-                              "RangePercent": {
-                                "Min": {
-                                  "ScopedEval": {
+                              "Comparison": {
+                                "ComparisonKind": 4,
+                                "Left": {
+                                  "Measure": {
                                     "Expression": {
-                                      "Aggregation": {
-                                        "Expression": {
-                                          "ScopedEval": {
-                                            "Expression": {
-                                              "Measure": {
-                                                "Expression": {
-                                                  "SourceRef": {
-                                                    "Entity": "medidas"
-                                                  }
-                                                },
-                                                "Property": "% Cumplimiento muestreos"
-                                              }
-                                            },
-                                            "Scope": [
-                                              {
-                                                "AllRolesRef": {}
-                                              }
-                                            ]
-                                          }
-                                        },
-                                        "Function": 3
+                                      "SourceRef": {
+                                        "Entity": "medidas"
                                       }
                                     },
-                                    "Scope": []
+                                    "Property": "% Cumplimiento muestreos"
                                   }
                                 },
-                                "Max": {
-                                  "ScopedEval": {
-                                    "Expression": {
-                                      "Aggregation": {
-                                        "Expression": {
-                                          "ScopedEval": {
-                                            "Expression": {
-                                              "Measure": {
-                                                "Expression": {
-                                                  "SourceRef": {
-                                                    "Entity": "medidas"
-                                                  }
-                                                },
-                                                "Property": "% Cumplimiento muestreos"
-                                              }
-                                            },
-                                            "Scope": [
-                                              {
-                                                "AllRolesRef": {}
-                                              }
-                                            ]
-                                          }
-                                        },
-                                        "Function": 4
-                                      }
-                                    },
-                                    "Scope": []
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "1D"
                                   }
-                                },
-                                "Percent": 0.67
+                                }
                               }
                             }
                           }
@@ -304,66 +252,8 @@
                                   }
                                 },
                                 "Right": {
-                                  "RangePercent": {
-                                    "Min": {
-                                      "ScopedEval": {
-                                        "Expression": {
-                                          "Aggregation": {
-                                            "Expression": {
-                                              "ScopedEval": {
-                                                "Expression": {
-                                                  "Measure": {
-                                                    "Expression": {
-                                                      "SourceRef": {
-                                                        "Entity": "medidas"
-                                                      }
-                                                    },
-                                                    "Property": "% Cumplimiento muestreos"
-                                                  }
-                                                },
-                                                "Scope": [
-                                                  {
-                                                    "AllRolesRef": {}
-                                                  }
-                                                ]
-                                              }
-                                            },
-                                            "Function": 3
-                                          }
-                                        },
-                                        "Scope": []
-                                      }
-                                    },
-                                    "Max": {
-                                      "ScopedEval": {
-                                        "Expression": {
-                                          "Aggregation": {
-                                            "Expression": {
-                                              "ScopedEval": {
-                                                "Expression": {
-                                                  "Measure": {
-                                                    "Expression": {
-                                                      "SourceRef": {
-                                                        "Entity": "medidas"
-                                                      }
-                                                    },
-                                                    "Property": "% Cumplimiento muestreos"
-                                                  }
-                                                },
-                                                "Scope": [
-                                                  {
-                                                    "AllRolesRef": {}
-                                                  }
-                                                ]
-                                              }
-                                            },
-                                            "Function": 4
-                                          }
-                                        },
-                                        "Scope": []
-                                      }
-                                    },
-                                    "Percent": 0.33
+                                  "Literal": {
+                                    "Value": "0.33D"
                                   }
                                 }
                               }
@@ -382,66 +272,8 @@
                                   }
                                 },
                                 "Right": {
-                                  "RangePercent": {
-                                    "Min": {
-                                      "ScopedEval": {
-                                        "Expression": {
-                                          "Aggregation": {
-                                            "Expression": {
-                                              "ScopedEval": {
-                                                "Expression": {
-                                                  "Measure": {
-                                                    "Expression": {
-                                                      "SourceRef": {
-                                                        "Entity": "medidas"
-                                                      }
-                                                    },
-                                                    "Property": "% Cumplimiento muestreos"
-                                                  }
-                                                },
-                                                "Scope": [
-                                                  {
-                                                    "AllRolesRef": {}
-                                                  }
-                                                ]
-                                              }
-                                            },
-                                            "Function": 3
-                                          }
-                                        },
-                                        "Scope": []
-                                      }
-                                    },
-                                    "Max": {
-                                      "ScopedEval": {
-                                        "Expression": {
-                                          "Aggregation": {
-                                            "Expression": {
-                                              "ScopedEval": {
-                                                "Expression": {
-                                                  "Measure": {
-                                                    "Expression": {
-                                                      "SourceRef": {
-                                                        "Entity": "medidas"
-                                                      }
-                                                    },
-                                                    "Property": "% Cumplimiento muestreos"
-                                                  }
-                                                },
-                                                "Scope": [
-                                                  {
-                                                    "AllRolesRef": {}
-                                                  }
-                                                ]
-                                              }
-                                            },
-                                            "Function": 4
-                                          }
-                                        },
-                                        "Scope": []
-                                      }
-                                    },
-                                    "Percent": 0.67
+                                  "Literal": {
+                                    "Value": "0.7D"
                                   }
                                 }
                               }
@@ -456,79 +288,45 @@
                       },
                       {
                         "Condition": {
-                          "Comparison": {
-                            "ComparisonKind": 3,
+                          "And": {
                             "Left": {
-                              "Measure": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Entity": "medidas"
+                              "Comparison": {
+                                "ComparisonKind": 2,
+                                "Left": {
+                                  "Measure": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Entity": "medidas"
+                                      }
+                                    },
+                                    "Property": "% Cumplimiento muestreos"
                                   }
                                 },
-                                "Property": "% Cumplimiento muestreos"
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "0D"
+                                  }
+                                }
                               }
                             },
                             "Right": {
-                              "RangePercent": {
-                                "Min": {
-                                  "ScopedEval": {
+                              "Comparison": {
+                                "ComparisonKind": 3,
+                                "Left": {
+                                  "Measure": {
                                     "Expression": {
-                                      "Aggregation": {
-                                        "Expression": {
-                                          "ScopedEval": {
-                                            "Expression": {
-                                              "Measure": {
-                                                "Expression": {
-                                                  "SourceRef": {
-                                                    "Entity": "medidas"
-                                                  }
-                                                },
-                                                "Property": "% Cumplimiento muestreos"
-                                              }
-                                            },
-                                            "Scope": [
-                                              {
-                                                "AllRolesRef": {}
-                                              }
-                                            ]
-                                          }
-                                        },
-                                        "Function": 3
+                                      "SourceRef": {
+                                        "Entity": "medidas"
                                       }
                                     },
-                                    "Scope": []
+                                    "Property": "% Cumplimiento muestreos"
                                   }
                                 },
-                                "Max": {
-                                  "ScopedEval": {
-                                    "Expression": {
-                                      "Aggregation": {
-                                        "Expression": {
-                                          "ScopedEval": {
-                                            "Expression": {
-                                              "Measure": {
-                                                "Expression": {
-                                                  "SourceRef": {
-                                                    "Entity": "medidas"
-                                                  }
-                                                },
-                                                "Property": "% Cumplimiento muestreos"
-                                              }
-                                            },
-                                            "Scope": [
-                                              {
-                                                "AllRolesRef": {}
-                                              }
-                                            ]
-                                          }
-                                        },
-                                        "Function": 4
-                                      }
-                                    },
-                                    "Scope": []
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "0.33D"
                                   }
-                                },
-                                "Percent": 0.33
+                                }
                               }
                             }
                           }
@@ -588,13 +386,13 @@
           }
         }
       ],
-      "rowHeaders": [
+      "total": [
         {
           "properties": {
-            "fontFamily": {
+            "totals": {
               "expr": {
                 "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                  "Value": "true"
                 }
               }
             }
@@ -656,52 +454,6 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "46ef1afecd0ba18f711b",
-        "ordinal": 0,
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dimension ACTIVIDAD"
-              }
-            },
-            "Property": "NOMBRE_ACTIVIDAD"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "605537d0bb1b73a7a0b1",
-        "ordinal": 1,
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dimension MAESTRO ESPECIE"
-              }
-            },
-            "Property": "NOMBRE_ESPECIE"
-          }
-        },
-        "type": "Categorical",
-        "howCreated": "User"
-      },
-      {
-        "name": "63cd9a6b24fc96694a0f",
-        "ordinal": 2,
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "medidas"
-              }
-            },
-            "Property": "nmuestras2"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
         "name": "0c87f035633255e8be7f",
         "ordinal": 3,
         "field": {
@@ -716,6 +468,114 @@
         },
         "type": "Advanced",
         "howCreated": "User"
+      },
+      {
+        "name": "5a2fc506ddc7e4c6a9db",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "medidas"
+              }
+            },
+            "Property": "otonmuestras2"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "m",
+              "Entity": "medidas",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "Comparison": {
+                      "ComparisonKind": 0,
+                      "Left": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "m"
+                            }
+                          },
+                          "Property": "otonmuestras2"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "null"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "8f1d90e7a8b008c0d108",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dimension ACTIVIDAD"
+              }
+            },
+            "Property": "NOMBRE_ACTIVIDAD"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "27df5e9b7d0bb29b3dac",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dimension MAESTRO ESPECIE"
+              }
+            },
+            "Property": "NOMBRE_ESPECIE"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "07301e584db0090be069",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "medidas"
+              }
+            },
+            "Property": "Req (según actividad)"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c0e220c61023bd675254",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "medidas"
+              }
+            },
+            "Property": "% Cumplimiento muestreos"
+          }
+        },
+        "type": "Advanced"
       }
     ],
     "filterSortOrder": "Custom"

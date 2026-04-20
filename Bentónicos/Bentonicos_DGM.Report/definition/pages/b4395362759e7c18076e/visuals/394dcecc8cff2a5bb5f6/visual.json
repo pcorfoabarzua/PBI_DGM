@@ -167,7 +167,7 @@
                                 },
                                 "Right": {
                                   "Literal": {
-                                    "Value": "0.68D"
+                                    "Value": "0.7D"
                                   }
                                 }
                               }
@@ -218,7 +218,7 @@
                                 },
                                 "Right": {
                                   "Literal": {
-                                    "Value": "0.34D"
+                                    "Value": "0.33D"
                                   }
                                 }
                               }
@@ -238,7 +238,7 @@
                                 },
                                 "Right": {
                                   "Literal": {
-                                    "Value": "0.67D"
+                                    "Value": "0.7D"
                                   }
                                 }
                               }
@@ -542,7 +542,7 @@
         "howCreated": "User"
       },
       {
-        "name": "Filterb7e0eeca1db37f42ffdc",
+        "name": "1140d64b00c280333855",
         "ordinal": 5,
         "field": {
           "Measure": {
@@ -551,14 +551,13 @@
                 "Entity": "medidas"
               }
             },
-            "Property": "req"
+            "Property": "nmuestras2"
           }
         },
-        "type": "Advanced",
-        "howCreated": "User"
+        "type": "Advanced"
       },
       {
-        "name": "Filter935748be23a268ff62a2",
+        "name": "db617ddf3a9e1a0cb1ca",
         "ordinal": 6,
         "field": {
           "Measure": {
@@ -567,14 +566,13 @@
                 "Entity": "medidas"
               }
             },
-            "Property": "%cumplimiento"
+            "Property": "Req (según actividad)"
           }
         },
-        "type": "Advanced",
-        "howCreated": "User"
+        "type": "Advanced"
       },
       {
-        "name": "1140d64b00c280333855",
+        "name": "9f8796fd1d650aa764ea",
         "ordinal": 7,
         "field": {
           "Measure": {
@@ -583,7 +581,7 @@
                 "Entity": "medidas"
               }
             },
-            "Property": "nmuestras2"
+            "Property": "% Cumplimiento muestreos"
           }
         },
         "type": "Advanced"

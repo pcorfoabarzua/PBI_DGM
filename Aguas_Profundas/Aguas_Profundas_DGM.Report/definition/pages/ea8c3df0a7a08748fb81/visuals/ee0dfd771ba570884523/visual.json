@@ -4,10 +4,10 @@
   "position": {
     "x": 915.86901763224171,
     "y": 147.80856423173802,
-    "z": 25013,
+    "z": 19000,
     "height": 44.433249370277075,
     "width": 330.07556675062972,
-    "tabOrder": 24013
+    "tabOrder": 18000
   },
   "visual": {
     "visualType": "slicer",
@@ -82,23 +82,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "acc3e613e8406b0eca11",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "PB_VIAJE_MUESTREO_TEST"
-              }
-            },
-            "Property": "LUGAR_MUESTREO"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

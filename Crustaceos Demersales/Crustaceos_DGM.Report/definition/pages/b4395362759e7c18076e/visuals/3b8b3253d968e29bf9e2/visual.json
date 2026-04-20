@@ -47,7 +47,8 @@
                 }
               },
               "queryRef": "medidas.Viajes Totales Obs Cientifico",
-              "nativeQueryRef": "Viajes Totales Obs Cientifico"
+              "nativeQueryRef": "Viajes Totales",
+              "displayName": "Viajes Totales"
             }
           ]
         }
@@ -62,7 +63,7 @@
                     "Entity": "medidas"
                   }
                 },
-                "Property": "Viajes totales"
+                "Property": "Viajes Totales Obs Cientifico"
               }
             },
             "direction": "Descending"

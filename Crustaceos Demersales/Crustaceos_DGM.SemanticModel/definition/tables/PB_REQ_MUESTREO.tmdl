@@ -96,6 +96,14 @@ table PB_REQ_MUESTREO
 
 		annotation SummarizationSetBy = Automatic
 
+	column LUGAR_MUESTREO
+		dataType: string
+		lineageTag: bb53bc50-8876-4032-8118-b72f098dfe00
+		summarizeBy: none
+		sourceColumn: LUGAR_MUESTREO
+
+		annotation SummarizationSetBy = Automatic
+
 	partition PB_REQ_MUESTREO = m
 		mode: import
 		source =
@@ -103,9 +111,14 @@ table PB_REQ_MUESTREO
 				    Source = Sql.Databases("192.168.169.110"),
 				    Analytics = Source{[Name="Analytics"]}[Data],
 				    Fact_PB_REQ_MUESTREO = Analytics{[Schema="Fact",Item="PB_REQ_MUESTREO"]}[Data],
-				    #"Texto limpio" = Table.TransformColumns(Fact_PB_REQ_MUESTREO,{{"COD_PROYECTO", Text.Clean, type text}})
+				    #"Texto limpio" = Table.TransformColumns(Fact_PB_REQ_MUESTREO,{{"COD_PROYECTO", Text.Clean, type text}}),
+				    #"Cambio DCS a DAP" = Table.ReplaceValue(#"Texto limpio","DCS","DAP",Replacer.ReplaceText,{"COD_PROYECTO"}),
+				    #"Cambio DSA a DAP" = Table.ReplaceValue(#"Cambio DCS a DAP","DSA","DAP",Replacer.ReplaceText,{"COD_PROYECTO"}),
+				    #"Cambio Descarte a DES" = Table.ReplaceValue(#"Cambio DSA a DAP","Descarte","DES",Replacer.ReplaceText,{"COD_PROYECTO"}),
+				    #"Cambio PN_DES a DES_CER" = Table.ReplaceValue(#"Cambio Descarte a DES","PN_DES","DES_CER",Replacer.ReplaceText,{"COD_PROYECTO"}),
+				    #"Cambio PCS_DES a DES_CER" = Table.ReplaceValue(#"Cambio PN_DES a DES_CER","PCS_DESC","DES_CER",Replacer.ReplaceText,{"COD_PROYECTO"})
 				in
-				    #"Texto limpio"
+				    #"Cambio PCS_DES a DES_CER"
 
 	annotation PBI_ResultType = Table
 
