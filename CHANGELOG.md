@@ -15,6 +15,14 @@ El formato está basado en *Keep a Changelog* y el versionado sigue una lógica 
 ### Fixed
 - 
 
+
+---
+
+
+### Fixed
+- Mejora en la semántica de las tablas e indicadores de muestreo.
+- Diferenciación explícita entre ausencia de datos y valores cero en KPI operacionales.
+
 ---
 
 ### Changed
