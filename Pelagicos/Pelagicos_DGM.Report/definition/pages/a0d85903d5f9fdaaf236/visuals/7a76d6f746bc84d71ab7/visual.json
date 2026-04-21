@@ -83,10 +83,10 @@
                       "Entity": "medidas"
                     }
                   },
-                  "Property": "% Cumplimiento muestreos"
+                  "Property": "% Cumplimiento Muestreo (Cap 100%)"
                 }
               },
-              "queryRef": "medidas.% Cumplimiento muestreos",
+              "queryRef": "medidas.% Cumplimiento Muestreo (Cap 100%)",
               "nativeQueryRef": "% Cumpl",
               "displayName": "% Cumpl"
             }
@@ -114,202 +114,21 @@
       "values": [
         {
           "properties": {
-            "icon": {
-              "kind": "Icon",
-              "layout": {
-                "expr": {
-                  "Literal": {
-                    "Value": "'Before'"
-                  }
-                }
-              },
-              "verticalAlignment": {
-                "expr": {
-                  "Literal": {
-                    "Value": "'Top'"
-                  }
-                }
-              },
-              "value": {
-                "expr": {
-                  "Conditional": {
-                    "Cases": [
-                      {
-                        "Condition": {
-                          "And": {
-                            "Left": {
-                              "Comparison": {
-                                "ComparisonKind": 2,
-                                "Left": {
-                                  "Measure": {
-                                    "Expression": {
-                                      "SourceRef": {
-                                        "Entity": "medidas"
-                                      }
-                                    },
-                                    "Property": "% Cumplimiento muestreos"
-                                  }
-                                },
-                                "Right": {
-                                  "Literal": {
-                                    "Value": "0.68D"
-                                  }
-                                }
-                              }
-                            },
-                            "Right": {
-                              "Comparison": {
-                                "ComparisonKind": 4,
-                                "Left": {
-                                  "Measure": {
-                                    "Expression": {
-                                      "SourceRef": {
-                                        "Entity": "medidas"
-                                      }
-                                    },
-                                    "Property": "% Cumplimiento muestreos"
-                                  }
-                                },
-                                "Right": {
-                                  "Literal": {
-                                    "Value": "1D"
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        },
-                        "Value": {
-                          "Literal": {
-                            "Value": "'StarHighLight'"
-                          }
-                        }
-                      },
-                      {
-                        "Condition": {
-                          "And": {
-                            "Left": {
-                              "Comparison": {
-                                "ComparisonKind": 2,
-                                "Left": {
-                                  "Measure": {
-                                    "Expression": {
-                                      "SourceRef": {
-                                        "Entity": "medidas"
-                                      }
-                                    },
-                                    "Property": "% Cumplimiento muestreos"
-                                  }
-                                },
-                                "Right": {
-                                  "Literal": {
-                                    "Value": "0.34D"
-                                  }
-                                }
-                              }
-                            },
-                            "Right": {
-                              "Comparison": {
-                                "ComparisonKind": 3,
-                                "Left": {
-                                  "Measure": {
-                                    "Expression": {
-                                      "SourceRef": {
-                                        "Entity": "medidas"
-                                      }
-                                    },
-                                    "Property": "% Cumplimiento muestreos"
-                                  }
-                                },
-                                "Right": {
-                                  "Literal": {
-                                    "Value": "0.67D"
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        },
-                        "Value": {
-                          "Literal": {
-                            "Value": "'StarMediumLight'"
-                          }
-                        }
-                      },
-                      {
-                        "Condition": {
-                          "And": {
-                            "Left": {
-                              "Comparison": {
-                                "ComparisonKind": 2,
-                                "Left": {
-                                  "Measure": {
-                                    "Expression": {
-                                      "SourceRef": {
-                                        "Entity": "medidas"
-                                      }
-                                    },
-                                    "Property": "% Cumplimiento muestreos"
-                                  }
-                                },
-                                "Right": {
-                                  "Literal": {
-                                    "Value": "0D"
-                                  }
-                                }
-                              }
-                            },
-                            "Right": {
-                              "Comparison": {
-                                "ComparisonKind": 3,
-                                "Left": {
-                                  "Measure": {
-                                    "Expression": {
-                                      "SourceRef": {
-                                        "Entity": "medidas"
-                                      }
-                                    },
-                                    "Property": "% Cumplimiento muestreos"
-                                  }
-                                },
-                                "Right": {
-                                  "Literal": {
-                                    "Value": "0.33D"
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        },
-                        "Value": {
-                          "Literal": {
-                            "Value": "'StarLow'"
-                          }
-                        }
-                      }
-                    ]
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "dataViewWildcard": {
-                  "matchingOption": 1
-                }
-              }
-            ],
-            "metadata": "medidas.% Cumplimiento muestreos"
-          }
-        },
-        {
-          "properties": {
             "fontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "backColorSecondary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
                 }
               }
             }
@@ -323,6 +142,35 @@
               "expr": {
                 "Literal": {
                   "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#EEEDED'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.3
+                    }
+                  }
                 }
               }
             }
@@ -403,6 +251,114 @@
         },
         "type": "Advanced",
         "howCreated": "User"
+      },
+      {
+        "name": "b90511300ea10d84bc08",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dimension ACTIVIDAD"
+              }
+            },
+            "Property": "NOMBRE_ACTIVIDAD"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4b99f058005a8cd9ea10",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dimension MAESTRO ESPECIE"
+              }
+            },
+            "Property": "NOMBRE_ESPECIE"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6c907b3f32cc05a45620",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "medidas"
+              }
+            },
+            "Property": "nmuestras2"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "m",
+              "Entity": "medidas",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "Comparison": {
+                      "ComparisonKind": 0,
+                      "Left": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "m"
+                            }
+                          },
+                          "Property": "nmuestras2"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "null"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "f8aa0f82b25858263e2c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "medidas"
+              }
+            },
+            "Property": "Req (según actividad)"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "8fc74376b5580dc0d088",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "medidas"
+              }
+            },
+            "Property": "% Cumplimiento Muestreo (Cap 100%)"
+          }
+        },
+        "type": "Advanced"
       }
     ],
     "filterSortOrder": "Custom"

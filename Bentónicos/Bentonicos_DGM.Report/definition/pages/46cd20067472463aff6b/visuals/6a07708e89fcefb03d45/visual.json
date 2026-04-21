@@ -23,11 +23,12 @@
                       "Entity": "medidas"
                     }
                   },
-                  "Property": "Cumplimiento viaje embarcados"
+                  "Property": "% Cumplimiento Viajes (Cap 100%)"
                 }
               },
-              "queryRef": "medidas.Cumplimiento viaje embarcados",
-              "nativeQueryRef": "Cumplimiento viaje embarcados"
+              "queryRef": "medidas.% Cumplimiento Viajes (Cap 100%)",
+              "nativeQueryRef": "% Cumplimiento Viaje",
+              "displayName": "% Cumplimiento Viaje"
             }
           ]
         }
@@ -42,7 +43,7 @@
                     "Entity": "medidas"
                   }
                 },
-                "Property": "Cumplimiento viaje embarcados"
+                "Property": "% Cumplimiento Viajes (Cap 100%)"
               }
             },
             "direction": "Descending"
@@ -70,7 +71,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "35D"
+                  "Value": "25D"
                 }
               }
             },
@@ -159,7 +160,7 @@
                                       "Entity": "medidas"
                                     }
                                   },
-                                  "Property": "Cumplimiento viaje embarcados"
+                                  "Property": "Cumplimiento viaje"
                                 }
                               },
                               "Right": {
@@ -171,7 +172,7 @@
                           },
                           "Value": {
                             "Literal": {
-                              "Value": "'#D1DBF1'"
+                              "Value": "'#9E9E9E'"
                             }
                           }
                         },
@@ -188,7 +189,7 @@
                                           "Entity": "medidas"
                                         }
                                       },
-                                      "Property": "Cumplimiento viaje embarcados"
+                                      "Property": "Cumplimiento viaje"
                                     }
                                   },
                                   "Right": {
@@ -208,7 +209,7 @@
                                           "Entity": "medidas"
                                         }
                                       },
-                                      "Property": "Cumplimiento viaje embarcados"
+                                      "Property": "Cumplimiento viaje"
                                     }
                                   },
                                   "Right": {
@@ -239,7 +240,7 @@
                                           "Entity": "medidas"
                                         }
                                       },
-                                      "Property": "Cumplimiento viaje embarcados"
+                                      "Property": "Cumplimiento viaje"
                                     }
                                   },
                                   "Right": {
@@ -259,7 +260,7 @@
                                           "Entity": "medidas"
                                         }
                                       },
-                                      "Property": "Cumplimiento viaje embarcados"
+                                      "Property": "Cumplimiento viaje"
                                     }
                                   },
                                   "Right": {
@@ -290,7 +291,7 @@
                                           "Entity": "medidas"
                                         }
                                       },
-                                      "Property": "Cumplimiento viaje embarcados"
+                                      "Property": "Cumplimiento viaje"
                                     }
                                   },
                                   "Right": {
@@ -310,7 +311,7 @@
                                           "Entity": "medidas"
                                         }
                                       },
-                                      "Property": "Cumplimiento viaje embarcados"
+                                      "Property": "Cumplimiento viaje"
                                     }
                                   },
                                   "Right": {

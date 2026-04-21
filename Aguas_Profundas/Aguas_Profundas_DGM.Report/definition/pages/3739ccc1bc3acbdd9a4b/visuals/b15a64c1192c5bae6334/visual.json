@@ -226,20 +226,6 @@
           }
         },
         "type": "Categorical"
-      },
-      {
-        "name": "6f4bb294c8e2a6194c99",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "medidas"
-              }
-            },
-            "Property": "N° Ejemplares"
-          }
-        },
-        "type": "Advanced"
       }
     ],
     "filterSortOrder": "Custom"

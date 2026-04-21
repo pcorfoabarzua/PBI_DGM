@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "537b3c3a0c1b5d78f9ed",
   "position": {
-    "x": 167.2595281306715,
-    "y": 457.64065335753173,
+    "x": 166.45885286783044,
+    "y": 457.29426433915216,
     "z": 26000,
-    "height": 290.38112522686026,
-    "width": 334.519056261343,
+    "height": 290.83541147132172,
+    "width": 339.46384039900255,
     "tabOrder": 25000
   },
   "visual": {
@@ -83,10 +83,10 @@
                       "Entity": "medidas"
                     }
                   },
-                  "Property": "% Cumplimiento muestreos"
+                  "Property": "% Cumplimiento Muestreo (Cap 100%)"
                 }
               },
-              "queryRef": "medidas.% Cumplimiento muestreos",
+              "queryRef": "medidas.% Cumplimiento Muestreo (Cap 100%)",
               "nativeQueryRef": "% Cumpl",
               "displayName": "% Cumpl"
             }
@@ -118,7 +118,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "82.35807335543451D"
+                  "Value": "74.90801046810732D"
                 }
               }
             }
@@ -146,7 +146,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "67.20011913484558D"
+                  "Value": "66.25629247215352D"
                 }
               }
             }
@@ -162,6 +162,35 @@
         }
       ],
       "values": [
+        {
+          "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "backColorSecondary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
         {
           "properties": {
             "icon": {
@@ -197,7 +226,7 @@
                                         "Entity": "medidas"
                                       }
                                     },
-                                    "Property": "% Cumplimiento muestreos"
+                                    "Property": "% Cumplimiento Muestreo (Cap 100%)"
                                   }
                                 },
                                 "Right": {
@@ -217,12 +246,12 @@
                                         "Entity": "medidas"
                                       }
                                     },
-                                    "Property": "% Cumplimiento muestreos"
+                                    "Property": "% Cumplimiento Muestreo (Cap 100%)"
                                   }
                                 },
                                 "Right": {
                                   "Literal": {
-                                    "Value": "1D"
+                                    "Value": "10000000D"
                                   }
                                 }
                               }
@@ -248,7 +277,7 @@
                                         "Entity": "medidas"
                                       }
                                     },
-                                    "Property": "% Cumplimiento muestreos"
+                                    "Property": "% Cumplimiento Muestreo (Cap 100%)"
                                   }
                                 },
                                 "Right": {
@@ -268,7 +297,7 @@
                                         "Entity": "medidas"
                                       }
                                     },
-                                    "Property": "% Cumplimiento muestreos"
+                                    "Property": "% Cumplimiento Muestreo (Cap 100%)"
                                   }
                                 },
                                 "Right": {
@@ -299,7 +328,7 @@
                                         "Entity": "medidas"
                                       }
                                     },
-                                    "Property": "% Cumplimiento muestreos"
+                                    "Property": "% Cumplimiento Muestreo (Cap 100%)"
                                   }
                                 },
                                 "Right": {
@@ -319,7 +348,7 @@
                                         "Entity": "medidas"
                                       }
                                     },
-                                    "Property": "% Cumplimiento muestreos"
+                                    "Property": "% Cumplimiento Muestreo (Cap 100%)"
                                   }
                                 },
                                 "Right": {
@@ -351,18 +380,7 @@
                 }
               }
             ],
-            "metadata": "medidas.% Cumplimiento muestreos"
-          }
-        },
-        {
-          "properties": {
-            "fontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
-                }
-              }
-            }
+            "metadata": "medidas.% Cumplimiento Muestreo (Cap 100%)"
           }
         }
       ],
@@ -382,6 +400,17 @@
                   "Value": "false"
                 }
               }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#EEEDED'"
+                    }
+                  }
+                }
+              }
             }
           }
         }
@@ -396,6 +425,80 @@
                 }
               }
             }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "gridHorizontalWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "gridHorizontal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "gridHorizontalColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.2
+                    }
+                  }
+                }
+              }
+            },
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.3
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "styleValues": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Dimension ACTIVIDAD.NOMBRE_ACTIVIDAD"
           }
         }
       ]
@@ -520,62 +623,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "8f1d90e7a8b008c0d108",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dimension ACTIVIDAD"
-              }
-            },
-            "Property": "NOMBRE_ACTIVIDAD"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "27df5e9b7d0bb29b3dac",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dimension MAESTRO ESPECIE"
-              }
-            },
-            "Property": "NOMBRE_ESPECIE"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "07301e584db0090be069",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "medidas"
-              }
-            },
-            "Property": "Req (según actividad)"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "c0e220c61023bd675254",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "medidas"
-              }
-            },
-            "Property": "% Cumplimiento muestreos"
-          }
-        },
-        "type": "Advanced"
       }
     ],
     "filterSortOrder": "Custom"

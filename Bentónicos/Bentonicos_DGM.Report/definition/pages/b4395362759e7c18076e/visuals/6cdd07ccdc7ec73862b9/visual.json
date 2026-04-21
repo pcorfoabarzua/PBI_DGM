@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "6cdd07ccdc7ec73862b9",
   "position": {
     "x": 166.66666666666666,
@@ -301,7 +301,7 @@
                       "Entity": "medidas"
                     }
                   },
-                  "Property": "Titulo Viajes Embarcados"
+                  "Property": "Titulo Req Viajes"
                 }
               }
             },
@@ -316,6 +316,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
                 }
               }
             }

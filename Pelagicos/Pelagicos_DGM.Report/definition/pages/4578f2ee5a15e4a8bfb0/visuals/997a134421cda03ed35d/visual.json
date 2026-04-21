@@ -23,11 +23,12 @@
                       "Entity": "medidas"
                     }
                   },
-                  "Property": "Cumplimiento viaje"
+                  "Property": "% Cumplimiento Viajes (Cap 100%)"
                 }
               },
-              "queryRef": "medidas.Cumplimiento viaje embarcados",
-              "nativeQueryRef": "Cumplimiento viaje"
+              "queryRef": "medidas.% Cumplimiento Viajes (Cap 100%)",
+              "nativeQueryRef": "% Cumplimiento Viaje",
+              "displayName": "% Cumplimiento Viaje"
             }
           ]
         }
@@ -42,7 +43,7 @@
                     "Entity": "medidas"
                   }
                 },
-                "Property": "Cumplimiento viaje"
+                "Property": "% Cumplimiento Viajes (Cap 100%)"
               }
             },
             "direction": "Descending"
@@ -70,7 +71,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "35D"
+                  "Value": "25D"
                 }
               }
             },
@@ -171,7 +172,7 @@
                           },
                           "Value": {
                             "Literal": {
-                              "Value": "'#D1DBF1'"
+                              "Value": "'#9E9E9E'"
                             }
                           }
                         },
@@ -244,7 +245,7 @@
                                   },
                                   "Right": {
                                     "Literal": {
-                                      "Value": "0.52D"
+                                      "Value": "0.51D"
                                     }
                                   }
                                 }

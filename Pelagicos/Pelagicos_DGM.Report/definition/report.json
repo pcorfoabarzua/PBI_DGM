@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.2.0/schema.json",
   "themeCollection": {
     "baseTheme": {
       "name": "CY24SU05",
@@ -53,11 +53,6 @@
       "name": "RegisteredResources",
       "type": "RegisteredResources",
       "items": [
-        {
-          "name": "Ifop_pez_azul5826680854804568.png",
-          "path": "Ifop_pez_azul5826680854804568.png",
-          "type": "Image"
-        },
         {
           "name": "Ifop_pez_blanco-013120272467335976.png",
           "path": "Ifop_pez_blanco-013120272467335976.png",

@@ -4,10 +4,10 @@
   "position": {
     "x": 895.91939546599485,
     "y": 194.05541561712846,
-    "z": 20000,
+    "z": 19000,
     "height": 231.23425692695213,
     "width": 377.22921914357681,
-    "tabOrder": 19000
+    "tabOrder": 18000
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -195,37 +195,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "520578b923bd5cb73790",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dimension OBSERVADOR_CIENTIFICO"
-              }
-            },
-            "Property": "OBSERVADOR_CIENTIFICO"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "a97e4a592177c30dad06",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "medidas"
-              }
-            },
-            "Property": "Viajes Totales Obs Cientifico"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

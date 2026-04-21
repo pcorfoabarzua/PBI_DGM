@@ -68,15 +68,32 @@
                       "Entity": "medidas"
                     }
                   },
-                  "Property": "% Cumplimiento muestreos"
+                  "Property": "% Cumplimiento Muestreo (Cap 100%)"
                 }
               },
-              "queryRef": "medidas.% Cumplimiento muestreos",
-              "nativeQueryRef": "% Cumpl",
-              "displayName": "% Cumpl"
+              "queryRef": "medidas.% Cumplimiento Muestreo (Cap 100%)",
+              "nativeQueryRef": "% Cumpli",
+              "displayName": "% Cumpli"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dimension ACTIVIDAD"
+                  }
+                },
+                "Property": "NOMBRE_ACTIVIDAD"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
       }
     },
     "objects": {
@@ -86,13 +103,41 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "94.57142603610507D"
+                  "Value": "121.18772827753321D"
                 }
               }
             }
           },
           "selector": {
             "metadata": "Dimension ACTIVIDAD.NOMBRE_ACTIVIDAD"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "73.70962325211126D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Dimension MAESTRO ESPECIE.NOMBRE_ESPECIE"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "92.67285231183047D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "medidas.nmuestras2"
           }
         }
       ],
@@ -112,12 +157,34 @@
       "values": [
         {
           "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "backColorSecondary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
             "icon": {
               "kind": "Icon",
               "layout": {
                 "expr": {
                   "Literal": {
-                    "Value": "'Before'"
+                    "Value": "'After'"
                   }
                 }
               },
@@ -145,7 +212,7 @@
                                         "Entity": "medidas"
                                       }
                                     },
-                                    "Property": "% Cumplimiento muestreos"
+                                    "Property": "% Cumplimiento Muestreo (Cap 100%)"
                                   }
                                 },
                                 "Right": {
@@ -165,12 +232,12 @@
                                         "Entity": "medidas"
                                       }
                                     },
-                                    "Property": "% Cumplimiento muestreos"
+                                    "Property": "% Cumplimiento Muestreo (Cap 100%)"
                                   }
                                 },
                                 "Right": {
                                   "Literal": {
-                                    "Value": "100000D"
+                                    "Value": "10000000D"
                                   }
                                 }
                               }
@@ -196,7 +263,7 @@
                                         "Entity": "medidas"
                                       }
                                     },
-                                    "Property": "% Cumplimiento muestreos"
+                                    "Property": "% Cumplimiento Muestreo (Cap 100%)"
                                   }
                                 },
                                 "Right": {
@@ -216,7 +283,7 @@
                                         "Entity": "medidas"
                                       }
                                     },
-                                    "Property": "% Cumplimiento muestreos"
+                                    "Property": "% Cumplimiento Muestreo (Cap 100%)"
                                   }
                                 },
                                 "Right": {
@@ -247,7 +314,7 @@
                                         "Entity": "medidas"
                                       }
                                     },
-                                    "Property": "% Cumplimiento muestreos"
+                                    "Property": "% Cumplimiento Muestreo (Cap 100%)"
                                   }
                                 },
                                 "Right": {
@@ -267,7 +334,7 @@
                                         "Entity": "medidas"
                                       }
                                     },
-                                    "Property": "% Cumplimiento muestreos"
+                                    "Property": "% Cumplimiento Muestreo (Cap 100%)"
                                   }
                                 },
                                 "Right": {
@@ -299,18 +366,7 @@
                 }
               }
             ],
-            "metadata": "medidas.% Cumplimiento muestreos"
-          }
-        },
-        {
-          "properties": {
-            "fontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
-                }
-              }
-            }
+            "metadata": "medidas.% Cumplimiento Muestreo (Cap 100%)"
           }
         }
       ],
@@ -330,7 +386,92 @@
                   "Value": "false"
                 }
               }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#EEEDED'"
+                    }
+                  }
+                }
+              }
             }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.3
+                    }
+                  }
+                }
+              }
+            },
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "gridHorizontal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "gridHorizontalColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.2
+                    }
+                  }
+                }
+              }
+            },
+            "gridHorizontalWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "styleValues": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Dimension ACTIVIDAD.NOMBRE_ACTIVIDAD"
           }
         }
       ]
@@ -343,6 +484,13 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
                 }
               }
             }
@@ -366,6 +514,20 @@
                     }
                   },
                   "Function": 3
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -484,7 +646,45 @@
             "Property": "otonmuestras2"
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "m",
+              "Entity": "medidas",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "Comparison": {
+                      "ComparisonKind": 0,
+                      "Left": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "m"
+                            }
+                          },
+                          "Property": "otonmuestras2"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "null"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
       },
       {
         "name": "0d0a766346d37486579d",
@@ -497,20 +697,6 @@
               }
             },
             "Property": "Req (según actividad)"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "2d832e2570c900d43731",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "medidas"
-              }
-            },
-            "Property": "% Cumplimiento muestreos"
           }
         },
         "type": "Advanced"

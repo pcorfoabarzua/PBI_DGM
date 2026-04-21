@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "3fd60212d6b8c61926d2",
   "position": {
-    "x": 13.092269326683294,
-    "y": 632.16957605985044,
+    "x": 12.1571072319202,
+    "y": 631.23441396508736,
     "z": 11000,
     "height": 100.06234413965088,
-    "width": 129.05236907730674,
+    "width": 130.92269326683294,
     "tabOrder": 10000
   },
   "visual": {
@@ -297,23 +297,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "32fa93b39019c9228682",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "medidas"
-              }
-            },
-            "Property": "N° Muestreos Especie"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

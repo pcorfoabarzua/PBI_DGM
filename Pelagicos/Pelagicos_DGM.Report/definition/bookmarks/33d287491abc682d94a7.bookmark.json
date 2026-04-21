@@ -4,7 +4,7 @@
   "name": "33d287491abc682d94a7",
   "options": {
     "targetVisualNames": [
-      "10cf2c39a71455c0f852"
+      "2ab9bcf69871d087a88b"
     ]
   },
   "explorationState": {
@@ -117,7 +117,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "dc598d8f8300b36e5ec8",
+                  "name": "eb3c30358ecc512350bc",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -132,7 +132,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "a53f92e804de14d6005e",
+                  "name": "9a205140974b59308e7d",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -147,8 +147,46 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "dde0034d13073a29580c",
+                  "name": "974f3c6004cb008ce269",
                   "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "m",
+                        "Entity": "medidas",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "Comparison": {
+                                "ComparisonKind": 0,
+                                "Left": {
+                                  "Measure": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Source": "m"
+                                      }
+                                    },
+                                    "Property": "nmuestras2"
+                                  }
+                                },
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "null"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
                   "expression": {
                     "Measure": {
                       "Expression": {
@@ -162,7 +200,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "35682cdcadb0a34e7089",
+                  "name": "cee95ba209c178d29e81",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -177,7 +215,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "1627b3ade058d3aa5ad2",
+                  "name": "e4df486553a86e766a02",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -186,7 +224,7 @@
                           "Entity": "medidas"
                         }
                       },
-                      "Property": "% Cumplimiento muestreos"
+                      "Property": "% Cumplimiento Viajes (Cap 100%)"
                     }
                   },
                   "howCreated": 0
@@ -195,14 +233,29 @@
             },
             "singleVisual": {
               "visualType": "tableEx",
-              "objects": {}
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dimension ACTIVIDAD"
+                        }
+                      },
+                      "Property": "NOMBRE_ACTIVIDAD"
+                    }
+                  }
+                }
+              ]
             }
           },
           "1b46b69a1707c15a33ee": {
             "filters": {
               "byExpr": [
                 {
-                  "name": "4a3a34279dd80159669e",
+                  "name": "24571e5e324d815b0572",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -317,7 +370,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "7f4f97c3a151ece4a598",
+                  "name": "8ad8408a18c44e00b7e0",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -332,7 +385,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "3bae63742cca0d5d675e",
+                  "name": "91a6ae885073ee01da4c",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -347,7 +400,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "f200039607b081024935",
+                  "name": "bfb3e6314600b0b54400",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -478,6 +531,44 @@
                 {
                   "name": "a021edc5052753008b4e",
                   "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "m",
+                        "Entity": "medidas",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "Comparison": {
+                                "ComparisonKind": 0,
+                                "Left": {
+                                  "Measure": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Source": "m"
+                                      }
+                                    },
+                                    "Property": "nmuestras2"
+                                  }
+                                },
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "null"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
                   "expression": {
                     "Measure": {
                       "Expression": {
@@ -506,7 +597,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "d9ca2ac7868a0a60e304",
+                  "name": "1214faa02a39081003a9",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -515,7 +606,7 @@
                           "Entity": "medidas"
                         }
                       },
-                      "Property": "% Cumplimiento muestreos"
+                      "Property": "% Cumplimiento Viajes (Cap 100%)"
                     }
                   },
                   "howCreated": 0
@@ -595,7 +686,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "38770e9fe0710b4edc60",
+                  "name": "2f0a10ffae5be9e99097",
                   "type": "Advanced",
                   "expression": {
                     "Column": {
@@ -734,7 +825,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "6f3182c14e2c484ccebe",
+                  "name": "6e3ed2e06729402d1006",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -759,7 +850,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "a7c47670396c04073d13",
+                  "name": "13a26d3fdb19684144e7",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -921,7 +1012,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "63e3fbc558a313de7172",
+                  "name": "5a2fe0f31c19d1ad6420",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -936,7 +1027,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "2b6403dc3b1aed6505b2",
+                  "name": "f17dba976b9ddc162c41",
                   "type": "Advanced",
                   "expression": {
                     "Aggregation": {
@@ -1117,7 +1208,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "b3435554a3658e9ba08c",
+                  "name": "0b74227c05e022a375b4",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1270,7 +1361,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "0e19e7f0abb0263a1314",
+                  "name": "fa07f2c73c2d08457e48",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1285,7 +1376,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "9cf5f9856e61b06988de",
+                  "name": "f7e23487a56854de42e0",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1300,7 +1391,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "367fe2d2446b940a3a77",
+                  "name": "be71472022cb0bddc487",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1354,7 +1445,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "62f402aa8d8257b0adb2",
+                  "name": "c654646dd8b4b6d2c280",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1394,7 +1485,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "daa2db66387c20b81de6",
+                  "name": "a1330b31034c53140302",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1509,7 +1600,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "9bedaca80dd9bc685c76",
+                  "name": "2535c20ad36ed26a05ad",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1555,7 +1646,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "94884071677ded000788",
+                  "name": "bc5ea5b6e671c60ba95b",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1570,7 +1661,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "acacbe8bb45bd760b0ed",
+                  "name": "8499bbda9a699b9771d1",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1679,7 +1770,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "cf5d2dfa3e0a036151c1",
+                  "name": "73c8b961b7584713de7c",
                   "type": "Categorical",
                   "expression": {
                     "Column": {

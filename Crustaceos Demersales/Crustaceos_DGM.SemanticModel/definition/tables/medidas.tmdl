@@ -20,7 +20,7 @@ table medidas
 			    3, [N° Muestreos Biologico],
 			    2, [N° Muestreos Longitud],
 			    4 , [N° Muestreos Otolitos] ,
-			    BLANK()
+			    [N° Muestreos Biologico] + [N° Muestreos Longitud] + [N° Muestreos Otolitos]
 			)
 		formatString: 0
 		lineageTag: f1f9c5e2-f6aa-4561-8879-777be0595010
@@ -734,18 +734,15 @@ table medidas
 	measure 'Color Req Viajes' = ```
 			
 			VAR Actual = [Viajes totales]
-			VAR Anterior = [Req Viajes]
+			VAR Anterior = [Req Viajes] 
 			-- Colores (puedes cambiarlos por tu paleta corporativa)
 			VAR Verde = "#2E7D32"   -- verde oscuro
 			VAR Rojo  = "#C62828"   -- rojo
 			VAR Gris  = "#9E9E9E"   -- opcional para casos sin dato
-			
-			VAR Resultado = IF(ISBLANK(Anterior) , 0 , Anterior)
-			
 			RETURN
 			SWITCH (
 			    TRUE(),
-			    ISBLANK(Resultado) || ISBLANK(Actual), Gris,          -- evita color “falso” si falta dato
+			    ISBLANK(Anterior) || ISBLANK(Actual), Gris,          -- evita color “falso” si falta dato
 			    Anterior <= Actual, Verde,
 			    Rojo
 			)
@@ -836,6 +833,144 @@ table medidas
 			)
 		formatString: 0
 		lineageTag: 68b851b8-3b65-41d6-a57a-32ba93bf85dd
+
+	measure 'Req Viajes Existe' = ```
+			
+			[Req Viajes] > 0
+			
+			```
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f3d6629d-42f6-42a8-9a2e-9a6fd75a01ae
+
+	measure 'Cumplimiento viaje' = ```
+			
+			VAR Viajes =
+			    [Viajes totales]
+			
+			VAR Req =
+			    [Req Viajes]
+			
+			RETURN
+			IF (
+			    NOT [Req Viajes Existe],
+			    BLANK (),
+			    DIVIDE ( Viajes, Req )
+			)
+			
+			```
+		lineageTag: 1e96c11a-a53e-40b2-b332-c0234309a890
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Cumplimiento Viajes Mes' =
+			
+			IF (
+			    NOT [Req Viajes Existe],
+			    BLANK(),
+			    DIVIDE ( [Viajes totales], [Req Viajes] )
+			)
+		lineageTag: e9263ceb-5af9-4748-a5f4-8b04fa1c9d60
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Cumplimiento Viajes (Cap 100%)' = ```
+			
+			VAR Valor =
+			    [Cumplimiento viaje]
+			
+			RETURN
+			IF (
+			    ISBLANK ( Valor ),
+			    "Sin Datos",
+			    MIN ( Valor, 1 )
+			)
+			
+			```
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 49ff5ffe-0ab9-4361-8b6a-3361980395be
+
+	measure '% Cumplimiento General Viajes' =
+			
+			AVERAGEX (
+			    VALUES ( 'Date'[Mes] ),
+			    [% Cumplimiento Viajes (Cap 100%)]
+			)
+		lineageTag: b2cde011-0c98-4e1d-8691-82bb15564204
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Estrellas Cumplimiento Viajes' = ```
+			
+			VAR Cumplimiento =
+			    [% Cumplimiento General Viajes]
+			RETURN
+			SWITCH (
+			    TRUE(),
+			    ISBLANK ( Cumplimiento ), "",
+			    Cumplimiento <= 0.30, "⭐",
+			    Cumplimiento <= 0.70, "⭐⭐",
+			    "⭐⭐⭐"
+			)
+			
+			```
+		lineageTag: 9e5966d4-6e80-4b80-8c46-98affbc78b49
+
+	measure 'Titulo Req Viajes' = ```
+			
+			VAR ProyectoCod =
+			    SELECTEDVALUE (
+			        PB_VIAJE_MUESTREO_TEST[PROYECTO],
+			        "MULTI"
+			    )
+			
+			VAR ProyectoNombre =
+			    SWITCH (
+			        ProyectoCod,
+			        "PCS", "Pelágico Centro Sur",
+			        "PN",  "Pelágico Norte",
+			        "DAP",  "Aguas Profundas",
+			        "C",  "Crustáceos",
+			        "CB" , "Crustáceos Bentónicos" ,
+			        "DES" , "Descarte Demersales" ,
+			        "DES_CER" , "Descarte Pelágico" ,
+			        "MULTI", "Múltiples proyectos",
+			        ProyectoCod        -- fallback por si aparece uno nuevo
+			    )
+			
+			VAR CumplimientoTxt =
+			    FORMAT ( [% Cumplimiento General Viajes], "0.0%" )
+			
+			VAR Estrellas =
+			    [Estrellas Cumplimiento Viajes]
+			
+			RETURN
+			IF (
+			    ISBLANK ( [% Cumplimiento General Viajes] ),
+			    ProyectoNombre & " - Viajes (sin requerimiento definido)",
+			    ProyectoNombre
+			        & " - Cumplimiento General Viajes: "
+			        & CumplimientoTxt
+			        & " "
+			        & Estrellas
+			)
+			
+			```
+		lineageTag: 2de6fba4-c75a-4cca-8754-24c383639793
+
+	measure '% Cumplimiento Muestreo (Cap 100%)' =
+			
+			VAR Valor =
+			    [% Cumplimiento muestreos]
+			
+			RETURN
+			IF (
+			    ISBLANK ( Valor ),
+			    "Sin Datos",
+			    MIN ( Valor, 1 )
+			)
+		lineageTag: 8e0f204c-8df2-4664-a170-a29ca002a8ea
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	partition medidas = m
 		mode: import
