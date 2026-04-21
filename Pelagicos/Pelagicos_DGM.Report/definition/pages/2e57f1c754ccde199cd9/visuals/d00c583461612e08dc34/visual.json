@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "d00c583461612e08dc34",
   "position": {
-    "x": 166.66666666666666,
-    "y": 198.88888888888889,
+    "x": 166.45885286783044,
+    "y": 199.18952618453866,
     "z": 5000,
-    "height": 281.11111111111109,
-    "width": 352.22222222222223,
+    "height": 280.54862842892771,
+    "width": 375.93516209476314,
     "tabOrder": 0
   },
   "visual": {
@@ -291,7 +291,7 @@
                       "Entity": "medidas"
                     }
                   },
-                  "Property": "Titulo Viajes Embarcados"
+                  "Property": "Titulo Req Viajes"
                 }
               }
             },
@@ -306,6 +306,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
                 }
               }
             }

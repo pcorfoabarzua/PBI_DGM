@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
-  "name": "65ee1e00a0c1e49606c2",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "2223f9cc4e63e39d89c2",
   "position": {
     "x": 23.379052369077307,
     "y": 0,
-    "z": 26000,
+    "z": 30001,
     "height": 114.08977556109727,
     "width": 114.08977556109727,
-    "tabOrder": 25000
+    "tabOrder": 29001
   },
   "visual": {
     "visualType": "image",
@@ -20,7 +20,7 @@
                 "name": {
                   "expr": {
                     "Literal": {
-                      "Value": "'Ifop pez azul.png'"
+                      "Value": "'Ifop pez blanco-01.png'"
                     }
                   }
                 },
@@ -29,7 +29,7 @@
                     "ResourcePackageItem": {
                       "PackageName": "RegisteredResources",
                       "PackageType": 1,
-                      "ItemName": "Ifop_pez_azul5826680854804568.png"
+                      "ItemName": "Ifop_pez_blanco-013120272467335976.png"
                     }
                   }
                 },

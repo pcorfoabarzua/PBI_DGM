@@ -23,11 +23,12 @@
                       "Entity": "medidas"
                     }
                   },
-                  "Property": "Cumplimiento viaje embarcados"
+                  "Property": "% Cumplimiento Viajes (Cap 100%)"
                 }
               },
-              "queryRef": "medidas.Cumplimiento viaje embarcados",
-              "nativeQueryRef": "Cumplimiento viaje embarcados"
+              "queryRef": "medidas.% Cumplimiento Viajes (Cap 100%)",
+              "nativeQueryRef": "% Cumplimiento Viajes",
+              "displayName": "% Cumplimiento Viajes"
             }
           ]
         }
@@ -42,7 +43,7 @@
                     "Entity": "medidas"
                   }
                 },
-                "Property": "Cumplimiento viaje embarcados"
+                "Property": "% Cumplimiento Viajes (Cap 100%)"
               }
             },
             "direction": "Descending"
@@ -146,189 +147,13 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Conditional": {
-                      "Cases": [
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "medidas"
-                                    }
-                                  },
-                                  "Property": "Cumplimiento viaje embarcados"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "null"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#D1DBF1'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "And": {
-                              "Left": {
-                                "Comparison": {
-                                  "ComparisonKind": 2,
-                                  "Left": {
-                                    "Measure": {
-                                      "Expression": {
-                                        "SourceRef": {
-                                          "Entity": "medidas"
-                                        }
-                                      },
-                                      "Property": "Cumplimiento viaje embarcados"
-                                    }
-                                  },
-                                  "Right": {
-                                    "Literal": {
-                                      "Value": "1D"
-                                    }
-                                  }
-                                }
-                              },
-                              "Right": {
-                                "Comparison": {
-                                  "ComparisonKind": 4,
-                                  "Left": {
-                                    "Measure": {
-                                      "Expression": {
-                                        "SourceRef": {
-                                          "Entity": "medidas"
-                                        }
-                                      },
-                                      "Property": "Cumplimiento viaje embarcados"
-                                    }
-                                  },
-                                  "Right": {
-                                    "Literal": {
-                                      "Value": "1000D"
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#37A794'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "And": {
-                              "Left": {
-                                "Comparison": {
-                                  "ComparisonKind": 2,
-                                  "Left": {
-                                    "Measure": {
-                                      "Expression": {
-                                        "SourceRef": {
-                                          "Entity": "medidas"
-                                        }
-                                      },
-                                      "Property": "Cumplimiento viaje embarcados"
-                                    }
-                                  },
-                                  "Right": {
-                                    "Literal": {
-                                      "Value": "0.52D"
-                                    }
-                                  }
-                                }
-                              },
-                              "Right": {
-                                "Comparison": {
-                                  "ComparisonKind": 3,
-                                  "Left": {
-                                    "Measure": {
-                                      "Expression": {
-                                        "SourceRef": {
-                                          "Entity": "medidas"
-                                        }
-                                      },
-                                      "Property": "Cumplimiento viaje embarcados"
-                                    }
-                                  },
-                                  "Right": {
-                                    "Literal": {
-                                      "Value": "1D"
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#D3D325'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "And": {
-                              "Left": {
-                                "Comparison": {
-                                  "ComparisonKind": 2,
-                                  "Left": {
-                                    "Measure": {
-                                      "Expression": {
-                                        "SourceRef": {
-                                          "Entity": "medidas"
-                                        }
-                                      },
-                                      "Property": "Cumplimiento viaje embarcados"
-                                    }
-                                  },
-                                  "Right": {
-                                    "Literal": {
-                                      "Value": "0D"
-                                    }
-                                  }
-                                }
-                              },
-                              "Right": {
-                                "Comparison": {
-                                  "ComparisonKind": 3,
-                                  "Left": {
-                                    "Measure": {
-                                      "Expression": {
-                                        "SourceRef": {
-                                          "Entity": "medidas"
-                                        }
-                                      },
-                                      "Property": "Cumplimiento viaje embarcados"
-                                    }
-                                  },
-                                  "Right": {
-                                    "Literal": {
-                                      "Value": "0.51D"
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#F60202'"
-                            }
-                          }
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "medidas"
                         }
-                      ]
+                      },
+                      "Property": "Color Req Viajes"
                     }
                   }
                 }

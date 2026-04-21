@@ -27,8 +27,9 @@
                 }
               },
               "queryRef": "Dimension OBSERVADOR_CIENTIFICO.OBSERVADOR_CIENTIFICO",
-              "nativeQueryRef": "OBSERVADOR_CIENTIFICO",
-              "active": true
+              "nativeQueryRef": "Observador Cientifico",
+              "active": true,
+              "displayName": "Observador Cientifico"
             }
           ]
         },
@@ -46,7 +47,8 @@
                 }
               },
               "queryRef": "medidas.Viajes Totales Obs Cientifico",
-              "nativeQueryRef": "Viajes Totales Obs Cientifico"
+              "nativeQueryRef": "Viajes Totales",
+              "displayName": "Viajes Totales"
             }
           ]
         }
@@ -83,11 +85,18 @@
             "showAxisTitle": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
             "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "titleFontFamily": {
               "expr": {
                 "Literal": {
                   "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
@@ -104,6 +113,13 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
                 }
               }
             }
@@ -132,6 +148,13 @@
         {
           "properties": {
             "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "titleFontFamily": {
               "expr": {
                 "Literal": {
                   "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
@@ -212,37 +235,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "a7a09e3810002552d952",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dimension OBSERVADOR_CIENTIFICO"
-              }
-            },
-            "Property": "OBSERVADOR_CIENTIFICO"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "6f6ae3153d08197c3c9d",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "medidas"
-              }
-            },
-            "Property": "Viajes Totales Obs Cientifico"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

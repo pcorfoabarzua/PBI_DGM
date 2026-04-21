@@ -83,10 +83,10 @@
                       "Entity": "medidas"
                     }
                   },
-                  "Property": "% Cumplimiento muestreos"
+                  "Property": "% Cumplimiento Muestreo (Cap 100%)"
                 }
               },
-              "queryRef": "medidas.% Cumplimiento muestreos",
+              "queryRef": "medidas.% Cumplimiento Muestreo (Cap 100%)",
               "nativeQueryRef": "% Cumpl",
               "displayName": "% Cumpl"
             }
@@ -114,202 +114,21 @@
       "values": [
         {
           "properties": {
-            "icon": {
-              "kind": "Icon",
-              "layout": {
-                "expr": {
-                  "Literal": {
-                    "Value": "'After'"
-                  }
-                }
-              },
-              "verticalAlignment": {
-                "expr": {
-                  "Literal": {
-                    "Value": "'Top'"
-                  }
-                }
-              },
-              "value": {
-                "expr": {
-                  "Conditional": {
-                    "Cases": [
-                      {
-                        "Condition": {
-                          "And": {
-                            "Left": {
-                              "Comparison": {
-                                "ComparisonKind": 2,
-                                "Left": {
-                                  "Measure": {
-                                    "Expression": {
-                                      "SourceRef": {
-                                        "Entity": "medidas"
-                                      }
-                                    },
-                                    "Property": "% Cumplimiento muestreos"
-                                  }
-                                },
-                                "Right": {
-                                  "Literal": {
-                                    "Value": "0.68D"
-                                  }
-                                }
-                              }
-                            },
-                            "Right": {
-                              "Comparison": {
-                                "ComparisonKind": 4,
-                                "Left": {
-                                  "Measure": {
-                                    "Expression": {
-                                      "SourceRef": {
-                                        "Entity": "medidas"
-                                      }
-                                    },
-                                    "Property": "% Cumplimiento muestreos"
-                                  }
-                                },
-                                "Right": {
-                                  "Literal": {
-                                    "Value": "1000D"
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        },
-                        "Value": {
-                          "Literal": {
-                            "Value": "'StarHighLight'"
-                          }
-                        }
-                      },
-                      {
-                        "Condition": {
-                          "And": {
-                            "Left": {
-                              "Comparison": {
-                                "ComparisonKind": 2,
-                                "Left": {
-                                  "Measure": {
-                                    "Expression": {
-                                      "SourceRef": {
-                                        "Entity": "medidas"
-                                      }
-                                    },
-                                    "Property": "% Cumplimiento muestreos"
-                                  }
-                                },
-                                "Right": {
-                                  "Literal": {
-                                    "Value": "0.34D"
-                                  }
-                                }
-                              }
-                            },
-                            "Right": {
-                              "Comparison": {
-                                "ComparisonKind": 3,
-                                "Left": {
-                                  "Measure": {
-                                    "Expression": {
-                                      "SourceRef": {
-                                        "Entity": "medidas"
-                                      }
-                                    },
-                                    "Property": "% Cumplimiento muestreos"
-                                  }
-                                },
-                                "Right": {
-                                  "Literal": {
-                                    "Value": "0.67D"
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        },
-                        "Value": {
-                          "Literal": {
-                            "Value": "'StarMediumLight'"
-                          }
-                        }
-                      },
-                      {
-                        "Condition": {
-                          "And": {
-                            "Left": {
-                              "Comparison": {
-                                "ComparisonKind": 2,
-                                "Left": {
-                                  "Measure": {
-                                    "Expression": {
-                                      "SourceRef": {
-                                        "Entity": "medidas"
-                                      }
-                                    },
-                                    "Property": "% Cumplimiento muestreos"
-                                  }
-                                },
-                                "Right": {
-                                  "Literal": {
-                                    "Value": "0D"
-                                  }
-                                }
-                              }
-                            },
-                            "Right": {
-                              "Comparison": {
-                                "ComparisonKind": 3,
-                                "Left": {
-                                  "Measure": {
-                                    "Expression": {
-                                      "SourceRef": {
-                                        "Entity": "medidas"
-                                      }
-                                    },
-                                    "Property": "% Cumplimiento muestreos"
-                                  }
-                                },
-                                "Right": {
-                                  "Literal": {
-                                    "Value": "0.33D"
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        },
-                        "Value": {
-                          "Literal": {
-                            "Value": "'StarLow'"
-                          }
-                        }
-                      }
-                    ]
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "dataViewWildcard": {
-                  "matchingOption": 1
-                }
-              }
-            ],
-            "metadata": "medidas.% Cumplimiento muestreos"
-          }
-        },
-        {
-          "properties": {
             "fontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "backColorSecondary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
                 }
               }
             }
@@ -323,6 +142,35 @@
               "expr": {
                 "Literal": {
                   "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#EEEDED'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.3
+                    }
+                  }
                 }
               }
             }
@@ -405,7 +253,7 @@
         "howCreated": "User"
       },
       {
-        "name": "db06fd8dea530dc103c0",
+        "name": "dad7057cb38bd6a3a18d",
         "field": {
           "Column": {
             "Expression": {
@@ -419,7 +267,7 @@
         "type": "Categorical"
       },
       {
-        "name": "016237b623d13c061750",
+        "name": "cd1e1cb300538b26b47b",
         "field": {
           "Column": {
             "Expression": {
@@ -433,7 +281,7 @@
         "type": "Categorical"
       },
       {
-        "name": "8a46af51795365ae3a14",
+        "name": "b93edf405481ed5530d0",
         "field": {
           "Measure": {
             "Expression": {
@@ -444,10 +292,48 @@
             "Property": "nmuestras2"
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "m",
+              "Entity": "medidas",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "Comparison": {
+                      "ComparisonKind": 0,
+                      "Left": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "m"
+                            }
+                          },
+                          "Property": "nmuestras2"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "null"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
       },
       {
-        "name": "40d79a1c90cb0b03ca8b",
+        "name": "6c9baf1836d5c85b108d",
         "field": {
           "Measure": {
             "Expression": {
@@ -461,7 +347,7 @@
         "type": "Advanced"
       },
       {
-        "name": "32693730022b8b066c9b",
+        "name": "597b412106d9856a0257",
         "field": {
           "Measure": {
             "Expression": {
@@ -469,7 +355,7 @@
                 "Entity": "medidas"
               }
             },
-            "Property": "% Cumplimiento muestreos"
+            "Property": "% Cumplimiento Muestreo (Cap 100%)"
           }
         },
         "type": "Advanced"

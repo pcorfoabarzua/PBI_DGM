@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "6cdd07ccdc7ec73862b9",
   "position": {
     "x": 169.2643391521197,
     "y": 143.07980049875312,
     "z": 16000,
     "height": 243.142144638404,
-    "width": 352.55610972568581,
+    "width": 373.12967581047383,
     "tabOrder": 12000
   },
   "visual": {
@@ -168,6 +168,20 @@
                   "Value": "true"
                 }
               }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            },
+            "legendMarkerRendering": {
+              "expr": {
+                "Literal": {
+                  "Value": "'markerCircleDefault'"
+                }
+              }
             }
           }
         }
@@ -193,6 +207,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Categorical'"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
                 }
               }
             }
@@ -271,7 +292,35 @@
             "secShow": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "titleFontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "secTitleFontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "secFontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
                 }
               }
             }
@@ -304,7 +353,7 @@
                       "Entity": "medidas"
                     }
                   },
-                  "Property": "Titulo Viajes Embarcados"
+                  "Property": "Titulo Req Viajes"
                 }
               }
             },
@@ -319,6 +368,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
                 }
               }
             }
@@ -425,29 +481,23 @@
         "howCreated": "User"
       },
       {
-        "name": "6299f7a433850c40ae52",
+        "name": "65b51f77ae520ebd0ddc",
         "ordinal": 4,
         "field": {
-          "Aggregation": {
+          "Column": {
             "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "PB_VIAJE_MUESTREO_TEST"
-                  }
-                },
-                "Property": "IDBarcoFecha"
+              "SourceRef": {
+                "Entity": "Date"
               }
             },
-            "Function": 5
+            "Property": "Mes"
           }
         },
-        "type": "Advanced",
-        "howCreated": "User"
+        "type": "Categorical"
       },
       {
-        "name": "aee648f99879c93d6002",
-        "ordinal": 7,
+        "name": "c87f1af7b0740ebac2bb",
+        "ordinal": 5,
         "field": {
           "Measure": {
             "Expression": {
@@ -455,11 +505,25 @@
                 "Entity": "medidas"
               }
             },
-            "Property": "Total REQ Viajes EMB"
+            "Property": "Viajes totales"
           }
         },
-        "type": "Advanced",
-        "howCreated": "User"
+        "type": "Advanced"
+      },
+      {
+        "name": "c1d42b5587b05e4710c9",
+        "ordinal": 6,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "medidas"
+              }
+            },
+            "Property": "Req Viajes (sin viajes)"
+          }
+        },
+        "type": "Advanced"
       }
     ],
     "filterSortOrder": "Custom"
