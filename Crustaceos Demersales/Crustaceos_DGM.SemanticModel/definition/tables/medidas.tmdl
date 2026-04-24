@@ -672,7 +672,7 @@ table medidas
 		lineageTag: 522b7f71-9bb6-4845-9619-1a9b41fb1a7d
 
 	measure 'Lances Totales Tarjeta' = IF(ISBLANK([N° Lances]) , 0 , [N° Lances])
-		formatString: 0
+		formatString: #,0
 		lineageTag: 455020d5-1dba-4cc1-b7a3-ad86a7935508
 
 	measure 'Req Viajes (sin viajes)' = ```
@@ -817,7 +817,7 @@ table medidas
 	measure 'Req Viajes Tarjeta' = ```
 			
 			
-			VAR Valor = IF([Req Viajes] == BLANK() , 0  ,  [Req Viajes])
+			VAR Valor = IF([Req Viajes] == BLANK() , "Sin datos"  ,  [Req Viajes])
 			
 			RETURN Valor
 			

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "2896b78d2047d1adcc80",
   "position": {
     "x": 165.03778337531486,
@@ -101,7 +101,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "82.35807335543451D"
+                  "Value": "96.80632190301834D"
                 }
               }
             }
@@ -398,6 +398,20 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "label": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Objetivo del Programa'"
                 }
               }
             }

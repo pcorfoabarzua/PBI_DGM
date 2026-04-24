@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
-  "name": "6cdd07ccdc7ec73862b9",
+  "name": "f5a4c57c200b68810e28",
   "position": {
-    "x": 169.2643391521197,
-    "y": 143.07980049875312,
-    "z": 16000,
-    "height": 243.142144638404,
-    "width": 373.12967581047383,
-    "tabOrder": 12000
+    "x": 167.39401496259353,
+    "y": 142.14463840399003,
+    "z": 27001,
+    "height": 244.07730673316709,
+    "width": 375.00000000000006,
+    "tabOrder": 26001
   },
   "visual": {
     "visualType": "lineClusteredColumnComboChart",
@@ -42,10 +42,10 @@
                       "Entity": "medidas"
                     }
                   },
-                  "Property": "Viajes totales"
+                  "Property": "N° Viajes Embarcados"
                 }
               },
-              "queryRef": "medidas.Viajes totales",
+              "queryRef": "medidas.N° Viajes",
               "nativeQueryRef": "N° Viajes",
               "displayName": "N° Viajes"
             }
@@ -61,32 +61,15 @@
                       "Entity": "medidas"
                     }
                   },
-                  "Property": "Req Viajes (sin viajes)"
+                  "Property": "Total REQ Viajes EMB"
                 }
               },
-              "queryRef": "medidas.Req Viajes (sin viajes)",
+              "queryRef": "medidas.Total REQ Viajes EMB",
               "nativeQueryRef": "Req Viajes",
               "displayName": "Req Viajes"
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Date"
-                  }
-                },
-                "Property": "Mes"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ]
       }
     },
     "objects": {
@@ -125,16 +108,50 @@
         },
         {
           "properties": {
-            "showSeries": {
+            "labelPosition": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "'Above'"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "medidas.Req Viajes (sin viajes)"
+            "metadata": "medidas.Total REQ Viajes EMB"
+          }
+        },
+        {
+          "properties": {
+            "labelPosition": {
+              "expr": {
+                "Literal": {
+                  "Value": "'OutsideEnd'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "medidas.N° Viajes"
+          }
+        }
+      ],
+      "lineStyles": [
+        {
+          "properties": {
+            "showMarker": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "markerSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
           }
         }
       ],
@@ -152,34 +169,6 @@
               "expr": {
                 "Literal": {
                   "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
-                }
-              }
-            },
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "matchLineColor": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "9D"
-                }
-              }
-            },
-            "legendMarkerRendering": {
-              "expr": {
-                "Literal": {
-                  "Value": "'markerCircleDefault'"
                 }
               }
             }
@@ -216,70 +205,11 @@
                   "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
                 }
               }
-            }
-          }
-        }
-      ],
-      "dataPoint": [
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#DB7C0D'"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#6B7280'"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "medidas.N° Viajes"
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#6B7280'"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "medidas.Viajes totales"
-          }
-        }
-      ],
-      "lineStyles": [
-        {
-          "properties": {
-            "showMarker": {
+            },
+            "titleFontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
                 }
               }
             }
@@ -289,10 +219,10 @@
       "valueAxis": [
         {
           "properties": {
-            "secShow": {
+            "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "11D"
                 }
               }
             },
@@ -310,10 +240,10 @@
                 }
               }
             },
-            "secTitleFontFamily": {
+            "secShow": {
               "expr": {
                 "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                  "Value": "false"
                 }
               }
             },
@@ -321,6 +251,37 @@
               "expr": {
                 "Literal": {
                   "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "secTitleFontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#DB7C0D'"
+                    }
+                  }
                 }
               }
             }
@@ -363,20 +324,6 @@
                   "Value": "'center'"
                 }
               }
-            },
-            "fontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "12D"
-                }
-              }
             }
           }
         }
@@ -390,13 +337,6 @@
                   "Value": "'46cd20067472463aff6b'"
                 }
               }
-            },
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
             }
           }
         }
@@ -407,66 +347,8 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "Filterc30abe0c046ed6fe0d29",
-        "ordinal": 0,
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "PB_VIAJE_MUESTREO_TEST"
-                  }
-                },
-                "Property": "IDBarcoFecha"
-              }
-            },
-            "Function": 2
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User"
-      },
-      {
-        "name": "Filter44c8826c557c188bc749",
-        "ordinal": 1,
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "PB_REQ_VIAJES"
-                  }
-                },
-                "Property": "TOT_VIAJE_EMB"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User"
-      },
-      {
-        "name": "Filter0b818d8ebdb08a00f2dc",
-        "ordinal": 2,
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "PB_VIAJE_MUESTREO_TEST"
-              }
-            },
-            "Property": "FECHA_HORA_RECALADA"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User"
-      },
-      {
         "name": "Filterac84b2521aa831628eab",
-        "ordinal": 3,
+        "ordinal": 0,
         "field": {
           "Column": {
             "Expression": {
@@ -481,8 +363,8 @@
         "howCreated": "User"
       },
       {
-        "name": "65b51f77ae520ebd0ddc",
-        "ordinal": 4,
+        "name": "3a884f2fadadf98939bc",
+        "ordinal": 1,
         "field": {
           "Column": {
             "Expression": {
@@ -490,14 +372,15 @@
                 "Entity": "Date"
               }
             },
-            "Property": "Mes"
+            "Property": "Month Number"
           }
         },
-        "type": "Categorical"
+        "type": "Advanced",
+        "howCreated": "User"
       },
       {
-        "name": "c87f1af7b0740ebac2bb",
-        "ordinal": 5,
+        "name": "c78f96645ed754d79d0b",
+        "ordinal": 2,
         "field": {
           "Measure": {
             "Expression": {
@@ -505,14 +388,14 @@
                 "Entity": "medidas"
               }
             },
-            "Property": "Viajes totales"
+            "Property": "N° Viajes Embarcados"
           }
         },
         "type": "Advanced"
       },
       {
-        "name": "c1d42b5587b05e4710c9",
-        "ordinal": 6,
+        "name": "49be17650b8e66e7632a",
+        "ordinal": 3,
         "field": {
           "Measure": {
             "Expression": {
@@ -520,7 +403,7 @@
                 "Entity": "medidas"
               }
             },
-            "Property": "Req Viajes (sin viajes)"
+            "Property": "Total REQ Viajes EMB"
           }
         },
         "type": "Advanced"

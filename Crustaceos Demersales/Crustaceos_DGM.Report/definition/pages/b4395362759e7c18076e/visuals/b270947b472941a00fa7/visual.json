@@ -100,10 +100,10 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "PB_VIAJE_MUESTREO_TEST"
+                    "Entity": "Dimension ACTIVIDAD"
                   }
                 },
-                "Property": "NOMBRE_ESPECIE_SELECCIONADA"
+                "Property": "NOMBRE_ACTIVIDAD"
               }
             },
             "direction": "Descending"
@@ -223,6 +223,26 @@
               "expr": {
                 "Literal": {
                   "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "label": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Objetivo del Programa'"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
                 }
               }
             }
@@ -479,7 +499,7 @@
         "howCreated": "User"
       },
       {
-        "name": "4bad91edb7d87ada08b0",
+        "name": "c00dced24006b8ea7ec7",
         "field": {
           "Measure": {
             "Expression": {

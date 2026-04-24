@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "d85b64fa8a5b92dc8959",
   "position": {
     "x": 12.753906249999996,
@@ -66,7 +66,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "35D"
+                  "Value": "32D"
                 }
               }
             },

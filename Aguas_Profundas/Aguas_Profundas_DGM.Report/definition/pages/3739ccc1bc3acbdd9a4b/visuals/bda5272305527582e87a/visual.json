@@ -1,9 +1,9 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "bda5272305527582e87a",
   "position": {
     "x": 13.092269326683294,
-    "y": 418.9526184538654,
+    "y": 417.08229426433917,
     "z": 10000,
     "height": 98.1920199501247,
     "width": 130.92269326683294,
@@ -71,7 +71,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "33D"
+                  "Value": "32D"
                 }
               }
             },

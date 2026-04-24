@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "68d1a4477c82653b4487",
   "position": {
     "x": 167,
     "y": 488,
-    "z": 27000,
+    "z": 26000,
     "height": 262,
     "width": 340,
-    "tabOrder": 26000
+    "tabOrder": 25000
   },
   "visual": {
     "visualType": "tableEx",
@@ -176,6 +176,26 @@
             }
           }
         }
+      ],
+      "total": [
+        {
+          "properties": {
+            "label": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Objetivo del Programa'"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -253,34 +273,6 @@
         "howCreated": "User"
       },
       {
-        "name": "dad7057cb38bd6a3a18d",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dimension ACTIVIDAD"
-              }
-            },
-            "Property": "NOMBRE_ACTIVIDAD"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "cd1e1cb300538b26b47b",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dimension MAESTRO ESPECIE"
-              }
-            },
-            "Property": "NOMBRE_ESPECIE"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
         "name": "b93edf405481ed5530d0",
         "field": {
           "Measure": {
@@ -331,34 +323,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "6c9baf1836d5c85b108d",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "medidas"
-              }
-            },
-            "Property": "Req (según actividad)"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "597b412106d9856a0257",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "medidas"
-              }
-            },
-            "Property": "% Cumplimiento Muestreo (Cap 100%)"
-          }
-        },
-        "type": "Advanced"
       }
     ],
     "filterSortOrder": "Custom"

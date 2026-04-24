@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "10cf2c39a71455c0f852",
   "position": {
     "x": 167.39401496259353,
@@ -100,10 +100,10 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Dimension ACTIVIDAD"
+                    "Entity": "PB_VIAJE_MUESTREO_TEST"
                   }
                 },
-                "Property": "NOMBRE_ACTIVIDAD"
+                "Property": "NOMBRE_ESPECIE_SELECCIONADA"
               }
             },
             "direction": "Ascending"
@@ -416,6 +416,13 @@
                   "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
                 }
               }
+            },
+            "label": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Objetivo del Programa'"
+                }
+              }
             }
           }
         }
@@ -512,34 +519,6 @@
         "howCreated": "User"
       },
       {
-        "name": "eb3c30358ecc512350bc",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dimension ACTIVIDAD"
-              }
-            },
-            "Property": "NOMBRE_ACTIVIDAD"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "9a205140974b59308e7d",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "PB_VIAJE_MUESTREO_TEST"
-              }
-            },
-            "Property": "NOMBRE_ESPECIE_SELECCIONADA"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
         "name": "974f3c6004cb008ce269",
         "field": {
           "Measure": {
@@ -590,20 +569,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "cee95ba209c178d29e81",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "medidas"
-              }
-            },
-            "Property": "Req (según actividad)"
-          }
-        },
-        "type": "Advanced"
       }
     ],
     "filterSortOrder": "Custom"

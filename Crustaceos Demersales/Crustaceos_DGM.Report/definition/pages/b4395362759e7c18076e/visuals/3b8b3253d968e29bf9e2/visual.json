@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "3b8b3253d968e29bf9e2",
   "position": {
     "x": 915.52369077306741,
@@ -63,7 +63,7 @@
                     "Entity": "medidas"
                   }
                 },
-                "Property": "Viajes totales"
+                "Property": "Viajes Totales Obs Cientifico"
               }
             },
             "direction": "Descending"
@@ -273,37 +273,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "990ff22e3d122dd29275",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dimension OBSERVADOR_CIENTIFICO"
-              }
-            },
-            "Property": "OBSERVADOR_CIENTIFICO"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "14498f3701ab34b9988e",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "medidas"
-              }
-            },
-            "Property": "Viajes Totales Obs Cientifico"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }
