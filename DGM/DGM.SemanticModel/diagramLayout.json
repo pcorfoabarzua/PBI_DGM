@@ -1,0 +1,249 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 794.14705882352848,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1011.1927514363977,
+            "y": 628.4429054346765
+          },
+          "nodeIndex": "PB_REQ_MUESTREO",
+          "nodeLineageTag": "344b56d9-3bb2-4bdb-8591-54287a0981a1",
+          "size": {
+            "height": 383,
+            "width": 234
+          },
+          "zIndex": 14
+        },
+        {
+          "location": {
+            "x": 643.82733385611493,
+            "y": 575.806348207859
+          },
+          "nodeIndex": "PB_REQ_VIAJES",
+          "nodeLineageTag": "701cf170-12da-43f6-988b-4053ccdfc70f",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 15,
+          "expandedHeight": 434
+        },
+        {
+          "location": {
+            "x": 1668.2968409645457,
+            "y": 279.12918624072609
+          },
+          "nodeIndex": "Date",
+          "nodeLineageTag": "5b504e36-4445-413a-8bcf-54bb3c27acf4",
+          "size": {
+            "height": 198.29215686274506,
+            "width": 234
+          },
+          "zIndex": 12
+        },
+        {
+          "location": {
+            "x": 3383.310859602771,
+            "y": 682.28689323051844
+          },
+          "nodeIndex": "Tipo grafico",
+          "nodeLineageTag": "e520efb0-f4a7-4314-ab6f-d8efc00ff9e8",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 1814.5731969815802,
+            "y": 128.89294614659087
+          },
+          "nodeIndex": "Dimension ACTIVIDAD",
+          "nodeLineageTag": "203d0e03-7f53-4fbd-8fae-f466ed5c71a0",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 8,
+          "expandedHeight": 128
+        },
+        {
+          "location": {
+            "x": 1969.9878094022338,
+            "y": 322.76751468270481
+          },
+          "nodeIndex": "Dimension BARCO",
+          "nodeLineageTag": "ad370d54-4ddb-4e6d-aa1e-63896a4c27fb",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 3,
+          "expandedHeight": 128
+        },
+        {
+          "location": {
+            "x": 582.44510455038892,
+            "y": 110.6318364352754
+          },
+          "nodeIndex": "Dimension FLOTA",
+          "nodeLineageTag": "6c136d7f-95e0-4817-a4e6-d59bcaf8a1df",
+          "size": {
+            "height": 145,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 2171.8922689123515,
+            "y": 465.44679996652945
+          },
+          "nodeIndex": "Dimension OBSERVADOR_CIENTIFICO",
+          "nodeLineageTag": "549386b6-28bd-4793-9826-f690d99b1039",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 4,
+          "expandedHeight": 128
+        },
+        {
+          "location": {
+            "x": 1468.4286435663164,
+            "y": 87.203113126556531
+          },
+          "nodeIndex": "Dimension PUERTO",
+          "nodeLineageTag": "f4cbe46c-71af-4202-94ea-f25437547ef1",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 10
+        },
+        {
+          "location": {
+            "x": 321.53140851935086,
+            "y": 467.48159596096951
+          },
+          "nodeIndex": "Dimension REGION",
+          "nodeLineageTag": "837d5044-e4ea-4576-b51e-a5dffc566e1d",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 1789.6066447568337,
+            "y": 858.66466119920256
+          },
+          "nodeIndex": "Dimension ZONA",
+          "nodeLineageTag": "be59d071-f6f9-4df2-b76d-c0631b793c8f",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 16,
+          "expandedHeight": 128
+        },
+        {
+          "location": {
+            "x": 2809.7131909389623,
+            "y": 933.5361618092553
+          },
+          "nodeIndex": "medidas",
+          "nodeLineageTag": "35e7f987-6529-4f11-bb13-87eb33f4c696",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 3790.918022524505,
+            "y": 962.2727637230247
+          },
+          "nodeIndex": "Date2",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 2078.7242738310811,
+            "y": 857.42824795117281
+          },
+          "nodeIndex": "Dimension MAESTRO ESPECIE",
+          "nodeLineageTag": "eb91ca5a-7ae2-45e4-a1fb-ddc9ff56ffa2",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 1,
+          "expandedHeight": 128
+        },
+        {
+          "location": {
+            "x": 1366.3243115646303,
+            "y": 523.09060742154566
+          },
+          "nodeIndex": "PB_VIAJE_MUESTREO_TEST",
+          "nodeLineageTag": "190195d3-3388-4bce-9613-a563e60a52f9",
+          "size": {
+            "height": 392,
+            "width": 348
+          },
+          "zIndex": 13,
+          "expandedHeight": 599.743137254902
+        },
+        {
+          "location": {
+            "x": 1172.9680197748264,
+            "y": 89.491618562366369
+          },
+          "nodeIndex": "Dimension PROYECTO",
+          "nodeLineageTag": "84559002-0b56-40f0-9813-4ca2a87d6e8f",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 11
+        },
+        {
+          "location": {
+            "x": 883.546807907199,
+            "y": 108.15213706632422
+          },
+          "nodeIndex": "Dimension PERIODO",
+          "nodeLineageTag": "f8a5c11c-91e2-48fb-b85c-d6788891056d",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 17
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 58.553386911595936,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

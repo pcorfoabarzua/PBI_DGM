@@ -1,0 +1,146 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "a0d85903d5f9fdaaf236",
+  "displayName": "Descarte Pelágico",
+  "displayOption": "FitToPage",
+  "height": 750,
+  "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f8c3747cb3c551ecb3d2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dimension PROYECTO"
+              }
+            },
+            "Property": "COD_PROYECTO"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "Dimension PROYECTO",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "d"
+                          }
+                        },
+                        "Property": "COD_PROYECTO"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'DES_CER'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "isLockedInViewMode": true
+      }
+    ]
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#EDEDEE'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          },
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "''"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "Literal": {
+                    "Value": "''"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "414L"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "6c4837fd3277e9e49136",
+      "target": "0a0c6eb483e11bc0ebb2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "4582c73cee1681311fc7",
+      "target": "a19528874a407563af55",
+      "type": "DataFilter"
+    },
+    {
+      "source": "4582c73cee1681311fc7",
+      "target": "32d70629c1b778121e5a",
+      "type": "DataFilter"
+    },
+    {
+      "source": "4582c73cee1681311fc7",
+      "target": "dcea7a0400a3194d036b",
+      "type": "DataFilter"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+table 'Dimension ACTIVIDAD'
+	lineageTag: 203d0e03-7f53-4fbd-8fae-f466ed5c71a0
+
+	column CODIGO_ACTIVIDAD
+		dataType: int64
+		formatString: 0
+		lineageTag: f14ca260-c346-46b3-80a8-252f92b167f4
+		summarizeBy: none
+		sourceColumn: CODIGO_ACTIVIDAD
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOMBRE_ACTIVIDAD
+		dataType: string
+		lineageTag: a23d1508-1da5-457d-9474-d7483d9abef8
+		summarizeBy: none
+		sourceColumn: NOMBRE_ACTIVIDAD
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dimension ACTIVIDAD' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("192.168.169.110"),
+				    Analytics = Source{[Name="Analytics"]}[Data],
+				    Dimension_ACTIVIDAD = Analytics{[Schema="Dimension",Item="ACTIVIDAD"]}[Data]
+				in
+				    Dimension_ACTIVIDAD
+
+	annotation PBI_ResultType = Table
+

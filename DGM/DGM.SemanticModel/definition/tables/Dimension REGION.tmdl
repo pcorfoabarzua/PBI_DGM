@@ -1,0 +1,35 @@
+table 'Dimension REGION'
+	lineageTag: 837d5044-e4ea-4576-b51e-a5dffc566e1d
+
+	column NOMBRE_REGION
+		dataType: string
+		lineageTag: eb40ce32-43df-428f-afc7-e604fb1d80d9
+		summarizeBy: none
+		sourceColumn: NOMBRE_REGION
+		sortByColumn: COD_REGION
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_REGION
+		dataType: int64
+		formatString: 0
+		lineageTag: c407f7e5-b908-4c23-aa32-383ab98fef65
+		summarizeBy: none
+		sourceColumn: COD_REGION
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dimension REGION' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("192.168.169.110"),
+				    Analytics = Source{[Name="Analytics"]}[Data],
+				    Dimension_PB_MAESTRO_REGION = Analytics{[Schema="Dimension",Item="PB_MAESTRO_REGION"]}[Data]
+				in
+				    Dimension_PB_MAESTRO_REGION
+
+	annotation PBI_ResultType = Table
+

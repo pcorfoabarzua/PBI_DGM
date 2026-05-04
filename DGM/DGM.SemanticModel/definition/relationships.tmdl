@@ -1,0 +1,104 @@
+relationship fcc631b1-083f-a625-d6b2-0ddf53efeeef
+	fromColumn: PB_REQ_VIAJES.COD_FLOTA
+	toColumn: 'Dimension FLOTA'.CODIGO_FLOTA
+
+relationship 1e6bdcc2-c6fa-33cc-569c-fcef4274a194
+	fromColumn: PB_REQ_VIAJES.COD_PUERTO
+	toColumn: 'Dimension PUERTO'.CODIGO_PUERTO
+
+relationship AutoDetected_5326c227-9b71-4990-8fdc-b181db020b5f
+	fromColumn: PB_VIAJE_MUESTREO_TEST.CODIGO_OBSERVADOR_CIENTIFICO
+	toColumn: 'Dimension OBSERVADOR_CIENTIFICO'.CODIGO_OBSERVADOR_CIENTIFICO
+
+relationship AutoDetected_ac5a7ba2-f735-4cc1-9c34-4c0e1d6aa817
+	fromColumn: PB_VIAJE_MUESTREO_TEST.CODIGO_FLOTA
+	toColumn: 'Dimension FLOTA'.CODIGO_FLOTA
+
+relationship AutoDetected_4c09b70f-4a59-4882-9829-16c3142fa81b
+	fromColumn: PB_VIAJE_MUESTREO_TEST.CODIGO_PUERTO
+	toColumn: 'Dimension PUERTO'.CODIGO_PUERTO
+
+relationship AutoDetected_5b9330a8-0d6c-4d5e-a618-704a6088d29f
+	fromColumn: PB_VIAJE_MUESTREO_TEST.CODIGO_ZONA
+	toColumn: 'Dimension ZONA'.CODIGO_ZONA
+
+relationship AutoDetected_963dc3dd-2686-4706-b30e-dca05d8efe69
+	fromColumn: PB_VIAJE_MUESTREO_TEST.CODIGO_ACTIVIDAD
+	toColumn: 'Dimension ACTIVIDAD'.CODIGO_ACTIVIDAD
+
+relationship AutoDetected_a6d09601-5bf0-4820-a5b9-74b3af38faf3
+	fromColumn: PB_REQ_MUESTREO.COD_REGION
+	toColumn: 'Dimension REGION'.COD_REGION
+
+relationship AutoDetected_e2c0765b-92f4-45ce-a16a-230934da84a3
+	fromColumn: PB_REQ_VIAJES.COD_REGION
+	toColumn: 'Dimension REGION'.COD_REGION
+
+relationship 7d4cd182-77c3-4d8d-956d-2c5f2eedfd9a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Date2.Date
+	toColumn: LocalDateTable_e390ec01-e410-4f61-9d24-06abe6539729.Date
+
+relationship da87e3ee-01e4-fdec-77ff-eaa48213f4d6
+	fromColumn: PB_VIAJE_MUESTREO_TEST.CODIGO_REGION
+	toColumn: 'Dimension REGION'.COD_REGION
+
+relationship AutoDetected_3165e5e5-cbb6-4185-aff6-cdec3559f987
+	fromColumn: PB_VIAJE_MUESTREO_TEST.COD_ESPECIE
+	toColumn: 'Dimension MAESTRO ESPECIE'.COD_ESPECIE
+
+relationship a4fdbdc5-20a1-a816-69c2-413a1d46c91a
+	fromColumn: PB_VIAJE_MUESTREO_TEST.COD_BARCO
+	toColumn: 'Dimension BARCO'.COD_BARCO
+
+relationship c710ecf2-0aee-41c5-8a3f-ccfe0207c9c7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: PB_VIAJE_MUESTREO_TEST.FECHA_HORA_RECALADA
+	toColumn: LocalDateTable_29a6f2b9-9c57-4c65-931d-1542e6accbc7.Date
+
+relationship 350a5312-362a-467a-9548-1102eb6f64ab
+	joinOnDateBehavior: datePartOnly
+	fromColumn: PB_VIAJE_MUESTREO_TEST.FECHA_HORA_ZARPE
+	toColumn: LocalDateTable_bc0b6aec-16d3-4111-9bae-db6deb1a9845.Date
+
+relationship 3c50139d-b1d4-5caa-5a9c-3e1d1802137d
+	fromColumn: PB_REQ_MUESTREO.COD_PROYECTO
+	toColumn: 'Dimension PROYECTO'.COD_PROYECTO
+
+relationship 6b864f70-d2eb-baa3-d74a-8b9bd2d53ebe
+	fromColumn: PB_REQ_VIAJES.COD_PROYECTO
+	toColumn: 'Dimension PROYECTO'.COD_PROYECTO
+
+relationship f08da2b5-53e7-cc6c-0b7f-f31f8d77c94f
+	fromColumn: PB_REQ_MUESTREO.COD_PUERTO
+	toColumn: 'Dimension PUERTO'.CODIGO_PUERTO
+
+relationship 3cf2b3fd-2598-84b6-3c0b-3bb75e0b0716
+	fromColumn: PB_VIAJE_MUESTREO_TEST.PROYECTO
+	toColumn: 'Dimension PROYECTO'.COD_PROYECTO
+
+relationship 6c74fd33-6032-9bad-00d8-c544090592e5
+	fromColumn: PB_REQ_MUESTREO.COD_FLOTA
+	toColumn: 'Dimension FLOTA'.CODIGO_FLOTA
+
+relationship fa7cb89d-2ea4-2550-fcb5-c680eb7e0e0d
+	fromColumn: PB_REQ_VIAJES.PERIODOMES
+	toColumn: 'Dimension PERIODO'.PERIODOMES
+
+relationship ad5a6089-8f05-c28b-d1b9-968788d289eb
+	fromColumn: PB_REQ_MUESTREO.PERIODOMES
+	toColumn: 'Dimension PERIODO'.PERIODOMES
+
+relationship 9090365e-6018-e6c7-d65f-00305d7f5980
+	fromColumn: PB_VIAJE_MUESTREO_TEST.PERIODOMES
+	toColumn: 'Dimension PERIODO'.PERIODOMES
+
+relationship 43335368-b4e3-40ac-89d7-d782eeeab026
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Date.Date
+	toColumn: LocalDateTable_75d9bd68-b8f0-4024-bf16-17cc1d9d78ba.Date
+
+relationship b533e1cc-66ec-23fe-a631-50928df80730
+	fromColumn: PB_VIAJE_MUESTREO_TEST.FECHA
+	toColumn: Date.Date
+

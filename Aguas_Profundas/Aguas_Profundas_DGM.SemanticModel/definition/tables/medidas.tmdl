@@ -832,6 +832,530 @@ table medidas
 		formatString: 0.00\ %;-0.00\ %;0.00\ %
 		lineageTag: d912c686-da9a-401e-843c-d11cac1d05b9
 
+	measure Landing_page = ```
+			
+			VAR HTMLOutput = 
+			"<!DOCTYPE html>
+			<html>
+			<head>
+			<meta charset='UTF-8'>
+			<style>
+			  * {
+			    margin: 0;
+			    padding: 0;
+			    box-sizing: border-box;
+			  }
+			
+			
+			    body {
+			    font-family: 'Segoe UI Semibold', Tahoma, Geneva, Verdana, sans-serif;
+			    margin: 0;
+			    overflow: hidden;
+			    position: relative;
+			    }
+			
+			    
+			    .container {
+			    position: relative;
+			    width: 100%;
+			    height: 100vh;
+			    display: flex;
+			    align-items: center;
+			    justify-content: center;
+			    perspective: 800px;
+			    z-index: 2;
+			    }
+			
+			
+			  /* TÍTULO SUPERIOR */
+			  .dashboard-title {
+			    position: absolute;
+			    top: 40px;
+			    left: 50%;
+			    transform: translateX(-50%);
+			    z-index: 200;
+			    text-align: center;
+			    max-width: 90%;
+			  }
+			
+			  
+			    .title-text {
+			    font-size: clamp(1.6rem, 2.4vw, 2.4rem);
+			    font-weight: 600;
+			    letter-spacing: 0.5px;
+			    text-align: center;
+			    color: #E3F2FD;
+			    text-shadow:
+			        0 2px 6px rgba(0,0,0,0.6),
+			        0 0 12px rgba(33,150,243,0.4);
+			    }
+			
+			
+			  @keyframes fadeInDown {
+			    from {
+			      opacity: 0;
+			      transform: translateY(-20px);
+			    }
+			    to {
+			      opacity: 1;
+			      transform: translateY(0);
+			    }
+			  }
+			
+			  
+			    .carousel {
+			    position: relative;
+			    width: 250px;   /* mismo tamaño que la imagen */
+			    height: 200px;  /* mismo tamaño que la imagen */
+			    transform-style: preserve-3d;
+			    transition: transform 0.6s ease-out;
+			    }
+			
+			
+			  .carousel span {
+			    position: absolute;
+			    top: 0;
+			    left: 0;
+			    width: 100%;
+			    height: 100%;
+			    transform-origin: center;
+			    transform-style: preserve-3d;
+			    cursor: pointer;
+			    transition: all 0.6s ease;
+			  }
+			
+			  .carousel span:nth-child(1) {
+			    transform: rotateY(0deg) translateZ(250px);
+			  }
+			
+			  .carousel span:nth-child(2) {
+			    transform: rotateY(51.43deg) translateZ(250px);
+			  }
+			
+			  .carousel span:nth-child(3) {
+			    transform: rotateY(102.86deg) translateZ(250px);
+			  }
+			
+			  .carousel span:nth-child(4) {
+			    transform: rotateY(154.29deg) translateZ(250px);
+			  }
+			
+			  .carousel span:nth-child(5) {
+			    transform: rotateY(205.71deg) translateZ(250px);
+			  }
+			
+			  .carousel span:nth-child(6) {
+			    transform: rotateY(257.14deg) translateZ(250px);
+			  }
+			
+			  .carousel span:nth-child(7) {
+			    transform: rotateY(308.57deg) translateZ(250px);
+			  }
+			
+			  .carousel span a {
+			    display: block;
+			    position: absolute;
+			    width: 100%;
+			    height: 100%;
+			    pointer-events: none;
+			  }
+			
+			  .carousel span.active a {
+			    pointer-events: all;
+			  }
+			
+			  
+			   
+			.carousel span img {
+			  position: absolute;
+			  width: 250px;
+			  height: 200px;
+			  object-fit: cover;
+			  border-radius: 14px;
+			
+			  background: rgba(255, 255, 255, 0.15);
+			  backdrop-filter: blur(6px);
+			
+			  border: 1px solid rgba(255, 255, 255, 0.35);
+			
+			  box-shadow:
+			    0 10px 30px rgba(0, 0, 0, 0.35),
+			    inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+			
+			  opacity: 0.35;
+			
+			  top: 50%;
+			  left: 50%;
+			  transform: translate(-50%, -50%) scale(0.7);
+			  transition: all 0.6s ease;
+			}
+			
+			
+			    /* CENTRADO REAL */
+			    top: 50%;
+			    left: 50%;
+			    transform: translate(-50%, -50%) scale(0.7);
+			    }
+			
+			
+			  .carousel span:hover img {
+			    opacity: 0.6;
+			  }
+			
+			      
+			  .carousel span.active img {
+			    opacity: 1;
+			    transform: translate(-50%, -50%) scale(1);
+			
+			    border-color: rgba(33,150,243,0.9);
+			    border-width: 2px;
+			
+			    animation: softGlow 3s ease-in-out infinite alternate;
+			    }
+			
+			
+			
+			  .controls {
+			    position: absolute;
+			    bottom: 50px;
+			    left: 50%;
+			    transform: translateX(-50%);
+			    display: flex;
+			    gap: 20px;
+			    z-index: 100;
+			    align-items: center;
+			  }
+			
+			 
+			.control-btn {
+			  background: rgba(255, 255, 255, 0.85);
+			  border: none;
+			  color: #1565C0;
+			  width: 52px;
+			  height: 52px;
+			  border-radius: 50%;
+			  box-shadow:
+			    0 6px 16px rgba(0, 0, 0, 0.35);
+			}
+			
+			
+			  .control-btn::before {
+			    content: '';
+			    position: absolute;
+			    top: 0;
+			    left: 0;
+			    width: 100%;
+			    height: 100%;
+			    background: linear-gradient(135deg, #2196F3, #1976D2);
+			    opacity: 0;
+			    transition: opacity 0.3s ease;
+			    z-index: -1;
+			  }
+			
+			  
+			    .control-btn:hover {
+			    transform: scale(1.08);
+			    background: white;
+			    }
+			
+			
+			  .control-btn:hover::before {
+			    opacity: 1;
+			  }
+			
+			  .control-btn:active {
+			    transform: translateY(0);
+			    box-shadow: 0 2px 8px rgba(33, 150, 243, 0.25);
+			  }
+			
+			  .control-btn svg {
+			    width: 20px;
+			    height: 20px;
+			    fill: currentColor;
+			    transition: transform 0.3s ease;
+			  }
+			
+			  .control-btn:hover svg {
+			    transform: scale(1.1);
+			  }
+			
+			  #prevBtn:hover svg {
+			    transform: translateX(-2px) scale(1.1);
+			  }
+			
+			  #nextBtn:hover svg {
+			    transform: translateX(2px) scale(1.1);
+			  }
+			
+			  /* CONTADOR */
+			  
+			    .counter {
+			    background: rgba(255, 255, 255, 0.85);
+			    border-radius: 20px;
+			    padding: 8px 20px;
+			    font-weight: 600;
+			    color: #0D47A1;
+			    box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+			    }
+			
+			
+			  .counter .current {
+			    color: #1565C0;
+			    font-size: 1.2em;
+			  }
+			
+			  .counter .separator {
+			    color: #64B5F6;
+			    margin: 0 8px;
+			  }
+			
+			
+			    .bg-video {
+			    position: fixed;
+			    top: 50%;
+			    left: 50%;
+			    min-width: 100%;
+			    min-height: 100%;
+			    transform: translate(-50%, -50%);
+			    object-fit: cover;
+			    z-index: -1;
+			    filter: brightness(0.7) contrast(1.1);
+			    }
+			
+			    
+			    .container::before {
+			    content: '';
+			    position: absolute;
+			    inset: 0;
+			    background: linear-gradient(
+			        to bottom,
+			        rgba(0, 0, 0, 0.45),
+			        rgba(0, 0, 0, 0.15),
+			        rgba(0, 0, 0, 0.45)
+			    );
+			    z-index: -1;
+			    }
+			
+			
+			
+			
+			
+			  /* RESPONSIVE */
+			  @media (max-width: 768px) {
+			    .dashboard-title {
+			      top: 30px;
+			    }
+			
+			    .title-text {
+			      font-size: 1.4em;
+			    }
+			
+			    .control-btn {
+			      width: 45px;
+			      height: 45px;
+			    }
+			
+			    .control-btn svg {
+			      width: 18px;
+			      height: 18px;
+			    }
+			
+			    .controls {
+			      bottom: 40px;
+			      gap: 15px;
+			    }
+			
+			    .counter {
+			      font-size: 0.9em;
+			      padding: 8px 16px;
+			    }
+			
+			   
+			    
+			    @keyframes softGlow {
+			    0% {
+			        box-shadow:
+			        0 0 25px rgba(33, 150, 243, 0.55),
+			        0 25px 70px rgba(33, 150, 243, 0.4);
+			    }
+			    100% {
+			        box-shadow:
+			        0 0 40px rgba(33, 150, 243, 0.8),
+			        0 30px 90px rgba(33, 150, 243, 0.6);
+			    }
+			    }
+			
+			
+			
+			
+			
+			
+			  }
+			</style>
+			</head>
+			<body>
+			
+			<video class='bg-video' autoplay muted loop playsinline>
+			  <source src='https://raw.githubusercontent.com/pcorfoabarzua/PBI_Images/main/Fondo.mp4' type='video/mp4'>
+			</video>
+			
+			<div class='container'>
+			
+			  <!-- TÍTULO DINÁMICO -->
+			  <div class='dashboard-title'>
+			    <div class='title-text' id='dashboardTitle'>Sales Performance Dashboard</div>
+			  </div>
+			
+			  <div class='carousel' id='carousel'>
+			    
+			    <span data-index='0' data-title='Proyecto Aguas Profundas y Descarte Demersales' class='active'>
+			      <a href='https://app.powerbi.com/view?r=eyJrIjoiMWZkZWNlOGUtYjUwNC00YTE4LThmNTktMzcyODYyNWQ4MWNjIiwidCI6IjdlNmJkZDM2LTlkOTMtNDExNS1iOTQ0LTZjNjk3Nzc1NjMzOCIsImMiOjR9' target='_blank'>
+			        <img src='https://raw.githubusercontent.com/pcorfoabarzua/PBI_Images/main/Aguas%20Profundas.jpg'> 
+			      </a>
+			    </span>
+			
+			    <span data-index='1' data-title='Financial Analytics Report'>
+			      <a href='https://app.powerbi.com/view?r=eyJrIjoiZDkwZjVjYjktYzQwNi00NTc3LTg3YWEtMjMzNmVhODhkOTM0IiwidCI6ImFkMjE3NTNiLWNkZWItNDU1Yi1hZGI3LTc0MDg3YjFhMTM2OCJ9&embedImagePlaceholder=true' target='_blank'>
+			        <img src='https://community.powerbi.com/t5/image/serverpage/image-id/509750iB06D6BB306F04E55/image-size/large/is-moderation-mode/true?v=v2&px=999'> 
+			      </a>
+			    </span>
+			
+			    <span data-index='2' data-title='Customer Insights Dashboard'>
+			      <a href='https://app.powerbi.com/view?r=eyJrIjoiZmI0OWU2MTUtMzIyNC00MGM4LTkwMmUtMzYyNzA1MGYxOTdlIiwidCI6ImFkMjE3NTNiLWNkZWItNDU1Yi1hZGI3LTc0MDg3YjFhMTM2OCJ9&fbclid=IwAR0o5M-SqrcAiDHbJeJ8svMrxJky541L4f1Nk6FSRYWJwUOU5sPhrTRW4lY' target='_blank'>
+			        <img src='https://community.powerbi.com/t5/image/serverpage/image-id/490583i8D734F9FECDAF8C5/image-size/large/is-moderation-mode/true?v=v2&px=999'> 
+			      </a>
+			    </span>
+			
+			    <span data-index='3' data-title='Operations Dashboard'>
+			      <a href='https://app.powerbi.com/view?r=eyJrIjoiODA3ZWI2MDEtYzRmYi00NTUwLWIwNWUtNzIyZWZlMDQyZWJhIiwidCI6ImFkMjE3NTNiLWNkZWItNDU1Yi1hZGI3LTc0MDg3YjFhMTM2OCJ9' target='_blank'>
+			        <img src='https://community.powerbi.com/t5/image/serverpage/image-id/506814i97390C03819BA56C/image-size/large/is-moderation-mode/true?v=v2&px=999'> 
+			      </a>
+			    </span>
+			
+			    <span data-index='4' data-title='Marketing Metrics Report'>
+			      <a href='https://app.powerbi.com/view?r=eyJrIjoiYmE3M2UxMWEtZThlMS00ZTY4LWI0NzMtNThkN2IxMWVlZTZhIiwidCI6ImFkMjE3NTNiLWNkZWItNDU1Yi1hZGI3LTc0MDg3YjFhMTM2OCJ9&fbclid=IwAR3jKHtxfJ8zp7yyjDGS9mMJwUwvf6EDrDNiTa0Nv-7CbLs6DrS2hApwY20' target='_blank'>
+			        <img src='https://community.powerbi.com/t5/image/serverpage/image-id/496582iA931890E93A00A9F/image-size/large/is-moderation-mode/true?v=v2&px=999'> 
+			      </a>
+			    </span>
+			
+			    <span data-index='5' data-title='Supply Chain Analytics'>
+			      <a href='https://app.powerbi.com/view?r=eyJrIjoiYmE3M2UxMWEtZThlMS00ZTY4LWI0NzMtNThkN2IxMWVlZTZhIiwidCI6ImFkMjE3NTNiLWNkZWItNDU1Yi1hZGI3LTc0MDg3YjFhMTM2OCJ9' target='_blank'>
+			        <img src='https://community.powerbi.com/t5/image/serverpage/image-id/496582iA931890E93A00A9F/image-size/large/is-moderation-mode/true?v=v2&px=999'>
+			      </a>
+			    </span>
+			
+			    <span data-index='6' data-title='HR Analytics Dashboard'>
+			      <a href='https://app.powerbi.com/view?r=eyJrIjoiYmE3M2UxMWEtZThlMS00ZTY4LWI0NzMtNThkN2IxMWVlZTZhIiwidCI6ImFkMjE3NTNiLWNkZWItNDU1Yi1hZGI3LTc0MDg3YjFhMTM2OCJ9' target='_blank'>
+			        <img src='https://community.powerbi.com/t5/image/serverpage/image-id/496582iA931890E93A00A9F/image-size/large/is-moderation-mode/true?v=v2&px=999'>
+			      </a>
+			    </span>
+			
+			  </div>
+			
+			  <div class='controls'>
+			    <button class='control-btn' id='prevBtn' title='Previous'>
+			      <svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+			        <path d='M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z'/>
+			      </svg>
+			    </button>
+			    
+			    <div class='counter'>
+			      <span class='current' id='currentNum'>1</span>
+			      <span class='separator'>/</span>
+			      <span class='total'>7</span>
+			    </div>
+			    
+			    <button class='control-btn' id='nextBtn' title='Next'>
+			      <svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+			        <path d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z'/>
+			      </svg>
+			    </button>
+			  </div>
+			</div>
+			
+			<script>
+			  (function() {
+			    let currentIndex = 0;
+			    const totalItems = 7;
+			    const angleStep = 360 / totalItems;
+			    const carousel = document.getElementById('carousel');
+			    const items = document.querySelectorAll('.carousel span');
+			    const titleElement = document.getElementById('dashboardTitle');
+			    const currentNumElement = document.getElementById('currentNum');
+			
+			    function updateCarousel() {
+			      const rotation = -currentIndex * angleStep;
+			      carousel.style.transform = 'rotateY(' + rotation + 'deg)';
+			      
+			      items.forEach((item, index) => {
+			        if (index === currentIndex) {
+			          item.classList.add('active');
+			        } else {
+			          item.classList.remove('active');
+			        }
+			      });
+			
+			      // Actualizar título
+			      const activeItem = items[currentIndex];
+			      const title = activeItem.getAttribute('data-title');
+			      titleElement.textContent = title;
+			
+			      // Actualizar contador
+			      currentNumElement.textContent = currentIndex + 1;
+			    }
+			
+			    // Click en item para traerlo al frente
+			    items.forEach((item, index) => {
+			      item.addEventListener('click', (e) => {
+			        if (e.target.tagName !== 'A' && !item.classList.contains('active')) {
+			          e.preventDefault();
+			          e.stopPropagation();
+			          currentIndex = index;
+			          updateCarousel();
+			        }
+			      });
+			    });
+			
+			    // Previous button
+			    document.getElementById('prevBtn').addEventListener('click', function(e) {
+			      e.preventDefault();
+			      e.stopPropagation();
+			      currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+			      updateCarousel();
+			    });
+			
+			    // Next button
+			    document.getElementById('nextBtn').addEventListener('click', function(e) {
+			      e.preventDefault();
+			      e.stopPropagation();
+			      currentIndex = (currentIndex + 1) % totalItems;
+			      updateCarousel();
+			    });
+			
+			    // Keyboard navigation
+			    document.addEventListener('keydown', (e) => {
+			      if (e.key === 'ArrowLeft') {
+			        e.preventDefault();
+			        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+			        updateCarousel();
+			      } else if (e.key === 'ArrowRight') {
+			        e.preventDefault();
+			        currentIndex = (currentIndex + 1) % totalItems;
+			        updateCarousel();
+			      }
+			    });
+			
+			    // Initialize
+			    updateCarousel();
+			  })();
+			</script>
+			</body>
+			</html>"
+			
+			RETURN HTMLOutput
+			```
+		lineageTag: d3a80741-c899-42d1-b1d0-6ff1b9316e10
+
 	partition medidas = m
 		mode: import
 		source =

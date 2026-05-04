@@ -1,0 +1,32 @@
+table 'Dimension OBSERVADOR_CIENTIFICO'
+	lineageTag: 549386b6-28bd-4793-9826-f690d99b1039
+
+	column CODIGO_OBSERVADOR_CIENTIFICO
+		dataType: int64
+		formatString: 0
+		lineageTag: f62e01d5-c3d4-4dc7-b8f8-cd1b800776c6
+		summarizeBy: none
+		sourceColumn: CODIGO_OBSERVADOR_CIENTIFICO
+
+		annotation SummarizationSetBy = Automatic
+
+	column OBSERVADOR_CIENTIFICO
+		dataType: string
+		lineageTag: 4b19d1da-e949-4ebe-83ec-85d626efffd2
+		summarizeBy: none
+		sourceColumn: OBSERVADOR_CIENTIFICO
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dimension OBSERVADOR_CIENTIFICO' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("192.168.169.110"),
+				    Analytics = Source{[Name="Analytics"]}[Data],
+				    Dimension_OBSERVADOR_CIENTIFICO = Analytics{[Schema="Dimension",Item="OBSERVADOR_CIENTIFICO"]}[Data]
+				in
+				    Dimension_OBSERVADOR_CIENTIFICO
+
+	annotation PBI_ResultType = Table
+
