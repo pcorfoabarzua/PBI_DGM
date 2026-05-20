@@ -18,6 +18,15 @@ El formato está basado en *Keep a Changelog* y el versionado sigue una lógica 
 
 ---
 
+# [2026-05-08]
+
+- Se agrego página de landing de presentación con video del Abate Molina
+- Se agrego proyectos de Descarte Pelágicos , Descarte Demersales , Jibia , SRAM
+- Se modifico medida de DAX para Requerimiento de Viajes ignorando el filtro de Región y de Flota
+
+  
+---
+
 
 ### Fixed
 - Mejora en la semántica de las tablas e indicadores de muestreo.
