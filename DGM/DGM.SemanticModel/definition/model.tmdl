@@ -32,6 +32,7 @@ ref table LocalDateTable_bc0b6aec-16d3-4111-9bae-db6deb1a9845
 ref table 'Dimension PROYECTO'
 ref table 'Dimension PERIODO'
 ref table LocalDateTable_75d9bd68-b8f0-4024-bf16-17cc1d9d78ba
+ref table REQ_VIAJES_NORMALIZADA
 
 ref cultureInfo en-US
 

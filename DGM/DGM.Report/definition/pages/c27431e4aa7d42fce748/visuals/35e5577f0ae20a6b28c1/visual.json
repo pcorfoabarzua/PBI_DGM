@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "35e5577f0ae20a6b28c1",
   "position": {
     "x": 811.11111111111109,
@@ -287,7 +287,7 @@
             "secTitleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Duración Marea(Dias)'"
+                  "Value": "'Duración Marea'"
                 }
               }
             },

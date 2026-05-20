@@ -59,7 +59,7 @@ table 'Dimension REGION'
 				in
 				    #"Agregando Sigla de Region"
 
-	annotation PBI_ResultType = Table
+	annotation PBI_ResultType = Exception
 
 	annotation PBI_NavigationStepName = Navegación
 

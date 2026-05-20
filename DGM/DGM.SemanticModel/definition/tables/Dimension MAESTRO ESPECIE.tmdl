@@ -28,7 +28,7 @@ table 'Dimension MAESTRO ESPECIE'
 				in
 				    #"Poner En Mayúsculas Cada Palabra"
 
-	annotation PBI_ResultType = Table
+	annotation PBI_ResultType = Exception
 
 	annotation PBI_NavigationStepName = Navegación
 

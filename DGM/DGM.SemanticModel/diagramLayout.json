@@ -4,14 +4,14 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 792.43921568627354,
+        "x": 1330.5500393187172,
         "y": 0
       },
       "nodes": [
         {
           "location": {
             "x": 1011.1927514363977,
-            "y": 628.4429054346765
+            "y": 672.04446199795484
           },
           "nodeIndex": "PB_REQ_MUESTREO",
           "nodeLineageTag": "344b56d9-3bb2-4bdb-8591-54287a0981a1",
@@ -24,7 +24,7 @@
         {
           "location": {
             "x": 643.82733385611493,
-            "y": 575.806348207859
+            "y": 619.40790477113728
           },
           "nodeIndex": "PB_REQ_VIAJES",
           "nodeLineageTag": "701cf170-12da-43f6-988b-4053ccdfc70f",
@@ -38,7 +38,7 @@
         {
           "location": {
             "x": 1668.2968409645457,
-            "y": 279.12918624072609
+            "y": 322.73074280400436
           },
           "nodeIndex": "Date",
           "nodeLineageTag": "5b504e36-4445-413a-8bcf-54bb3c27acf4",
@@ -51,7 +51,7 @@
         {
           "location": {
             "x": 3383.310859602771,
-            "y": 682.28689323051844
+            "y": 725.88844979379678
           },
           "nodeIndex": "Tipo grafico",
           "nodeLineageTag": "e520efb0-f4a7-4314-ab6f-d8efc00ff9e8",
@@ -64,7 +64,7 @@
         {
           "location": {
             "x": 1814.5731969815802,
-            "y": 128.89294614659087
+            "y": 172.49450270986915
           },
           "nodeIndex": "Dimension ACTIVIDAD",
           "nodeLineageTag": "203d0e03-7f53-4fbd-8fae-f466ed5c71a0",
@@ -78,7 +78,7 @@
         {
           "location": {
             "x": 1969.9878094022338,
-            "y": 322.76751468270481
+            "y": 366.36907124598309
           },
           "nodeIndex": "Dimension BARCO",
           "nodeLineageTag": "ad370d54-4ddb-4e6d-aa1e-63896a4c27fb",
@@ -92,7 +92,7 @@
         {
           "location": {
             "x": 582.44510455038892,
-            "y": 110.6318364352754
+            "y": 154.23339299855368
           },
           "nodeIndex": "Dimension FLOTA",
           "nodeLineageTag": "6c136d7f-95e0-4817-a4e6-d59bcaf8a1df",
@@ -105,7 +105,7 @@
         {
           "location": {
             "x": 2171.8922689123515,
-            "y": 465.44679996652945
+            "y": 509.04835652980773
           },
           "nodeIndex": "Dimension OBSERVADOR_CIENTIFICO",
           "nodeLineageTag": "549386b6-28bd-4793-9826-f690d99b1039",
@@ -119,7 +119,7 @@
         {
           "location": {
             "x": 1468.4286435663164,
-            "y": 87.203113126556531
+            "y": 130.80466968983481
           },
           "nodeIndex": "Dimension PUERTO",
           "nodeLineageTag": "f4cbe46c-71af-4202-94ea-f25437547ef1",
@@ -132,7 +132,7 @@
         {
           "location": {
             "x": 321.53140851935086,
-            "y": 467.48159596096951
+            "y": 511.08315252424779
           },
           "nodeIndex": "Dimension REGION",
           "nodeLineageTag": "837d5044-e4ea-4576-b51e-a5dffc566e1d",
@@ -145,7 +145,7 @@
         {
           "location": {
             "x": 1789.6066447568337,
-            "y": 858.66466119920256
+            "y": 902.26621776248089
           },
           "nodeIndex": "Dimension ZONA",
           "nodeLineageTag": "be59d071-f6f9-4df2-b76d-c0631b793c8f",
@@ -159,7 +159,7 @@
         {
           "location": {
             "x": 2809.7131909389623,
-            "y": 933.5361618092553
+            "y": 977.13771837253353
           },
           "nodeIndex": "medidas",
           "nodeLineageTag": "35e7f987-6529-4f11-bb13-87eb33f4c696",
@@ -172,7 +172,7 @@
         {
           "location": {
             "x": 2078.7242738310811,
-            "y": 857.42824795117281
+            "y": 901.02980451445114
           },
           "nodeIndex": "Dimension MAESTRO ESPECIE",
           "nodeLineageTag": "eb91ca5a-7ae2-45e4-a1fb-ddc9ff56ffa2",
@@ -186,7 +186,7 @@
         {
           "location": {
             "x": 1366.3243115646303,
-            "y": 523.09060742154566
+            "y": 566.692163984824
           },
           "nodeIndex": "PB_VIAJE_MUESTREO_TEST",
           "nodeLineageTag": "190195d3-3388-4bce-9613-a563e60a52f9",
@@ -200,7 +200,7 @@
         {
           "location": {
             "x": 1172.9680197748264,
-            "y": 89.491618562366369
+            "y": 133.09317512564465
           },
           "nodeIndex": "Dimension PROYECTO",
           "nodeLineageTag": "84559002-0b56-40f0-9813-4ca2a87d6e8f",
@@ -213,7 +213,7 @@
         {
           "location": {
             "x": 883.546807907199,
-            "y": 108.15213706632422
+            "y": 151.75369362960248
           },
           "nodeIndex": "Dimension PERIODO",
           "nodeLineageTag": "f8a5c11c-91e2-48fb-b85c-d6788891056d",
@@ -222,6 +222,18 @@
             "width": 234
           },
           "zIndex": 16
+        },
+        {
+          "location": {
+            "x": 3345.77945108342,
+            "y": 418.7680809046276
+          },
+          "nodeIndex": "REQ_VIAJES_NORMALIZADA",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "All tables",

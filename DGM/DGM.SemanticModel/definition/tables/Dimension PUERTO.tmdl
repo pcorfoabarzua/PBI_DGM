@@ -30,7 +30,7 @@ table 'Dimension PUERTO'
 				in
 				    #"Quitar COD_PUERTO nulo"
 
-	annotation PBI_ResultType = Table
+	annotation PBI_ResultType = Exception
 
 	annotation PBI_NavigationStepName = Navegación
 

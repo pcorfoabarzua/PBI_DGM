@@ -28,5 +28,5 @@ table 'Dimension ACTIVIDAD'
 				in
 				    Dimension_ACTIVIDAD
 
-	annotation PBI_ResultType = Table
+	annotation PBI_ResultType = Exception
 

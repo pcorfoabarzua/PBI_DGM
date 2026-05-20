@@ -853,12 +853,13 @@ table medidas
 			
 			    
 			    <!-- BARRA INFERIOR CON BOTONES -->
-			    <div style='position:absolute; bottom:0; left:0;
+			    <div style='position:absolute; bottom:40px; left:0;
 			        width:100%; height:110px;
 			        background:transparent;
 			        opacity:0; animation:bottomFadeIn 1.2s ease-out forwards;
 			        animation-delay:1s; z-index:4;
 			        display:flex; align-items:center; justify-content:center;
+			        padding-left:40px;
 			        padding-bottom:18px;
 			        border-top:1px solid rgba(255,255,255,0.15);'>
 			
@@ -866,9 +867,9 @@ table medidas
 			            <div class='ucl-btn'>Pelágico Centro Sur</div>
 			            <div class='ucl-btn'>Pelágico Norte</div>
 			            <div class='ucl-btn'>Demersales</div>
-			            <div class='ucl-btn'>Crustáceos Demer</div>
+			            <div class='ucl-btn'>Crustáceos Demersales</div>
 			            <div class='ucl-btn'>Bentónicos</div>
-			            <div class='ucl-btn'>Crustáceos Ben</div>
+			            <div class='ucl-btn'>Crustáceos Bentónicos</div>
 			            <div class='ucl-btn'>SRAM</div>
 			        </div>
 			    </div>
@@ -876,12 +877,17 @@ table medidas
 			
 			    <!-- ESTILOS -->
 			    <style>
+			        
 			        .ucl-btn {
 			            width:140px;
-			            padding:12px 0;
+			            height:60px;                     /* 👈 CLAVE */
+			            padding:0 10px;                  /* mejor que padding vertical */
 			            display:flex;
 			            align-items:center;
 			            justify-content:center;
+			            text-align:center;               /* 👈 centra texto multilinea */
+			            line-height:1.2;                 /* 👈 mejora el espaciado */
+			
 			            border-radius:8px;
 			            background:rgba(255,255,255,0.03);
 			            color:white;
@@ -889,8 +895,13 @@ table medidas
 			            letter-spacing:0.4px;
 			            cursor:pointer;
 			            transition:all 0.3s ease;
-			            border:1px solid rgba(255,255,255,0.15);
+			            border:3px solid rgba(255,255,255,0.15);
+			
+			            margin-top:20px;
 			        }
+			
+			
+			
 			
 			        .ucl-btn:hover {
 			            background:rgba(255,255,255,0.08);
@@ -1167,6 +1178,172 @@ table medidas
 			```
 		formatString: """TRUE"";""TRUE"";""FALSE"""
 		lineageTag: 0652aea6-98b0-4af5-880c-f7a3376afd3b
+
+	measure 'Req Viajes (Pesqueria) V2' = ```
+			
+			
+			VAR LugarNorm =
+			    LOWER(
+			        TRIM(
+			            SELECTEDVALUE(
+			                PB_VIAJE_MUESTREO_TEST[LUGAR_MUESTREO],
+			                "embarcado"
+			            )
+			        )
+			    )
+			
+			-- ✅ Evalúa si existen registros con región (por período, sin sesgos)
+			VAR TieneRegion =
+			    CALCULATE(
+			        COUNTROWS('PB_REQ_VIAJES'),
+			        NOT ISBLANK('PB_REQ_VIAJES'[COD_REGION]),
+			
+			        TREATAS(
+			            VALUES('Date'[PERIODOMES]),
+			            'PB_REQ_VIAJES'[PERIODOMES]
+			        ),
+			
+			        REMOVEFILTERS('Dimension REGION'),
+			        REMOVEFILTERS('Dimension FLOTA')
+			    ) > 0
+			
+			-- ✅ EMBARCADO
+			VAR ReqViajes_Emb =
+			    IF(
+			        TieneRegion,
+			
+			        -- ✅ CASO MIXTO O CON REGIÓN
+			        CALCULATE(
+			            SUM('PB_REQ_VIAJES'[TOT_VIAJE_EMB]),
+			            TREATAS(
+			                VALUES('Date'[PERIODOMES]),
+			                'PB_REQ_VIAJES'[PERIODOMES]
+			            ),
+			
+			            REMOVEFILTERS('Dimension FLOTA'),
+			
+			            -- 🔹 Parte 1: CON región (filtrado)
+			            FILTER(
+			                'PB_REQ_VIAJES',
+			                NOT ISBLANK('PB_REQ_VIAJES'[COD_REGION])
+			            ),
+			
+			            TREATAS(
+			                VALUES('Dimension REGION'[COD_REGION]),
+			                'PB_REQ_VIAJES'[COD_REGION]
+			            )
+			        )
+			        +
+			
+			        -- 🔹 Parte 2: SIN región (siempre incluido)
+			        CALCULATE(
+			            SUM('PB_REQ_VIAJES'[TOT_VIAJE_EMB]),
+			            TREATAS(
+			                VALUES('Date'[PERIODOMES]),
+			                'PB_REQ_VIAJES'[PERIODOMES]
+			            ),
+			
+			            REMOVEFILTERS('Dimension REGION'),
+			
+			            FILTER(
+			                'PB_REQ_VIAJES',
+			                ISBLANK('PB_REQ_VIAJES'[COD_REGION])
+			            )
+			        ),
+			
+			        -- ✅ CASO SIN REGIÓN
+			        CALCULATE(
+			            SUM('PB_REQ_VIAJES'[TOT_VIAJE_EMB]),
+			            TREATAS(
+			                VALUES('Date'[PERIODOMES]),
+			                'PB_REQ_VIAJES'[PERIODOMES]
+			            ),
+			
+			            REMOVEFILTERS('Dimension REGION'),
+			            REMOVEFILTERS('Dimension FLOTA')
+			        )
+			    )
+			
+			-- ✅ TIERRA
+			VAR ReqViajes_Tie =
+			    IF(
+			        TieneRegion,
+			
+			        CALCULATE(
+			            SUM('PB_REQ_VIAJES'[TOT_VIAJE_ENC]),
+			            TREATAS(
+			                VALUES('Date'[PERIODOMES]),
+			                'PB_REQ_VIAJES'[PERIODOMES]
+			            ),
+			
+			            REMOVEFILTERS('Dimension FLOTA'),
+			
+			            FILTER(
+			                'PB_REQ_VIAJES',
+			                NOT ISBLANK('PB_REQ_VIAJES'[COD_REGION])
+			            ),
+			
+			            TREATAS(
+			                VALUES('Dimension REGION'[COD_REGION]),
+			                'PB_REQ_VIAJES'[COD_REGION]
+			            )
+			        )
+			        +
+			
+			        CALCULATE(
+			            SUM('PB_REQ_VIAJES'[TOT_VIAJE_ENC]),
+			            TREATAS(
+			                VALUES('Date'[PERIODOMES]),
+			                'PB_REQ_VIAJES'[PERIODOMES]
+			            ),
+			
+			            REMOVEFILTERS('Dimension REGION'),
+			            REMOVEFILTERS('Dimension FLOTA'),
+			
+			            FILTER(
+			                'PB_REQ_VIAJES',
+			                ISBLANK('PB_REQ_VIAJES'[COD_REGION])
+			            )
+			        ),
+			
+			        CALCULATE(
+			            SUM('PB_REQ_VIAJES'[TOT_VIAJE_ENC]),
+			            TREATAS(
+			                VALUES('Date'[PERIODOMES]),
+			                'PB_REQ_VIAJES'[PERIODOMES]
+			            ),
+			
+			            REMOVEFILTERS('Dimension REGION'),
+			            REMOVEFILTERS('Dimension FLOTA')
+			        )
+			    )
+			
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    LugarNorm = "embarcado", ReqViajes_Emb,
+			    LugarNorm = "tierra" || LugarNorm = "encuesta en tierra", ReqViajes_Tie,
+			    ReqViajes_Emb
+			)
+			
+			
+			```
+		formatString: 0
+		lineageTag: a9d3db51-3684-4f68-ac12-6f39cfbc9bd4
+
+	measure '% Ejemplares' = ```
+			
+			DIVIDE(
+			    SUM(PB_VIAJE_MUESTREO_TEST[NRO_EJEMPLARES]),
+			    CALCULATE(
+			        SUM(PB_VIAJE_MUESTREO_TEST[NRO_EJEMPLARES]),
+			        ALL(PB_VIAJE_MUESTREO_TEST[COD_ESPECIE])
+			    )
+			)
+			
+			```
+		formatString: 0.0
+		lineageTag: 96c8d776-5217-4149-a5df-b6d09c61b04f
 
 	partition medidas = m
 		mode: import

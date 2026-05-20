@@ -28,5 +28,5 @@ table 'Dimension ZONA'
 				in
 				    Dimension_ZONA
 
-	annotation PBI_ResultType = Table
+	annotation PBI_ResultType = Exception
 

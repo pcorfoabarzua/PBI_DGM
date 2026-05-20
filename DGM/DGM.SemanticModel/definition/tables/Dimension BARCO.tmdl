@@ -45,7 +45,7 @@ table 'Dimension BARCO'
 				in
 				    #"Columnas con nombre cambiado"
 
-	annotation PBI_ResultType = Table
+	annotation PBI_ResultType = Exception
 
 	annotation PBI_NavigationStepName = Navegación
 

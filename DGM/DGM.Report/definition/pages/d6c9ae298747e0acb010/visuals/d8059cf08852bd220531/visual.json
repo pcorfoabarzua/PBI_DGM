@@ -1,9 +1,9 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "d8059cf08852bd220531",
   "position": {
-    "x": 810.78553615960107,
-    "y": 425.498753117207,
+    "x": 810.53304239401507,
+    "y": 423.62842892768083,
     "z": 10000,
     "height": 323.56608478802997,
     "width": 469.45137157107234,
@@ -315,6 +315,13 @@
               "expr": {
                 "Literal": {
                   "Value": "10D"
+                }
+              }
+            },
+            "secTitleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Duración Marea'"
                 }
               }
             }
