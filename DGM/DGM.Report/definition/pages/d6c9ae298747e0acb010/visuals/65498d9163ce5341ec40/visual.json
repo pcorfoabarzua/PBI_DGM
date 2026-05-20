@@ -4,10 +4,10 @@
   "position": {
     "x": 166.66666666666666,
     "y": 124.01080631753959,
-    "z": 16000,
+    "z": 9000,
     "height": 288.88888888888886,
     "width": 354.44444444444446,
-    "tabOrder": 12000
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "lineClusteredColumnComboChart",
@@ -61,11 +61,12 @@
                       "Entity": "medidas"
                     }
                   },
-                  "Property": "Req Viajes"
+                  "Property": "Req Viajes (Pesqueria)"
                 }
               },
-              "queryRef": "medidas.Req Viajes",
-              "nativeQueryRef": "Req Viajes"
+              "queryRef": "medidas.Req Viajes (Pesqueria)",
+              "nativeQueryRef": "Req Viajes",
+              "displayName": "Req Viajes"
             }
           ]
         }
@@ -116,7 +117,7 @@
             }
           },
           "selector": {
-            "metadata": "medidas.Req Viajes"
+            "metadata": "medidas.Req Viajes (Pesqueria)"
           }
         }
       ],
@@ -297,7 +298,7 @@
                       "Entity": "medidas"
                     }
                   },
-                  "Property": "Titulo Req Viajes"
+                  "Property": "Titulo Req Viajes Pesqueria"
                 }
               }
             },
@@ -318,7 +319,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
+                  "Value": "15D"
                 }
               }
             }
@@ -331,7 +332,7 @@
             "section": {
               "expr": {
                 "Literal": {
-                  "Value": "'4578f2ee5a15e4a8bfb0'"
+                  "Value": "'0416bbb67417b794fe18'"
                 }
               }
             },
@@ -421,7 +422,8 @@
             "Property": "Req Viajes"
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "howCreated": "User"
       }
     ],
     "filterSortOrder": "Custom"

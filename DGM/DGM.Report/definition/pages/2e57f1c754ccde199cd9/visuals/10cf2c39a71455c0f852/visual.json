@@ -83,7 +83,7 @@
                       "Entity": "medidas"
                     }
                   },
-                  "Property": "% Cumplimiento Muestreo (Cap 100%)"
+                  "Property": "% Cumplimiento Muestreo"
                 }
               },
               "queryRef": "medidas.% Cumplimiento Muestreo (Cap 100%)",
@@ -200,7 +200,7 @@
                                         "Entity": "medidas"
                                       }
                                     },
-                                    "Property": "% Cumplimiento Muestreo (Cap 100%)"
+                                    "Property": "% Cumplimiento Muestreo"
                                   }
                                 },
                                 "Right": {
@@ -220,12 +220,12 @@
                                         "Entity": "medidas"
                                       }
                                     },
-                                    "Property": "% Cumplimiento Muestreo (Cap 100%)"
+                                    "Property": "% Cumplimiento Muestreo"
                                   }
                                 },
                                 "Right": {
                                   "Literal": {
-                                    "Value": "1000000D"
+                                    "Value": "1D"
                                   }
                                 }
                               }
@@ -251,7 +251,7 @@
                                         "Entity": "medidas"
                                       }
                                     },
-                                    "Property": "% Cumplimiento Muestreo (Cap 100%)"
+                                    "Property": "% Cumplimiento Muestreo"
                                   }
                                 },
                                 "Right": {
@@ -271,7 +271,7 @@
                                         "Entity": "medidas"
                                       }
                                     },
-                                    "Property": "% Cumplimiento Muestreo (Cap 100%)"
+                                    "Property": "% Cumplimiento Muestreo"
                                   }
                                 },
                                 "Right": {
@@ -302,7 +302,7 @@
                                         "Entity": "medidas"
                                       }
                                     },
-                                    "Property": "% Cumplimiento Muestreo (Cap 100%)"
+                                    "Property": "% Cumplimiento Muestreo"
                                   }
                                 },
                                 "Right": {
@@ -322,7 +322,7 @@
                                         "Entity": "medidas"
                                       }
                                     },
-                                    "Property": "% Cumplimiento Muestreo (Cap 100%)"
+                                    "Property": "% Cumplimiento Muestreo"
                                   }
                                 },
                                 "Right": {

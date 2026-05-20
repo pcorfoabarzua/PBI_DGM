@@ -145,9 +145,11 @@ table PB_REQ_VIAJES
 				    Analytics = Source{[Name="Analytics"]}[Data],
 				    Fact_PB_REQ_VIAJES = Analytics{[Schema="Staging",Item="PB_REQ_VIAJES"]}[Data],
 				    #"Texto limpio" = Table.TransformColumns(Fact_PB_REQ_VIAJES,{{"COD_PROYECTO", Text.Clean, type text}}),
-				    #"Valor reemplazado" = Table.ReplaceValue(#"Texto limpio","Descarte","DES",Replacer.ReplaceText,{"COD_PROYECTO"}),
-				    #"Valor reemplazado1" = Table.ReplaceValue(#"Valor reemplazado","DES_cerco","DES_CER",Replacer.ReplaceText,{"COD_PROYECTO"}),
-				    #"Filas filtradas" = Table.SelectRows(#"Valor reemplazado1", each true)
+				    #"Cambio Descarte a DES" = Table.ReplaceValue(#"Texto limpio","Descarte","DES",Replacer.ReplaceText,{"COD_PROYECTO"}),
+				    #"Cambio Des_cerco a DES_CER" = Table.ReplaceValue(#"Cambio Descarte a DES","DES_cerco","DES_CER",Replacer.ReplaceText,{"COD_PROYECTO"}),
+				    #"Cambio DES a DAP" = Table.ReplaceValue(#"Cambio Des_cerco a DES_CER","DCS","DAP",Replacer.ReplaceText,{"COD_PROYECTO"}),
+				    #"Valor reemplazado" = Table.ReplaceValue(#"Cambio DES a DAP",0,null,Replacer.ReplaceValue,{"COD_REGION"}),
+				    #"Filas filtradas" = Table.SelectRows(#"Valor reemplazado", each true)
 				in
 				    #"Filas filtradas"
 

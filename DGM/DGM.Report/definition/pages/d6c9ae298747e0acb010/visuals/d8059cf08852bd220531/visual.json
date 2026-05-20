@@ -4,10 +4,10 @@
   "position": {
     "x": 810.78553615960107,
     "y": 425.498753117207,
-    "z": 17000,
+    "z": 10000,
     "height": 323.56608478802997,
     "width": 469.45137157107234,
-    "tabOrder": 14000
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "lineClusteredColumnComboChart",
@@ -27,9 +27,9 @@
                 }
               },
               "queryRef": "Dimension BARCO.NOMBRE_BARCO",
-              "nativeQueryRef": "Barco",
+              "nativeQueryRef": "Embarcación",
               "active": true,
-              "displayName": "Barco"
+              "displayName": "Embarcación"
             }
           ]
         },
@@ -61,7 +61,7 @@
                       "Entity": "medidas"
                     }
                   },
-                  "Property": "Duración Marea (Hrs)"
+                  "Property": "Duración Marea (Dias) Promedio"
                 }
               },
               "queryRef": "medidas.Duración Marea (Hrs)",
@@ -115,7 +115,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
+                  "Value": "9D"
                 }
               }
             },
@@ -144,6 +144,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "titleFontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
                 }
               }
             }
@@ -273,6 +280,41 @@
               "expr": {
                 "Literal": {
                   "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "secTitleFontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "secTitleFontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            },
+            "secShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "secFontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "titleFontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
                 }
               }
             }

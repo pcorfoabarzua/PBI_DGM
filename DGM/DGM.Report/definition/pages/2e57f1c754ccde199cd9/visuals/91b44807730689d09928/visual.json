@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "91b44807730689d09928",
   "position": {
-    "x": 3.484573502722323,
-    "y": 184.6823956442831,
+    "x": 8,
+    "y": 135.65493388656924,
     "z": 10000,
-    "height": 63.883847549909255,
-    "width": 137.05989110707804,
+    "height": 60,
+    "width": 138,
     "tabOrder": 10000
   },
   "visual": {
@@ -71,6 +71,13 @@
                   "Value": "false"
                 }
               }
+            },
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           }
         }
@@ -101,6 +108,13 @@
                       "Percent": 0
                     }
                   }
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
                 }
               }
             }
@@ -135,6 +149,31 @@
                   "expr": {
                     "Literal": {
                       "Value": "'#115EAC'"
+                    }
+                  }
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
                     }
                   }
                 }

@@ -21,15 +21,45 @@ table 'Dimension REGION'
 
 		annotation SummarizationSetBy = Automatic
 
+	column SIGLA_REGION
+		dataType: string
+		lineageTag: 6f1bb873-ec1a-42a6-96c5-30fff31e7499
+		summarizeBy: none
+		sourceColumn: SIGLA_REGION
+		sortByColumn: COD_REGION
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'Dimension REGION' = m
 		mode: import
 		source =
 				let
 				    Source = Sql.Databases("192.168.169.110"),
 				    Analytics = Source{[Name="Analytics"]}[Data],
-				    Dimension_PB_MAESTRO_REGION = Analytics{[Schema="Dimension",Item="PB_MAESTRO_REGION"]}[Data]
+				    Dimension_PB_MAESTRO_REGION = Analytics{[Schema="Dimension",Item="PB_MAESTRO_REGION"]}[Data],
+				    #"Agregando Sigla de Region" = Table.AddColumn(Dimension_PB_MAESTRO_REGION, "SIGLA_REGION", each if [COD_REGION] = 15 then "AyP"
+				else if [COD_REGION] = 1 then "TPCA"
+				else if [COD_REGION] = 2 then "ANTOF"
+				else if [COD_REGION] = 3 then "ATCMA"
+				else if [COD_REGION] = 4 then "COQ"
+				else if [COD_REGION] = 5 then "VALPO"
+				else if [COD_REGION] = 13 then "RM"
+				else if [COD_REGION] = 6 then "LGBO"
+				else if [COD_REGION] = 7 then "MAULE"
+				else if [COD_REGION] = 16 then "NUBLE"
+				else if [COD_REGION] = 8 then "BBIO"
+				else if [COD_REGION] = 9 then "ARAUC"
+				else if [COD_REGION] = 14 then "RIOS"
+				else if [COD_REGION] = 10 then "LAGOS"
+				else if [COD_REGION] = 11 then "AYSEN"
+				else if [COD_REGION] = 12 then "MAG"
+				else null)
 				in
-				    Dimension_PB_MAESTRO_REGION
+				    #"Agregando Sigla de Region"
 
 	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
 

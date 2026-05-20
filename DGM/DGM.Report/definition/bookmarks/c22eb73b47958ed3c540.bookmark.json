@@ -69,210 +69,6 @@
           }
         },
         "visualContainers": {
-          "0a0c6eb483e11bc0ebb2": {
-            "filters": {
-              "byExpr": [
-                {
-                  "name": "50237a41edc96919faee",
-                  "type": "Advanced",
-                  "filter": {
-                    "Version": 2,
-                    "From": [
-                      {
-                        "Name": "m",
-                        "Entity": "medidas",
-                        "Type": 0
-                      }
-                    ],
-                    "Where": [
-                      {
-                        "Condition": {
-                          "Comparison": {
-                            "ComparisonKind": 0,
-                            "Left": {
-                              "Measure": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Source": "m"
-                                  }
-                                },
-                                "Property": "Datos Año"
-                              }
-                            },
-                            "Right": {
-                              "Literal": {
-                                "Value": "1L"
-                              }
-                            }
-                          }
-                        }
-                      }
-                    ]
-                  },
-                  "expression": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "medidas"
-                        }
-                      },
-                      "Property": "Datos Año"
-                    }
-                  },
-                  "howCreated": 1
-                },
-                {
-                  "name": "8315551341c6d9b8e0a7",
-                  "type": "Advanced",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Date"
-                        }
-                      },
-                      "Property": "Year"
-                    }
-                  },
-                  "howCreated": 0
-                }
-              ]
-            },
-            "singleVisual": {
-              "visualType": "slicer",
-              "objects": {
-                "merge": {
-                  "general": [
-                    {
-                      "properties": {
-                        "filter": {
-                          "filter": {
-                            "Version": 2,
-                            "From": [
-                              {
-                                "Name": "d",
-                                "Entity": "Date",
-                                "Type": 0
-                              }
-                            ],
-                            "Where": [
-                              {
-                                "Condition": {
-                                  "In": {
-                                    "Expressions": [
-                                      {
-                                        "Column": {
-                                          "Expression": {
-                                            "SourceRef": {
-                                              "Source": "d"
-                                            }
-                                          },
-                                          "Property": "Year"
-                                        }
-                                      }
-                                    ],
-                                    "Values": [
-                                      [
-                                        {
-                                          "Literal": {
-                                            "Value": "2021L"
-                                          }
-                                        }
-                                      ]
-                                    ]
-                                  }
-                                }
-                              }
-                            ]
-                          }
-                        }
-                      }
-                    }
-                  ],
-                  "data": [
-                    {
-                      "properties": {
-                        "mode": {
-                          "expr": {
-                            "Literal": {
-                              "Value": "'Dropdown'"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  ],
-                  "selection": [
-                    {
-                      "properties": {
-                        "strictSingleSelect": {
-                          "expr": {
-                            "Literal": {
-                              "Value": "false"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  ]
-                }
-              },
-              "activeProjections": {
-                "Values": [
-                  {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Date"
-                        }
-                      },
-                      "Property": "Year"
-                    }
-                  }
-                ]
-              }
-            }
-          },
-          "12bcea43afa9d3852f72": {
-            "filters": {
-              "byExpr": [
-                {
-                  "name": "9f28c8c0b0998711d2aa",
-                  "type": "Advanced",
-                  "expression": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "medidas"
-                        }
-                      },
-                      "Property": "Viajes Totales Tarjeta"
-                    }
-                  },
-                  "howCreated": 0
-                }
-              ]
-            },
-            "singleVisual": {
-              "visualType": "card",
-              "objects": {},
-              "orderBy": [
-                {
-                  "Direction": 2,
-                  "Expression": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "medidas"
-                        }
-                      },
-                      "Property": "Viajes totales"
-                    }
-                  }
-                }
-              ]
-            }
-          },
           "17aec47167da5ce6d3a6": {
             "filters": {
               "byExpr": [
@@ -331,7 +127,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "b4f6047f2149551d0e06",
+                  "name": "e1e78944a44f90f6132a",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -346,7 +142,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "8f40d3f2e2e3e21936e8",
+                  "name": "ca1cf40d59b83f950105",
                   "type": "Advanced",
                   "expression": {
                     "Aggregation": {
@@ -409,18 +205,46 @@
               }
             }
           },
-          "2223f9cc4e63e39d89c2": {
-            "singleVisual": {
-              "visualType": "image",
-              "objects": {}
-            }
-          },
-          "238061bb843aeb133f21": {
+          "23b5994e5532a830cbdb": {
             "filters": {
               "byExpr": [
                 {
-                  "name": "dde8c4a92cdbabc88606",
+                  "name": "9cff7046ebfac06fdb9c",
                   "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "m",
+                        "Entity": "medidas",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 0,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "m"
+                                  }
+                                },
+                                "Property": "Datos region"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "1L"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
                   "expression": {
                     "Measure": {
                       "Expression": {
@@ -428,7 +252,22 @@
                           "Entity": "medidas"
                         }
                       },
-                      "Property": "Lances Totales Tarjeta"
+                      "Property": "Datos region"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "8b4f7c4ee498541399a7",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dimension REGION"
+                        }
+                      },
+                      "Property": "SIGLA_REGION"
                     }
                   },
                   "howCreated": 0
@@ -436,69 +275,91 @@
               ]
             },
             "singleVisual": {
-              "visualType": "card",
-              "objects": {},
-              "orderBy": [
-                {
-                  "Direction": 2,
-                  "Expression": {
-                    "Measure": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "d",
+                                "Entity": "Dimension REGION",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "d"
+                                            }
+                                          },
+                                          "Property": "SIGLA_REGION"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'TPCA'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "medidas"
+                          "Entity": "Dimension REGION"
                         }
                       },
-                      "Property": "N° Lances"
+                      "Property": "SIGLA_REGION"
                     }
                   }
-                }
-              ]
+                ]
+              }
             }
           },
-          "24e0c253403761172e14": {
+          "23bfd3d00d8699e285ac": {
             "singleVisual": {
               "visualType": "actionButton",
               "objects": {}
-            }
-          },
-          "26f82db8106f1a9bc6d4": {
-            "filters": {
-              "byExpr": [
-                {
-                  "name": "e1522c200d90a0c654ac",
-                  "type": "Advanced",
-                  "expression": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "medidas"
-                        }
-                      },
-                      "Property": "N° Muestreos Especie"
-                    }
-                  },
-                  "howCreated": 0
-                }
-              ]
-            },
-            "singleVisual": {
-              "visualType": "card",
-              "objects": {},
-              "orderBy": [
-                {
-                  "Direction": 2,
-                  "Expression": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "medidas"
-                        }
-                      },
-                      "Property": "N° Muestreos Especie"
-                    }
-                  }
-                }
-              ]
             }
           },
           "2be4aaac6b320f238ce2": {
@@ -678,7 +539,7 @@
                           "Entity": "medidas"
                         }
                       },
-                      "Property": "% Cumplimiento Muestreo (Cap 100%)"
+                      "Property": "% Cumplimiento Muestreo"
                     }
                   },
                   "howCreated": 0
@@ -730,7 +591,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "6a0eb0801d4e6acc25e4",
+                  "name": "f426fce461680f1a7e92",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -841,61 +702,12 @@
               }
             }
           },
-          "486790c5b191d5e4276e": {
+          "472a5d1124357d9c5d7a": {
             "filters": {
               "byExpr": [
                 {
-                  "name": "cc95c4c3b65351b5d5e1",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Dimension REGION"
-                        }
-                      },
-                      "Property": "NOMBRE_REGION"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
-                  "name": "3c72558eb64369c684f1",
+                  "name": "1e489d27708029db024c",
                   "type": "Advanced",
-                  "filter": {
-                    "Version": 2,
-                    "From": [
-                      {
-                        "Name": "m",
-                        "Entity": "medidas",
-                        "Type": 0
-                      }
-                    ],
-                    "Where": [
-                      {
-                        "Condition": {
-                          "Comparison": {
-                            "ComparisonKind": 0,
-                            "Left": {
-                              "Measure": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Source": "m"
-                                  }
-                                },
-                                "Property": "Datos region"
-                              }
-                            },
-                            "Right": {
-                              "Literal": {
-                                "Value": "1L"
-                              }
-                            }
-                          }
-                        }
-                      }
-                    ]
-                  },
                   "expression": {
                     "Measure": {
                       "Expression": {
@@ -903,111 +715,46 @@
                           "Entity": "medidas"
                         }
                       },
-                      "Property": "Datos region"
+                      "Property": "Lances Totales Tarjeta"
                     }
                   },
-                  "howCreated": 1
+                  "howCreated": 0
                 }
               ]
             },
             "singleVisual": {
-              "visualType": "slicer",
-              "objects": {
-                "merge": {
-                  "general": [
-                    {
-                      "properties": {
-                        "filter": {
-                          "filter": {
-                            "Version": 2,
-                            "From": [
-                              {
-                                "Name": "d",
-                                "Entity": "Dimension REGION",
-                                "Type": 0
-                              }
-                            ],
-                            "Where": [
-                              {
-                                "Condition": {
-                                  "In": {
-                                    "Expressions": [
-                                      {
-                                        "Column": {
-                                          "Expression": {
-                                            "SourceRef": {
-                                              "Source": "d"
-                                            }
-                                          },
-                                          "Property": "NOMBRE_REGION"
-                                        }
-                                      }
-                                    ],
-                                    "Values": [
-                                      [
-                                        {
-                                          "Literal": {
-                                            "Value": "'Arica'"
-                                          }
-                                        }
-                                      ]
-                                    ]
-                                  }
-                                }
-                              }
-                            ]
-                          }
-                        }
-                      }
-                    }
-                  ],
-                  "data": [
-                    {
-                      "properties": {
-                        "mode": {
-                          "expr": {
-                            "Literal": {
-                              "Value": "'Dropdown'"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  ],
-                  "selection": [
-                    {
-                      "properties": {
-                        "strictSingleSelect": {
-                          "expr": {
-                            "Literal": {
-                              "Value": "false"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  ]
-                }
-              },
-              "activeProjections": {
-                "Values": [
-                  {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Dimension REGION"
-                        }
-                      },
-                      "Property": "NOMBRE_REGION"
-                    }
-                  }
-                ]
-              }
+              "visualType": "card",
+              "objects": {}
             }
           },
           "4fcbe82e018790a52abc": {
             "singleVisual": {
               "visualType": "basicShape",
+              "objects": {}
+            }
+          },
+          "5addc8046347fa0c8d5c": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "53ad5bc64797580588fa",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "medidas"
+                        }
+                      },
+                      "Property": "N° Muestreos Especie"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
               "objects": {}
             }
           },
@@ -1023,94 +770,10 @@
               "objects": {}
             }
           },
-          "6c4837fd3277e9e49136": {
-            "filters": {
-              "byExpr": [
-                {
-                  "name": "e7e491867a454fbfd1b1",
-                  "type": "Advanced",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Date"
-                        }
-                      },
-                      "Property": "Month Number"
-                    }
-                  },
-                  "howCreated": 1
-                },
-                {
-                  "name": "83d0c207d57128104360",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Date"
-                        }
-                      },
-                      "Property": "Mes"
-                    }
-                  },
-                  "howCreated": 0
-                }
-              ]
-            },
+          "6fb74ce2a9450d553093": {
             "singleVisual": {
-              "visualType": "slicer",
-              "objects": {
-                "merge": {
-                  "data": [
-                    {
-                      "properties": {
-                        "mode": {
-                          "expr": {
-                            "Literal": {
-                              "Value": "'Dropdown'"
-                            }
-                          }
-                        },
-                        "isInvertedSelectionMode": {
-                          "expr": {
-                            "Literal": {
-                              "Value": "true"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  ],
-                  "selection": [
-                    {
-                      "properties": {
-                        "strictSingleSelect": {
-                          "expr": {
-                            "Literal": {
-                              "Value": "false"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  ]
-                }
-              },
-              "activeProjections": {
-                "Values": [
-                  {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Date"
-                        }
-                      },
-                      "Property": "Mes"
-                    }
-                  }
-                ]
-              }
+              "visualType": "image",
+              "objects": {}
             }
           },
           "767c803196a906653ffb": {
@@ -1197,7 +860,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "a0338e572a0c740a45d6",
+                  "name": "ffb6f50eba5fb9e31c94",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1212,7 +875,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "4d234c69c85d40de45b0",
+                  "name": "e0d3b026373ff453fcf7",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1227,7 +890,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "bbf0a5cec499769c60c2",
+                  "name": "e3a0b1c8a5c44c9fd26a",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1242,7 +905,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "a26de2b27c90900738d5",
+                  "name": "e52f524c938cb5452dd3",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1251,7 +914,7 @@
                           "Entity": "medidas"
                         }
                       },
-                      "Property": "% Cumplimiento Muestreo (Cap 100%)"
+                      "Property": "% Cumplimiento Muestreo"
                     }
                   },
                   "howCreated": 0
@@ -1273,7 +936,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "dfdbd6440009022496e5",
+                  "name": "2b62638ed1f097ab1134",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1300,26 +963,11 @@
               "objects": {}
             }
           },
-          "9daa42fcf85a4aaef9e4": {
+          "9a8277fada37c18b93f3": {
             "filters": {
               "byExpr": [
                 {
-                  "name": "cc95c4c3b65351b5d5e1",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Dimension REGION"
-                        }
-                      },
-                      "Property": "NOMBRE_REGION"
-                    }
-                  },
-                  "howCreated": 1
-                },
-                {
-                  "name": "3c72558eb64369c684f1",
+                  "name": "374e861cfd42baee1fb6",
                   "type": "Advanced",
                   "filter": {
                     "Version": 2,
@@ -1342,7 +990,7 @@
                                     "Source": "m"
                                   }
                                 },
-                                "Property": "Datos region"
+                                "Property": "Datos Flota"
                               }
                             },
                             "Right": {
@@ -1362,13 +1010,13 @@
                           "Entity": "medidas"
                         }
                       },
-                      "Property": "Datos region"
+                      "Property": "Datos Flota"
                     }
                   },
                   "howCreated": 1
                 },
                 {
-                  "name": "4b50bbc2559a24e526b1",
+                  "name": "f42426f969d5950fc392",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1447,19 +1095,6 @@
                         }
                       }
                     }
-                  ],
-                  "selection": [
-                    {
-                      "properties": {
-                        "strictSingleSelect": {
-                          "expr": {
-                            "Literal": {
-                              "Value": "false"
-                            }
-                          }
-                        }
-                      }
-                    }
                   ]
                 }
               },
@@ -1477,6 +1112,18 @@
                   }
                 ]
               }
+            }
+          },
+          "9c5e03523a4c901d29ee": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "a12fc16b92a4a1529a1b": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
             }
           },
           "a19528874a407563af55": {
@@ -1553,7 +1200,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "e24d0fb071694b7a7d13",
+                  "name": "2a4fb117dc571a9f6f37",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1568,7 +1215,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "51830973e6c8da6a8a89",
+                  "name": "cf803112d4879bbe4822",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1601,6 +1248,31 @@
                   }
                 ]
               }
+            }
+          },
+          "a7be0db73cf854e77c98": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "6ee4b2ac8d0930bc493f",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "medidas"
+                        }
+                      },
+                      "Property": "Viajes Totales Tarjeta"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {}
             }
           },
           "ba48e891c82a7f62d0f5": {
@@ -1642,7 +1314,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "6caf3f72aba9902dcbe0",
+                  "name": "45a95d868e98f0604dca",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1696,7 +1368,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "acdaa377598c1b047e58",
+                  "name": "8dfd2823efa924eaba90",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1711,7 +1383,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "d88dd22b9cc569eae704",
+                  "name": "d503fcd1b49f59f5b594",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1720,7 +1392,7 @@
                           "Entity": "medidas"
                         }
                       },
-                      "Property": "Viajes Totales Obs Cientifico"
+                      "Property": "Viajes totales"
                     }
                   },
                   "howCreated": 0
@@ -1740,7 +1412,7 @@
                           "Entity": "medidas"
                         }
                       },
-                      "Property": "Viajes Totales Obs Cientifico"
+                      "Property": "Viajes totales"
                     }
                   }
                 }
@@ -1770,11 +1442,162 @@
               }
             }
           },
+          "c195f606d87f85d3b374": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "d1aac46ac729c8166ba6",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "m",
+                        "Entity": "medidas",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 0,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "m"
+                                  }
+                                },
+                                "Property": "Datos Año"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "1L"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "medidas"
+                        }
+                      },
+                      "Property": "Datos Año"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "61f6a1000f7202ae38a6",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Date"
+                        }
+                      },
+                      "Property": "Year"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "d",
+                                "Entity": "Date",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "d"
+                                            }
+                                          },
+                                          "Property": "Year"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "2021L"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Date"
+                        }
+                      },
+                      "Property": "Year"
+                    }
+                  }
+                ]
+              }
+            }
+          },
           "dcea7a0400a3194d036b": {
             "filters": {
               "byExpr": [
                 {
-                  "name": "b119d11d084298994d99",
+                  "name": "65ce1a4d601d9f62a2bf",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1789,7 +1612,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "b95386e338acd1d7e0b1",
+                  "name": "a7ca259de07f7ede45c4",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1804,7 +1627,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "008c22119ac6908c5cc7",
+                  "name": "850236005af28bef818c",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1813,7 +1636,7 @@
                           "Entity": "medidas"
                         }
                       },
-                      "Property": "Duración Marea (Hrs)"
+                      "Property": "Duración Marea (Dias) Promedio"
                     }
                   },
                   "howCreated": 0
@@ -1863,6 +1686,76 @@
             "singleVisual": {
               "visualType": "basicShape",
               "objects": {}
+            }
+          },
+          "fe1afdfceb6ccf3c1fa8": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "450e2253dfc486e89ada",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "medidas"
+                        }
+                      },
+                      "Property": "Datos Meses"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "545fed616d6b138ce68e",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Date"
+                        }
+                      },
+                      "Property": "Mes"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Date"
+                        }
+                      },
+                      "Property": "Mes"
+                    }
+                  }
+                ]
+              }
             }
           }
         }

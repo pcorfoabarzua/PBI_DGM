@@ -1,0 +1,49 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "168e319963bc66c36c50",
+  "position": {
+    "x": 0.294779919295987,
+    "y": 0,
+    "z": 0,
+    "height": 749.53184957789711,
+    "width": 156.19339984650804,
+    "tabOrder": 29000
+  },
+  "visualGroup": {
+    "displayName": "Nav Bar",
+    "groupMode": "ScaleMode",
+    "objects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#DB7C0D'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "30D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

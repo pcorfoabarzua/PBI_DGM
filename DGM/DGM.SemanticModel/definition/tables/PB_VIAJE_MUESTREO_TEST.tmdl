@@ -14,7 +14,7 @@ table PB_VIAJE_MUESTREO_TEST
 
 		annotation SummarizationSetBy = Automatic
 
-	column DuracionMarea = ABS(DATEDIFF(PB_VIAJE_MUESTREO_TEST[FECHA_HORA_ZARPE],PB_VIAJE_MUESTREO_TEST[FECHA_HORA_RECALADA],HOUR))
+	column DuracionMarea = ABS(DATEDIFF(PB_VIAJE_MUESTREO_TEST[FECHA_HORA_ZARPE],PB_VIAJE_MUESTREO_TEST[FECHA_HORA_RECALADA],DAY))
 		formatString: 0
 		lineageTag: 026e3bd4-552d-4b26-90ff-67eeb2f320ee
 		summarizeBy: sum
@@ -225,13 +225,6 @@ table PB_VIAJE_MUESTREO_TEST
 
 		annotation SummarizationSetBy = Automatic
 
-	column Año = YEAR(PB_VIAJE_MUESTREO_TEST[FECHA])
-		formatString: 0
-		lineageTag: 1ccd1746-6ac1-4929-8790-1ac1dfc58afd
-		summarizeBy: sum
-
-		annotation SummarizationSetBy = Automatic
-
 	column NOMBRE_ESPECIE_SELECCIONADA = ```
 			
 			VAR cod =
@@ -254,6 +247,15 @@ table PB_VIAJE_MUESTREO_TEST
 
 		annotation SummarizationSetBy = Automatic
 
+	column AÑO
+		dataType: int64
+		formatString: 0
+		lineageTag: 884f4ba1-9294-447a-9bc8-6bd0fdda598e
+		summarizeBy: sum
+		sourceColumn: AÑO
+
+		annotation SummarizationSetBy = Automatic
+
 	partition PB_VIAJE_MUESTREO_TEST = m
 		mode: import
 		source =
@@ -267,9 +269,16 @@ table PB_VIAJE_MUESTREO_TEST
 				    #"Valor reemplazado1" = Table.ReplaceValue(#"Valor reemplazado","DCS","DAP",Replacer.ReplaceText,{"PROYECTO"}),
 				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Valor reemplazado1",{{"FECHA_HORA_RECALADA", type datetime}, {"FECHA_HORA_ZARPE", type datetime}}),
 				    #"Poner En Mayúsculas Cada Palabra" = Table.TransformColumns(#"Tipo cambiado",{{"LUGAR_MUESTREO", Text.Proper, type text}}),
-				    #"Filas filtradas" = Table.SelectRows(#"Poner En Mayúsculas Cada Palabra", each ([FECHA] <> null and [FECHA] <> ""))
+				    #"Filas filtradas" = Table.SelectRows(#"Poner En Mayúsculas Cada Palabra", each ([FECHA] <> null and [FECHA] <> "")),
+				    #"Agregar Año" = Table.AddColumn(#"Filas filtradas", "AÑO", each Date.Year([FECHA]), Int64.Type),
+				
+				    AnioActual = Date.Year(Date.From(DateTime.LocalNow())),
+				    AnioMinimo = AnioActual - 5,
+				
+				    #"Filtrar últimos 5 años" = Table.SelectRows(#"Agregar Año", each [AÑO] >= AnioMinimo)
+				
 				in
-				    #"Filas filtradas"
+				    #"Filtrar últimos 5 años"
 
 	annotation PBI_ResultType = Table
 

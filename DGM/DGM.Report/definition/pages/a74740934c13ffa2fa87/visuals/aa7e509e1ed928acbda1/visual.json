@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "aa7e509e1ed928acbda1",
   "position": {
     "x": 811,
     "y": 485,
-    "z": 17000,
+    "z": 10000,
     "height": 265,
     "width": 466,
-    "tabOrder": 14000
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "lineClusteredColumnComboChart",
@@ -27,9 +27,9 @@
                 }
               },
               "queryRef": "Dimension BARCO.NOMBRE_BARCO",
-              "nativeQueryRef": "Barco",
+              "nativeQueryRef": "Embarcación",
               "active": true,
-              "displayName": "Barco"
+              "displayName": "Embarcación"
             }
           ]
         },
@@ -61,7 +61,7 @@
                       "Entity": "medidas"
                     }
                   },
-                  "Property": "Duración Marea (Hrs)"
+                  "Property": "Duración Marea (Dias) Promedio"
                 }
               },
               "queryRef": "medidas.Duración Marea (Hrs)",
@@ -260,6 +260,34 @@
               }
             },
             "titleFontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "secShowAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "secTitleFontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "secShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "secFontFamily": {
               "expr": {
                 "Literal": {
                   "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"

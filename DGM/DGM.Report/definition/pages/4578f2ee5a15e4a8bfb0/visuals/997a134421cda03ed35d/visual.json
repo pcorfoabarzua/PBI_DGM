@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "997a134421cda03ed35d",
   "position": {
     "x": 35,
@@ -23,7 +23,7 @@
                       "Entity": "medidas"
                     }
                   },
-                  "Property": "% Cumplimiento Viajes (Cap 100%)"
+                  "Property": "% Cumplimiento Viajes"
                 }
               },
               "queryRef": "medidas.% Cumplimiento Viajes (Cap 100%)",
@@ -43,7 +43,7 @@
                     "Entity": "medidas"
                   }
                 },
-                "Property": "% Cumplimiento Viajes (Cap 100%)"
+                "Property": "% Cumplimiento Viajes"
               }
             },
             "direction": "Descending"

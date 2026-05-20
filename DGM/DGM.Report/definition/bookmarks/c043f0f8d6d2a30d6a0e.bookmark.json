@@ -3,7 +3,9 @@
   "displayName": "Descarte Demersales",
   "name": "c043f0f8d6d2a30d6a0e",
   "options": {
-    "targetVisualNames": []
+    "targetVisualNames": [
+      "db7ba01fe419dc950006"
+    ]
   },
   "explorationState": {
     "version": "1.3",
@@ -69,46 +71,12 @@
           }
         },
         "visualContainers": {
-          "9af3a0cd34be342247a6": {
+          "102e2b4168e07203040c": {
             "filters": {
               "byExpr": [
                 {
-                  "name": "50237a41edc96919faee",
+                  "name": "e1478e6f6819b43053a0",
                   "type": "Advanced",
-                  "filter": {
-                    "Version": 2,
-                    "From": [
-                      {
-                        "Name": "m",
-                        "Entity": "medidas",
-                        "Type": 0
-                      }
-                    ],
-                    "Where": [
-                      {
-                        "Condition": {
-                          "Comparison": {
-                            "ComparisonKind": 0,
-                            "Left": {
-                              "Measure": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Source": "m"
-                                  }
-                                },
-                                "Property": "Datos Año"
-                              }
-                            },
-                            "Right": {
-                              "Literal": {
-                                "Value": "1L"
-                              }
-                            }
-                          }
-                        }
-                      }
-                    ]
-                  },
                   "expression": {
                     "Measure": {
                       "Expression": {
@@ -116,22 +84,7 @@
                           "Entity": "medidas"
                         }
                       },
-                      "Property": "Datos Año"
-                    }
-                  },
-                  "howCreated": 1
-                },
-                {
-                  "name": "7f930997e52334c10c1d",
-                  "type": "Advanced",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Date"
-                        }
-                      },
-                      "Property": "Year"
+                      "Property": "TxtFlotaRegion"
                     }
                   },
                   "howCreated": 0
@@ -139,111 +92,135 @@
               ]
             },
             "singleVisual": {
-              "visualType": "slicer",
-              "objects": {
-                "merge": {
-                  "general": [
-                    {
-                      "properties": {
-                        "filter": {
-                          "filter": {
-                            "Version": 2,
-                            "From": [
-                              {
-                                "Name": "d",
-                                "Entity": "Date",
-                                "Type": 0
-                              }
-                            ],
-                            "Where": [
-                              {
-                                "Condition": {
-                                  "In": {
-                                    "Expressions": [
-                                      {
-                                        "Column": {
-                                          "Expression": {
-                                            "SourceRef": {
-                                              "Source": "d"
-                                            }
-                                          },
-                                          "Property": "Year"
-                                        }
-                                      }
-                                    ],
-                                    "Values": [
-                                      [
-                                        {
-                                          "Literal": {
-                                            "Value": "2024L"
-                                          }
-                                        }
-                                      ]
-                                    ]
-                                  }
-                                }
-                              }
-                            ]
-                          }
+              "visualType": "card",
+              "objects": {}
+            }
+          },
+          "1552d55fad0731011e24": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "165d4f5c01896a28f690": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "7415becd0f90fee02630",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "medidas"
                         }
-                      }
+                      },
+                      "Property": "N° Muestreos Especie"
                     }
-                  ],
-                  "data": [
-                    {
-                      "properties": {
-                        "mode": {
-                          "expr": {
-                            "Literal": {
-                              "Value": "'Dropdown'"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  ],
-                  "selection": [
-                    {
-                      "properties": {
-                        "strictSingleSelect": {
-                          "expr": {
-                            "Literal": {
-                              "Value": "false"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  ]
+                  },
+                  "howCreated": 0
                 }
-              },
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {}
+            }
+          },
+          "204e4adf30ce10565ec0": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filter6e3e363372ac3f5a4f41",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PB_VIAJE_MUESTREO_TEST"
+                            }
+                          },
+                          "Property": "NRO_EJEMPLARES"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "21b3be7b5c00023bae96",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dimension MAESTRO ESPECIE"
+                        }
+                      },
+                      "Property": "NOMBRE_ESPECIE"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b85a41a6c6e5c01a5732",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "medidas"
+                        }
+                      },
+                      "Property": "N° Ejemplares"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "donutChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "medidas"
+                        }
+                      },
+                      "Property": "N° Ejemplares"
+                    }
+                  }
+                }
+              ],
               "activeProjections": {
-                "Values": [
+                "Category": [
                   {
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Date"
+                          "Entity": "Dimension MAESTRO ESPECIE"
                         }
                       },
-                      "Property": "Year"
+                      "Property": "NOMBRE_ESPECIE"
                     }
                   }
                 ]
               }
             }
           },
-          "6bb6d4c30824e5806aca": {
-            "singleVisual": {
-              "visualType": "basicShape",
-              "objects": {}
-            }
-          },
-          "0eab7ccf69d7b8bde023": {
+          "266979d3c17618d3e215": {
             "filters": {
               "byExpr": [
                 {
-                  "name": "d1e6a43bab3a605bb002",
+                  "name": "9e914a25be0036ce81e1",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -261,22 +238,19 @@
             },
             "singleVisual": {
               "visualType": "card",
-              "objects": {},
-              "orderBy": [
-                {
-                  "Direction": 2,
-                  "Expression": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "medidas"
-                        }
-                      },
-                      "Property": "Viajes totales"
-                    }
-                  }
-                }
-              ]
+              "objects": {}
+            }
+          },
+          "2e0cbb51a790d30d1054": {
+            "singleVisual": {
+              "visualType": "basicShape",
+              "objects": {}
+            }
+          },
+          "3e4aeb0b9749bf31eeff": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
             }
           },
           "3f6e779fbb23b51438de": {
@@ -337,7 +311,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "60e1ff559a03867daeae",
+                  "name": "5f9ce5915c5b2b7a07e0",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -352,7 +326,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "40795b52b4b218c4395a",
+                  "name": "159ab8fd0e218738d9d6",
                   "type": "Advanced",
                   "expression": {
                     "Aggregation": {
@@ -415,96 +389,10 @@
               }
             }
           },
-          "10adad7aed61c6bb6300": {
+          "4ebaae1793bb9604336c": {
             "singleVisual": {
-              "visualType": "image",
+              "visualType": "basicShape",
               "objects": {}
-            }
-          },
-          "aa69a702680e6b224c87": {
-            "filters": {
-              "byExpr": [
-                {
-                  "name": "abebad42581b88de5ea6",
-                  "type": "Advanced",
-                  "expression": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "medidas"
-                        }
-                      },
-                      "Property": "Lances Totales Tarjeta"
-                    }
-                  },
-                  "howCreated": 0
-                }
-              ]
-            },
-            "singleVisual": {
-              "visualType": "card",
-              "objects": {},
-              "orderBy": [
-                {
-                  "Direction": 2,
-                  "Expression": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "medidas"
-                        }
-                      },
-                      "Property": "N° Lances"
-                    }
-                  }
-                }
-              ]
-            }
-          },
-          "a7754630c2956b503d7d": {
-            "singleVisual": {
-              "visualType": "actionButton",
-              "objects": {}
-            }
-          },
-          "5ee753fe7500aee618c8": {
-            "filters": {
-              "byExpr": [
-                {
-                  "name": "6dad1e1e32adde76a510",
-                  "type": "Advanced",
-                  "expression": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "medidas"
-                        }
-                      },
-                      "Property": "N° Muestreos Especie"
-                    }
-                  },
-                  "howCreated": 0
-                }
-              ]
-            },
-            "singleVisual": {
-              "visualType": "card",
-              "objects": {},
-              "orderBy": [
-                {
-                  "Direction": 2,
-                  "Expression": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "medidas"
-                        }
-                      },
-                      "Property": "N° Muestreos Especie"
-                    }
-                  }
-                }
-              ]
             }
           },
           "5ceb7acf9d03cc84bc25": {
@@ -678,7 +566,7 @@
                           "Entity": "medidas"
                         }
                       },
-                      "Property": "% Cumplimiento Muestreo (Cap 100%)"
+                      "Property": "% Cumplimiento Muestreo"
                     }
                   },
                   "howCreated": 0
@@ -705,26 +593,218 @@
               ]
             }
           },
-          "eea72bc860cab411202c": {
+          "6a569be9501b089155c0": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filterc30abe0c046ed6fe0d29",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PB_VIAJE_MUESTREO_TEST"
+                            }
+                          },
+                          "Property": "IDBarcoFecha"
+                        }
+                      },
+                      "Function": 2
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "Filter0b818d8ebdb08a00f2dc",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PB_VIAJE_MUESTREO_TEST"
+                        }
+                      },
+                      "Property": "FECHA_HORA_RECALADA"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "6299f7a433850c40ae52",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PB_VIAJE_MUESTREO_TEST"
+                            }
+                          },
+                          "Property": "IDBarcoFecha"
+                        }
+                      },
+                      "Function": 5
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "dabfeebf66bdb6eae497",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "medidas"
+                        }
+                      },
+                      "Property": "Req Viajes"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1a64d997052bd7c7d165",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Date"
+                        }
+                      },
+                      "Property": "Mes"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ea55ee43ede7c6597f14",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "medidas"
+                        }
+                      },
+                      "Property": "Viajes totales"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineClusteredColumnComboChart",
+              "objects": {},
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Date"
+                        }
+                      },
+                      "Property": "Mes"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "6b9e2a9a68eb31f9c219": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "450e2253dfc486e89ada",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "medidas"
+                        }
+                      },
+                      "Property": "Datos Meses"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "93dd6f3abbb182c6c673",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Date"
+                        }
+                      },
+                      "Property": "Mes"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        },
+                        "isInvertedSelectionMode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Date"
+                        }
+                      },
+                      "Property": "Mes"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "6bb6d4c30824e5806aca": {
             "singleVisual": {
               "visualType": "basicShape",
               "objects": {}
-            }
-          },
-          "d4d4d6b70aa090c0b117": {
-            "singleVisual": {
-              "visualType": "basicShape",
-              "objects": {},
-              "display": {
-                "mode": "hidden"
-              }
             }
           },
           "737c42b1ec040b2e4e76": {
             "filters": {
               "byExpr": [
                 {
-                  "name": "f1a859cb43ac0db6b068",
+                  "name": "56466e8ebccef8479e23",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -835,26 +915,36 @@
               }
             }
           },
-          "0bcfd610d6205505d0b2": {
+          "778495fcecd368ed2718": {
             "filters": {
               "byExpr": [
                 {
-                  "name": "cc95c4c3b65351b5d5e1",
-                  "type": "Categorical",
+                  "name": "3ddac8ba72aa224bd0a6",
+                  "type": "Advanced",
                   "expression": {
-                    "Column": {
+                    "Measure": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Dimension REGION"
+                          "Entity": "medidas"
                         }
                       },
-                      "Property": "NOMBRE_REGION"
+                      "Property": "Lances Totales Tarjeta"
                     }
                   },
                   "howCreated": 0
-                },
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {}
+            }
+          },
+          "7c674a8f71a3fdaabfaf": {
+            "filters": {
+              "byExpr": [
                 {
-                  "name": "3c72558eb64369c684f1",
+                  "name": "9cff7046ebfac06fdb9c",
                   "type": "Advanced",
                   "filter": {
                     "Version": 2,
@@ -901,6 +991,21 @@
                     }
                   },
                   "howCreated": 1
+                },
+                {
+                  "name": "0d8613b4cba4598f151a",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dimension REGION"
+                        }
+                      },
+                      "Property": "NOMBRE_REGION"
+                    }
+                  },
+                  "howCreated": 0
                 }
               ]
             },
@@ -967,19 +1072,6 @@
                         }
                       }
                     }
-                  ],
-                  "selection": [
-                    {
-                      "properties": {
-                        "strictSingleSelect": {
-                          "expr": {
-                            "Literal": {
-                              "Value": "false"
-                            }
-                          }
-                        }
-                      }
-                    }
                   ]
                 }
               },
@@ -999,23 +1091,188 @@
               }
             }
           },
+          "a2c842539148300d0110": {
+            "singleVisual": {
+              "visualType": "basicShape",
+              "objects": {}
+            }
+          },
+          "a47306236532931cbc0a": {
+            "singleVisual": {
+              "visualType": "basicShape",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "a5e3d98204f37060e9ec": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "ae0e84a39e1081c51869": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "c8cec655f3064529ad90",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dimension BARCO"
+                        }
+                      },
+                      "Property": "NOMBRE_BARCO"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "df88910d206dec801888",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "medidas"
+                        }
+                      },
+                      "Property": "N° Lances"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "fc297a1a318c8c98811a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "medidas"
+                        }
+                      },
+                      "Property": "Duración Marea (Dias) Promedio"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineClusteredColumnComboChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "PB_VIAJE_MUESTREO_TEST"
+                            }
+                          },
+                          "Property": "NRO_LANCES"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dimension BARCO"
+                        }
+                      },
+                      "Property": "NOMBRE_BARCO"
+                    }
+                  }
+                ]
+              }
+            }
+          },
           "ae0eef6643cc16e28724": {
             "singleVisual": {
               "visualType": "textbox",
               "objects": {}
             }
           },
-          "2e0cbb51a790d30d1054": {
+          "b2286cca46e0db100112": {
             "singleVisual": {
               "visualType": "basicShape",
               "objects": {}
             }
           },
-          "01a2c7ad7e81857782bd": {
+          "b7fab23c639d32c924b9": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "be8c079a8acf9221e0b9": {
             "filters": {
               "byExpr": [
                 {
-                  "name": "e7e491867a454fbfd1b1",
+                  "name": "d1aac46ac729c8166ba6",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "m",
+                        "Entity": "medidas",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 0,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "m"
+                                  }
+                                },
+                                "Property": "Datos Año"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "1L"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "medidas"
+                        }
+                      },
+                      "Property": "Datos Año"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "86c3a46f296bf1f2f463",
                   "type": "Advanced",
                   "expression": {
                     "Column": {
@@ -1024,22 +1281,7 @@
                           "Entity": "Date"
                         }
                       },
-                      "Property": "Month Number"
-                    }
-                  },
-                  "howCreated": 1
-                },
-                {
-                  "name": "1bad9646ee2a82b47480",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Date"
-                        }
-                      },
-                      "Property": "Mes"
+                      "Property": "Year"
                     }
                   },
                   "howCreated": 0
@@ -1050,6 +1292,53 @@
               "visualType": "slicer",
               "objects": {
                 "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "d",
+                                "Entity": "Date",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "d"
+                                            }
+                                          },
+                                          "Property": "Year"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "2024L"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
                   "data": [
                     {
                       "properties": {
@@ -1057,26 +1346,6 @@
                           "expr": {
                             "Literal": {
                               "Value": "'Dropdown'"
-                            }
-                          }
-                        },
-                        "isInvertedSelectionMode": {
-                          "expr": {
-                            "Literal": {
-                              "Value": "true"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  ],
-                  "selection": [
-                    {
-                      "properties": {
-                        "strictSingleSelect": {
-                          "expr": {
-                            "Literal": {
-                              "Value": "false"
                             }
                           }
                         }
@@ -1094,16 +1363,112 @@
                           "Entity": "Date"
                         }
                       },
-                      "Property": "Mes"
+                      "Property": "Year"
                     }
                   }
                 ]
               }
             }
           },
+          "cf6b4762d7da105e82cb": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "d4d4d6b70aa090c0b117": {
+            "singleVisual": {
+              "visualType": "basicShape",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
           "d66190f7978906241487": {
             "singleVisual": {
               "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "db7ba01fe419dc950006": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "017d443986b80b9425c7",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dimension OBSERVADOR_CIENTIFICO"
+                        }
+                      },
+                      "Property": "OBSERVADOR_CIENTIFICO"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "cbdd5ce30e04c36afb44",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "medidas"
+                        }
+                      },
+                      "Property": "Viajes totales"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "clusteredBarChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "medidas"
+                        }
+                      },
+                      "Property": "Viajes totales"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dimension OBSERVADOR_CIENTIFICO"
+                        }
+                      },
+                      "Property": "OBSERVADOR_CIENTIFICO"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "eea72bc860cab411202c": {
+            "singleVisual": {
+              "visualType": "basicShape",
+              "objects": {}
+            }
+          },
+          "f97eebedb09409823a07": {
+            "singleVisual": {
+              "visualType": "image",
               "objects": {}
             }
           },
@@ -1179,7 +1544,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "eb49ffca709056555175",
+                  "name": "1239931cf1c0d235f781",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1194,7 +1559,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "5aa7f5a9662ccdc96c9c",
+                  "name": "bb266cf380ed87b8a077",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1209,7 +1574,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "3f8684bf4e02547950a3",
+                  "name": "3c74cf89900dd04dac14",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1224,7 +1589,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "489c5020eac29e708790",
+                  "name": "1e5b5188e5ed1fd216ff",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1233,7 +1598,7 @@
                           "Entity": "medidas"
                         }
                       },
-                      "Property": "% Cumplimiento Muestreo (Cap 100%)"
+                      "Property": "% Cumplimiento Muestreo"
                     }
                   },
                   "howCreated": 0
@@ -1245,63 +1610,11 @@
               "objects": {}
             }
           },
-          "b2286cca46e0db100112": {
-            "singleVisual": {
-              "visualType": "basicShape",
-              "objects": {}
-            }
-          },
-          "102e2b4168e07203040c": {
+          "ffb12b5051f95f503c5d": {
             "filters": {
               "byExpr": [
                 {
-                  "name": "4c4026aa062968d04225",
-                  "type": "Advanced",
-                  "expression": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "medidas"
-                        }
-                      },
-                      "Property": "TxtFlotaRegion"
-                    }
-                  },
-                  "howCreated": 0
-                }
-              ]
-            },
-            "singleVisual": {
-              "visualType": "card",
-              "objects": {}
-            }
-          },
-          "4ebaae1793bb9604336c": {
-            "singleVisual": {
-              "visualType": "basicShape",
-              "objects": {}
-            }
-          },
-          "1f32934021a10d3aab81": {
-            "filters": {
-              "byExpr": [
-                {
-                  "name": "cc95c4c3b65351b5d5e1",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Dimension REGION"
-                        }
-                      },
-                      "Property": "NOMBRE_REGION"
-                    }
-                  },
-                  "howCreated": 1
-                },
-                {
-                  "name": "3c72558eb64369c684f1",
+                  "name": "27db3744a2780e661fb2",
                   "type": "Advanced",
                   "filter": {
                     "Version": 2,
@@ -1324,7 +1637,7 @@
                                     "Source": "m"
                                   }
                                 },
-                                "Property": "Datos region"
+                                "Property": "Datos Flota"
                               }
                             },
                             "Right": {
@@ -1344,13 +1657,13 @@
                           "Entity": "medidas"
                         }
                       },
-                      "Property": "Datos region"
+                      "Property": "Datos Flota"
                     }
                   },
                   "howCreated": 1
                 },
                 {
-                  "name": "8331de30d90643a37659",
+                  "name": "c72581ff247fa1c92e26",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1429,19 +1742,6 @@
                         }
                       }
                     }
-                  ],
-                  "selection": [
-                    {
-                      "properties": {
-                        "strictSingleSelect": {
-                          "expr": {
-                            "Literal": {
-                              "Value": "false"
-                            }
-                          }
-                        }
-                      }
-                    }
                   ]
                 }
               },
@@ -1459,404 +1759,6 @@
                   }
                 ]
               }
-            }
-          },
-          "6a569be9501b089155c0": {
-            "filters": {
-              "byExpr": [
-                {
-                  "name": "Filterc30abe0c046ed6fe0d29",
-                  "type": "Advanced",
-                  "expression": {
-                    "Aggregation": {
-                      "Expression": {
-                        "Column": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "PB_VIAJE_MUESTREO_TEST"
-                            }
-                          },
-                          "Property": "IDBarcoFecha"
-                        }
-                      },
-                      "Function": 2
-                    }
-                  },
-                  "howCreated": 1
-                },
-                {
-                  "name": "Filter0b818d8ebdb08a00f2dc",
-                  "type": "Advanced",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "PB_VIAJE_MUESTREO_TEST"
-                        }
-                      },
-                      "Property": "FECHA_HORA_RECALADA"
-                    }
-                  },
-                  "howCreated": 1
-                },
-                {
-                  "name": "6299f7a433850c40ae52",
-                  "type": "Advanced",
-                  "expression": {
-                    "Aggregation": {
-                      "Expression": {
-                        "Column": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "PB_VIAJE_MUESTREO_TEST"
-                            }
-                          },
-                          "Property": "IDBarcoFecha"
-                        }
-                      },
-                      "Function": 5
-                    }
-                  },
-                  "howCreated": 1
-                },
-                {
-                  "name": "dabfeebf66bdb6eae497",
-                  "type": "Advanced",
-                  "expression": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "medidas"
-                        }
-                      },
-                      "Property": "Req Viajes"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
-                  "name": "ff1b7b4930a0545b31bb",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Date"
-                        }
-                      },
-                      "Property": "Mes"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
-                  "name": "65bd2158c07c2e3e890b",
-                  "type": "Advanced",
-                  "expression": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "medidas"
-                        }
-                      },
-                      "Property": "Viajes totales"
-                    }
-                  },
-                  "howCreated": 0
-                }
-              ]
-            },
-            "singleVisual": {
-              "visualType": "lineClusteredColumnComboChart",
-              "objects": {},
-              "activeProjections": {
-                "Category": [
-                  {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Date"
-                        }
-                      },
-                      "Property": "Mes"
-                    }
-                  }
-                ]
-              }
-            }
-          },
-          "204e4adf30ce10565ec0": {
-            "filters": {
-              "byExpr": [
-                {
-                  "name": "Filter6e3e363372ac3f5a4f41",
-                  "type": "Advanced",
-                  "expression": {
-                    "Aggregation": {
-                      "Expression": {
-                        "Column": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "PB_VIAJE_MUESTREO_TEST"
-                            }
-                          },
-                          "Property": "NRO_EJEMPLARES"
-                        }
-                      },
-                      "Function": 0
-                    }
-                  },
-                  "howCreated": 1
-                },
-                {
-                  "name": "21b3be7b5c00023bae96",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Dimension MAESTRO ESPECIE"
-                        }
-                      },
-                      "Property": "NOMBRE_ESPECIE"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
-                  "name": "6979ebafabca4919083a",
-                  "type": "Advanced",
-                  "expression": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "medidas"
-                        }
-                      },
-                      "Property": "N° Ejemplares"
-                    }
-                  },
-                  "howCreated": 0
-                }
-              ]
-            },
-            "singleVisual": {
-              "visualType": "donutChart",
-              "objects": {},
-              "orderBy": [
-                {
-                  "Direction": 2,
-                  "Expression": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "medidas"
-                        }
-                      },
-                      "Property": "N° Ejemplares"
-                    }
-                  }
-                }
-              ],
-              "activeProjections": {
-                "Category": [
-                  {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Dimension MAESTRO ESPECIE"
-                        }
-                      },
-                      "Property": "NOMBRE_ESPECIE"
-                    }
-                  }
-                ]
-              }
-            }
-          },
-          "db7ba01fe419dc950006": {
-            "filters": {
-              "byExpr": [
-                {
-                  "name": "92b9fb64a0d8dcc7800c",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Dimension OBSERVADOR_CIENTIFICO"
-                        }
-                      },
-                      "Property": "OBSERVADOR_CIENTIFICO"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
-                  "name": "2130a91130231c0bad5b",
-                  "type": "Advanced",
-                  "expression": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "medidas"
-                        }
-                      },
-                      "Property": "Viajes Totales Obs Cientifico"
-                    }
-                  },
-                  "howCreated": 0
-                }
-              ]
-            },
-            "singleVisual": {
-              "visualType": "clusteredBarChart",
-              "objects": {},
-              "orderBy": [
-                {
-                  "Direction": 2,
-                  "Expression": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "medidas"
-                        }
-                      },
-                      "Property": "Viajes Totales Obs Cientifico"
-                    }
-                  }
-                }
-              ],
-              "activeProjections": {
-                "Category": [
-                  {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Dimension OBSERVADOR_CIENTIFICO"
-                        }
-                      },
-                      "Property": "OBSERVADOR_CIENTIFICO"
-                    }
-                  }
-                ]
-              }
-            }
-          },
-          "a47306236532931cbc0a": {
-            "singleVisual": {
-              "visualType": "basicShape",
-              "objects": {},
-              "display": {
-                "mode": "hidden"
-              }
-            }
-          },
-          "ae0e84a39e1081c51869": {
-            "filters": {
-              "byExpr": [
-                {
-                  "name": "ea8ac40d46a3e716b0c2",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Dimension BARCO"
-                        }
-                      },
-                      "Property": "NOMBRE_BARCO"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
-                  "name": "b28b7be0972a02060b12",
-                  "type": "Advanced",
-                  "expression": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "medidas"
-                        }
-                      },
-                      "Property": "N° Lances"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
-                  "name": "2c16a253d565b6c068ad",
-                  "type": "Advanced",
-                  "expression": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "medidas"
-                        }
-                      },
-                      "Property": "Duración Marea (Hrs)"
-                    }
-                  },
-                  "howCreated": 0
-                }
-              ]
-            },
-            "singleVisual": {
-              "visualType": "lineClusteredColumnComboChart",
-              "objects": {},
-              "orderBy": [
-                {
-                  "Direction": 2,
-                  "Expression": {
-                    "Aggregation": {
-                      "Expression": {
-                        "Column": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "PB_VIAJE_MUESTREO_TEST"
-                            }
-                          },
-                          "Property": "NRO_LANCES"
-                        }
-                      },
-                      "Function": 0
-                    }
-                  }
-                }
-              ],
-              "activeProjections": {
-                "Category": [
-                  {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Dimension BARCO"
-                        }
-                      },
-                      "Property": "NOMBRE_BARCO"
-                    }
-                  }
-                ]
-              }
-            }
-          },
-          "a2c842539148300d0110": {
-            "singleVisual": {
-              "visualType": "basicShape",
-              "objects": {}
-            }
-          },
-          "1552d55fad0731011e24": {
-            "singleVisual": {
-              "visualType": "actionButton",
-              "objects": {}
-            }
-          },
-          "cf6b4762d7da105e82cb": {
-            "singleVisual": {
-              "visualType": "actionButton",
-              "objects": {}
             }
           }
         }

@@ -34,11 +34,6 @@ relationship AutoDetected_e2c0765b-92f4-45ce-a16a-230934da84a3
 	fromColumn: PB_REQ_VIAJES.COD_REGION
 	toColumn: 'Dimension REGION'.COD_REGION
 
-relationship 7d4cd182-77c3-4d8d-956d-2c5f2eedfd9a
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Date2.Date
-	toColumn: LocalDateTable_e390ec01-e410-4f61-9d24-06abe6539729.Date
-
 relationship da87e3ee-01e4-fdec-77ff-eaa48213f4d6
 	fromColumn: PB_VIAJE_MUESTREO_TEST.CODIGO_REGION
 	toColumn: 'Dimension REGION'.COD_REGION

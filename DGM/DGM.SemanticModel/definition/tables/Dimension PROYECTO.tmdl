@@ -17,6 +17,27 @@ table 'Dimension PROYECTO'
 
 		annotation SummarizationSetBy = Automatic
 
+	column SIGLA_PROYECTO =
+			
+			SWITCH(
+			    TRUE(),
+			    'Dimension PROYECTO'[COD_PROYECTO] = "B", "BENT",
+			    'Dimension PROYECTO'[COD_PROYECTO] = "CB", "CRU BENT",
+			    'Dimension PROYECTO'[COD_PROYECTO] = "C", "CRU DEM",
+			    'Dimension PROYECTO'[COD_PROYECTO] = "DAP", "DAP",
+			    'Dimension PROYECTO'[COD_PROYECTO] = "DES", "DES DEM",
+			    'Dimension PROYECTO'[COD_PROYECTO] = "DES_CER", "DES PEL",
+			    'Dimension PROYECTO'[COD_PROYECTO] = "JIBIA", "JIBIA",
+			    'Dimension PROYECTO'[COD_PROYECTO] = "PCS", "PCS",
+			    'Dimension PROYECTO'[COD_PROYECTO] = "PN", "PZN",
+			    'Dimension PROYECTO'[COD_PROYECTO] = "SRAM", "SRAM",
+			    BLANK()
+			)
+		lineageTag: 6daafd07-d4cf-49b1-80d7-db0657c6bd19
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'Dimension PROYECTO' = calculated
 		mode: import
 		source =

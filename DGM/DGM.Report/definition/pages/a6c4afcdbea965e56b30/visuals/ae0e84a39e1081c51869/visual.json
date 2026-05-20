@@ -4,10 +4,10 @@
   "position": {
     "x": 811.11111111111109,
     "y": 487.77777777777777,
-    "z": 17000,
+    "z": 10000,
     "height": 262.22222222222223,
     "width": 468.88888888888886,
-    "tabOrder": 14000
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "lineClusteredColumnComboChart",
@@ -27,9 +27,9 @@
                 }
               },
               "queryRef": "Dimension BARCO.NOMBRE_BARCO",
-              "nativeQueryRef": "Barco",
+              "nativeQueryRef": "Embarcación",
               "active": true,
-              "displayName": "Barco"
+              "displayName": "Embarcación"
             }
           ]
         },
@@ -61,7 +61,7 @@
                       "Entity": "medidas"
                     }
                   },
-                  "Property": "Duración Marea (Hrs)"
+                  "Property": "Duración Marea (Dias) Promedio"
                 }
               },
               "queryRef": "medidas.Duración Marea (Hrs)",
@@ -271,6 +271,27 @@
         {
           "properties": {
             "titleFontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "secTitleFontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "secShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "secFontFamily": {
               "expr": {
                 "Literal": {
                   "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"

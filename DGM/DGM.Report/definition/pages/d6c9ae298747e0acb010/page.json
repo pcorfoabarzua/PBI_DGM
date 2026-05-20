@@ -130,11 +130,6 @@
   },
   "visualInteractions": [
     {
-      "source": "1be99913cdc178e57018",
-      "target": "324e9bce0c091690d690",
-      "type": "DataFilter"
-    },
-    {
       "source": "5c6abc96d784b03d72c4",
       "target": "65498d9163ce5341ec40",
       "type": "DataFilter"
@@ -147,6 +142,11 @@
     {
       "source": "5c6abc96d784b03d72c4",
       "target": "d8059cf08852bd220531",
+      "type": "DataFilter"
+    },
+    {
+      "source": "b8338b7abd76a5ed0d76",
+      "target": "65498d9163ce5341ec40",
       "type": "DataFilter"
     }
   ]

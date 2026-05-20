@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "2ab9bcf69871d087a88b",
   "position": {
     "x": 542.22222222222217,
@@ -68,7 +68,7 @@
                       "Entity": "medidas"
                     }
                   },
-                  "Property": "% Cumplimiento Muestreo (Cap 100%)"
+                  "Property": "% Cumplimiento Muestreo"
                 }
               },
               "queryRef": "medidas.% Cumplimiento Muestreo (Cap 100%)",
@@ -131,7 +131,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "99.02743493804711D"
+                  "Value": "86.8722424577517D"
                 }
               }
             }
@@ -233,70 +233,12 @@
                                         "Entity": "medidas"
                                       }
                                     },
-                                    "Property": "% Cumplimiento Muestreo (Cap 100%)"
+                                    "Property": "% Cumplimiento Muestreo"
                                   }
                                 },
                                 "Right": {
-                                  "RangePercent": {
-                                    "Min": {
-                                      "ScopedEval": {
-                                        "Expression": {
-                                          "Aggregation": {
-                                            "Expression": {
-                                              "ScopedEval": {
-                                                "Expression": {
-                                                  "Measure": {
-                                                    "Expression": {
-                                                      "SourceRef": {
-                                                        "Entity": "medidas"
-                                                      }
-                                                    },
-                                                    "Property": "% Cumplimiento Muestreo (Cap 100%)"
-                                                  }
-                                                },
-                                                "Scope": [
-                                                  {
-                                                    "AllRolesRef": {}
-                                                  }
-                                                ]
-                                              }
-                                            },
-                                            "Function": 3
-                                          }
-                                        },
-                                        "Scope": []
-                                      }
-                                    },
-                                    "Max": {
-                                      "ScopedEval": {
-                                        "Expression": {
-                                          "Aggregation": {
-                                            "Expression": {
-                                              "ScopedEval": {
-                                                "Expression": {
-                                                  "Measure": {
-                                                    "Expression": {
-                                                      "SourceRef": {
-                                                        "Entity": "medidas"
-                                                      }
-                                                    },
-                                                    "Property": "% Cumplimiento Muestreo (Cap 100%)"
-                                                  }
-                                                },
-                                                "Scope": [
-                                                  {
-                                                    "AllRolesRef": {}
-                                                  }
-                                                ]
-                                              }
-                                            },
-                                            "Function": 4
-                                          }
-                                        },
-                                        "Scope": []
-                                      }
-                                    },
-                                    "Percent": 0.0069999999999999993
+                                  "Literal": {
+                                    "Value": "0.7D"
                                   }
                                 }
                               }
@@ -311,12 +253,12 @@
                                         "Entity": "medidas"
                                       }
                                     },
-                                    "Property": "% Cumplimiento Muestreo (Cap 100%)"
+                                    "Property": "% Cumplimiento Muestreo"
                                   }
                                 },
                                 "Right": {
                                   "Literal": {
-                                    "Value": "100000000000D"
+                                    "Value": "10D"
                                   }
                                 }
                               }
@@ -342,70 +284,12 @@
                                         "Entity": "medidas"
                                       }
                                     },
-                                    "Property": "% Cumplimiento Muestreo (Cap 100%)"
+                                    "Property": "% Cumplimiento Muestreo"
                                   }
                                 },
                                 "Right": {
-                                  "RangePercent": {
-                                    "Min": {
-                                      "ScopedEval": {
-                                        "Expression": {
-                                          "Aggregation": {
-                                            "Expression": {
-                                              "ScopedEval": {
-                                                "Expression": {
-                                                  "Measure": {
-                                                    "Expression": {
-                                                      "SourceRef": {
-                                                        "Entity": "medidas"
-                                                      }
-                                                    },
-                                                    "Property": "% Cumplimiento Muestreo (Cap 100%)"
-                                                  }
-                                                },
-                                                "Scope": [
-                                                  {
-                                                    "AllRolesRef": {}
-                                                  }
-                                                ]
-                                              }
-                                            },
-                                            "Function": 3
-                                          }
-                                        },
-                                        "Scope": []
-                                      }
-                                    },
-                                    "Max": {
-                                      "ScopedEval": {
-                                        "Expression": {
-                                          "Aggregation": {
-                                            "Expression": {
-                                              "ScopedEval": {
-                                                "Expression": {
-                                                  "Measure": {
-                                                    "Expression": {
-                                                      "SourceRef": {
-                                                        "Entity": "medidas"
-                                                      }
-                                                    },
-                                                    "Property": "% Cumplimiento Muestreo (Cap 100%)"
-                                                  }
-                                                },
-                                                "Scope": [
-                                                  {
-                                                    "AllRolesRef": {}
-                                                  }
-                                                ]
-                                              }
-                                            },
-                                            "Function": 4
-                                          }
-                                        },
-                                        "Scope": []
-                                      }
-                                    },
-                                    "Percent": 0.0033
+                                  "Literal": {
+                                    "Value": "0.33D"
                                   }
                                 }
                               }
@@ -420,70 +304,12 @@
                                         "Entity": "medidas"
                                       }
                                     },
-                                    "Property": "% Cumplimiento Muestreo (Cap 100%)"
+                                    "Property": "% Cumplimiento Muestreo"
                                   }
                                 },
                                 "Right": {
-                                  "RangePercent": {
-                                    "Min": {
-                                      "ScopedEval": {
-                                        "Expression": {
-                                          "Aggregation": {
-                                            "Expression": {
-                                              "ScopedEval": {
-                                                "Expression": {
-                                                  "Measure": {
-                                                    "Expression": {
-                                                      "SourceRef": {
-                                                        "Entity": "medidas"
-                                                      }
-                                                    },
-                                                    "Property": "% Cumplimiento Muestreo (Cap 100%)"
-                                                  }
-                                                },
-                                                "Scope": [
-                                                  {
-                                                    "AllRolesRef": {}
-                                                  }
-                                                ]
-                                              }
-                                            },
-                                            "Function": 3
-                                          }
-                                        },
-                                        "Scope": []
-                                      }
-                                    },
-                                    "Max": {
-                                      "ScopedEval": {
-                                        "Expression": {
-                                          "Aggregation": {
-                                            "Expression": {
-                                              "ScopedEval": {
-                                                "Expression": {
-                                                  "Measure": {
-                                                    "Expression": {
-                                                      "SourceRef": {
-                                                        "Entity": "medidas"
-                                                      }
-                                                    },
-                                                    "Property": "% Cumplimiento Muestreo (Cap 100%)"
-                                                  }
-                                                },
-                                                "Scope": [
-                                                  {
-                                                    "AllRolesRef": {}
-                                                  }
-                                                ]
-                                              }
-                                            },
-                                            "Function": 4
-                                          }
-                                        },
-                                        "Scope": []
-                                      }
-                                    },
-                                    "Percent": 0.0069999999999999993
+                                  "Literal": {
+                                    "Value": "0.7D"
                                   }
                                 }
                               }
@@ -509,7 +335,7 @@
                                         "Entity": "medidas"
                                       }
                                     },
-                                    "Property": "% Cumplimiento Muestreo (Cap 100%)"
+                                    "Property": "% Cumplimiento Muestreo"
                                   }
                                 },
                                 "Right": {
@@ -529,7 +355,7 @@
                                         "Entity": "medidas"
                                       }
                                     },
-                                    "Property": "% Cumplimiento Muestreo (Cap 100%)"
+                                    "Property": "% Cumplimiento Muestreo"
                                   }
                                 },
                                 "Right": {

@@ -25,9 +25,10 @@ table 'Dimension PUERTO'
 				    Source = Sql.Databases("192.168.169.110"),
 				    Analytics = Source{[Name="Analytics"]}[Data],
 				    Dimension_PUERTO = Analytics{[Schema="Dimension",Item="PUERTO"]}[Data],
-				    #"Duplicados quitados" = Table.Distinct(Dimension_PUERTO, {"CODIGO_PUERTO"})
+				    #"Duplicados quitados" = Table.Distinct(Dimension_PUERTO, {"CODIGO_PUERTO"}),
+				    #"Quitar COD_PUERTO nulo" = Table.SelectRows(#"Duplicados quitados", each ([CODIGO_PUERTO] <> null))
 				in
-				    #"Duplicados quitados"
+				    #"Quitar COD_PUERTO nulo"
 
 	annotation PBI_ResultType = Table
 

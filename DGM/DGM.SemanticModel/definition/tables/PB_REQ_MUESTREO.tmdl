@@ -116,9 +116,10 @@ table PB_REQ_MUESTREO
 				    #"Cambio DCS a DAP" = Table.ReplaceValue(#"Cambio Descarte por DES","DCS","DAP",Replacer.ReplaceText,{"COD_PROYECTO"}),
 				    #"Cambio DSA a DAP" = Table.ReplaceValue(#"Cambio DCS a DAP","DSA","DAP",Replacer.ReplaceText,{"COD_PROYECTO"}),
 				    #"Cambio PN_DES a DES_CER" = Table.ReplaceValue(#"Cambio DSA a DAP","PN_DES","DES_CER",Replacer.ReplaceText,{"COD_PROYECTO"}),
-				    #"Cambio PCS_DESC a DES_CER" = Table.ReplaceValue(#"Cambio PN_DES a DES_CER","PCS_DESC","DES_CER",Replacer.ReplaceText,{"COD_PROYECTO"})
+				    #"Cambio PCS_DESC a DES_CER" = Table.ReplaceValue(#"Cambio PN_DES a DES_CER","PCS_DESC","DES_CER",Replacer.ReplaceText,{"COD_PROYECTO"}),
+				    #"Valor reemplazado" = Table.ReplaceValue(#"Cambio PCS_DESC a DES_CER",0,null,Replacer.ReplaceValue,{"COD_REGION"})
 				in
-				    #"Cambio PCS_DESC a DES_CER"
+				    #"Valor reemplazado"
 
 	annotation PBI_ResultType = Table
 

@@ -4,10 +4,10 @@
   "position": {
     "x": 515.55555555555554,
     "y": 487.77777777777777,
-    "z": 18000,
+    "z": 11000,
     "height": 262.22222222222223,
     "width": 282.22222222222223,
-    "tabOrder": 15000
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "donutChart",
@@ -125,6 +125,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "percentageLabelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
                 }
               }
             }

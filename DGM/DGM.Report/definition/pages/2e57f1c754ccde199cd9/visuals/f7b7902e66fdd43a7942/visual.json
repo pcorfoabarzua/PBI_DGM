@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "f7b7902e66fdd43a7942",
   "position": {
-    "x": 5,
-    "y": 248.33333333333334,
+    "x": 8.88888888888889,
+    "y": 212.65964433267621,
     "z": 11000,
-    "height": 61.666666666666671,
-    "width": 136.11110687255859,
+    "height": 60,
+    "width": 138.33333333333334,
     "tabOrder": 11000
   },
   "visual": {
@@ -23,13 +23,12 @@
                       "Entity": "Dimension REGION"
                     }
                   },
-                  "Property": "NOMBRE_REGION"
+                  "Property": "SIGLA_REGION"
                 }
               },
-              "queryRef": "Dimension REGION.NOMBRE_REGION",
-              "nativeQueryRef": "R E G I O N",
-              "active": true,
-              "displayName": "R E G I O N"
+              "queryRef": "Dimension REGION.SIGLA_REGION",
+              "nativeQueryRef": "SIGLA_REGION",
+              "active": true
             }
           ]
         }
@@ -65,6 +64,13 @@
                   "Value": "false"
                 }
               }
+            },
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           }
         }
@@ -72,45 +78,16 @@
       "general": [
         {
           "properties": {
-            "filter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "d",
-                    "Entity": "Dimension REGION",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "In": {
-                        "Expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Source": "d"
-                                }
-                              },
-                              "Property": "NOMBRE_REGION"
-                            }
-                          }
-                        ],
-                        "Values": [
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'del Bíobío'"
-                              }
-                            }
-                          ]
-                        ]
-                      }
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
                     }
                   }
-                ]
+                }
               }
             }
           }
@@ -142,6 +119,13 @@
                       "Percent": 0
                     }
                   }
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
                 }
               }
             }
@@ -178,6 +162,13 @@
                       "Value": "'#115EAC'"
                     }
                   }
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
                 }
               }
             }

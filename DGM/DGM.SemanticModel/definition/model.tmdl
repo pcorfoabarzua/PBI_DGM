@@ -26,8 +26,6 @@ ref table 'Dimension BARCO'
 ref table 'Dimension ZONA'
 ref table 'Dimension ACTIVIDAD'
 ref table medidas
-ref table Date2
-ref table LocalDateTable_e390ec01-e410-4f61-9d24-06abe6539729
 ref table 'Dimension MAESTRO ESPECIE'
 ref table LocalDateTable_29a6f2b9-9c57-4c65-931d-1542e6accbc7
 ref table LocalDateTable_bc0b6aec-16d3-4111-9bae-db6deb1a9845
