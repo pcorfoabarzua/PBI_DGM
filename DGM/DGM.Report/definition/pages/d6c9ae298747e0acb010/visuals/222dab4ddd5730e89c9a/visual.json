@@ -27,8 +27,9 @@
                 }
               },
               "queryRef": "Dimension MAESTRO ESPECIE.NOMBRE_ESPECIE",
-              "nativeQueryRef": "NOMBRE_ESPECIE",
-              "active": true
+              "nativeQueryRef": "Especie",
+              "active": true,
+              "displayName": "Especie"
             }
           ]
         },
@@ -206,6 +207,13 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "section": {
+              "expr": {
+                "Literal": {
+                  "Value": "'08896cda0780a8e8f21e'"
                 }
               }
             }

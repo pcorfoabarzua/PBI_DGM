@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "204e4adf30ce10565ec0",
   "position": {
     "x": 515.55555555555554,
@@ -27,8 +27,9 @@
                 }
               },
               "queryRef": "Dimension MAESTRO ESPECIE.NOMBRE_ESPECIE",
-              "nativeQueryRef": "NOMBRE_ESPECIE",
-              "active": true
+              "nativeQueryRef": "Especie",
+              "active": true,
+              "displayName": "Especie"
             }
           ]
         },
@@ -199,6 +200,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "section": {
+              "expr": {
+                "Literal": {
+                  "Value": "'08896cda0780a8e8f21e'"
                 }
               }
             }

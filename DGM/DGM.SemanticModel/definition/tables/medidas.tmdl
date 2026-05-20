@@ -1334,16 +1334,37 @@ table medidas
 	measure '% Ejemplares' = ```
 			
 			DIVIDE(
-			    SUM(PB_VIAJE_MUESTREO_TEST[NRO_EJEMPLARES]),
+			    [N° Ejemplares],
 			    CALCULATE(
-			        SUM(PB_VIAJE_MUESTREO_TEST[NRO_EJEMPLARES]),
-			        ALL(PB_VIAJE_MUESTREO_TEST[COD_ESPECIE])
+			        [N° Ejemplares],
+			        ALL('Dimension MAESTRO ESPECIE')
 			    )
 			)
 			
+			
 			```
-		formatString: 0.0
 		lineageTag: 96c8d776-5217-4149-a5df-b6d09c61b04f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Tooltip Especie' = ```
+			
+			VAR Valor = [N° Ejemplares]
+			VAR Porcentaje = [% Ejemplares]
+			
+			RETURN
+			SUBSTITUTE(
+			    FORMAT(Valor, "#,##0"),
+			    ",", "."
+			)
+			& " (" &
+			FORMAT(Porcentaje, "0.0%")
+			& ")"
+			
+			
+			
+			```
+		lineageTag: 5b8f2fd4-0630-44c2-8bf2-0bd0101f5f20
 
 	partition medidas = m
 		mode: import
