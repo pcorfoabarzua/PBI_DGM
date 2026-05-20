@@ -5,10 +5,13 @@ permitir versionamiento, trazabilidad de cambios y trabajo colaborativo mediante
 
 ## 📊 Alcance del proyecto
 El proyecto incluye análisis y visualizaciones relacionadas con:
-- Pelágicos
-- Crustáceos
+- Pelágicos (Sur y Norte)
+- Crustáceos Demersales
 - Aguas profundas
 - Bentónicos
+- Crustáceos Bentónicos
+- Jibia
+- SRAM
 
 ## 🧱 Estructura del proyecto
 - Modelo de datos en formato PBIP
